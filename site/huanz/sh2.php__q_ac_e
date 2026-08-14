@@ -1,0 +1,632 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+</head>
+<body>
+<STYLE>
+<!--
+    body { scrollbar-3d-light-color: #D6EEFC;
+          scrollbar-arrow-color: ##99FFFF;
+          scrollbar-base-color: ##99FFFF;
+          scrollbar-dark-shadow-color: ##99FFFF;
+          scrollbar-face-color: #707070;
+          scrollbar-highlight-color: ##99FFFF;
+          scrollbar-shadow-color: #69EC7;
+    }
+-->
+</STYLE>
+<link href='../link3.css' rel='stylesheet' type='text/css'>
+<Center>
+</script><Br><font color=green>幻獸資料庫 / Made by 敗家一族<BR><BR><font color=reD>詳細資料請點選 -> 幻獸大全 -> 幻獸數值 （網頁列出資料可用 Ctrl + F 加速查詢）</font></font><BR><BR>
+請選擇你要查詢的方式：<a href="sh2.php?ac=a"><font color=blue>名字</font></a>　<a href="sh2.php?ac=m"><font color=blue>地圖</font></a>　<a href="sh2.php?ac=b"><font color=blue>掉寶</font></a>　<a href="sh2.php?ac=c"><font color=blue>技能名</font></a>　<a href="sh2.php?ac=d"><font color=blue>備註</font></a>　<a href="sh2.php?ac=e"><font color=blue>稀有</font></a> ||  <a href="sh2.php"><font color=blue>回說明頁</font></a>
+<BR><BR>
+
+
+
+
+
+符合筆數共<font color=blue> 42</font> 筆資料<br>
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>Q 卡獎品		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/apcat.gif><BR>青蘋貓（木）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>2<TD>2<TD>22	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>21<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>無	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、恢復、連擊、裝死、賜福、巨木之擊、禁言	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>Q卡抽獎寶物，體智 ... 也不會轉換 ... 嗯 ~ 花瓶 ... 不過有一點很奇怪 ~ 這應該都是喵喵系的寵 ... 怎麼會的跟白喵喵不大一樣 @@? 還是官網 Q 卡區寫錯了 ... 有待查證 ... </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>Q 卡獎品		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/bm.gif><BR>白喵喵（光）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>25<TD>25<TD>25	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>26<TD>26<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>無	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、恢復、連擊、裝死、賜福、回復術、聖言術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>Q卡抽獎寶物，偏智的喵喵 ... 只有期待闇系的純智喵喵才比較有用吧 ~ 光系的嘛 ... 大概就跟小光貓頭鷹差不多用途囉 ~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>Q 卡獎品		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/bg.gif><BR>白金小龜（金）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>無	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 恢復、裝死、賜福、轉換、吸血、犧牲、魔刃術、裂地斬 	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>Q 卡獎品 ... 金系的呀 ... 偏智的寵卻有著完美的肉盾技能，我想終究是會走到被人拿去融的命運吧 ~ 但是還是隻好寵 !! </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>哈啾島聽說島玫瑰島		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/gx.gif><BR>雷爵獸（金）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>雷爵獸卡 雷爵獸娃娃 紫星棒 合金盾 鱉 鈦礦石 王者寶石	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、裝死、吸血、亡命一擊、魔刃術、裂地斬 	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>花瓶寵，金系偏力、體 ... 雷爵獸偏智慧 ... 所以養大之後走力體智，變成四不像的寵，所以就只能當個欣賞用的花瓶寵囉，練高等放身邊反而會吸魔，所以把親和度練高就好了~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>咕嚕島		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/mx.gif><BR>木鳳凰（木）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>木鳳凰卡 木鳳凰娃娃 破甲棒 鋼鐵鎖子甲 鈦礦石 鐵杉 王者寶石 
+	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、恢復、連擊、裝死、賜福、推車、巨木之擊、禁言 	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>雖然是走純體路線，但是技能雖多卻就是少了轉換這麼一項，使得鳳凰仍然是隻花瓶寵，無法跟冠軍派艾波相比。</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>巴斯迷宮B3		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/mu.gif><BR>小木魚（木）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>小木魚卡 小木魚娃娃 
+	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、威脅、吸血、犧牲、巨木之擊、禁言	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>在巴斯3抓到的稀寵小木魚是蘋果綠，用融合融出來的小木魚是深綠色，在本單元的相關說明有提到，一模一樣的寵只是稀寵跟融合寵顏色跟名字有點不同而已，其他在【融】跟【稀】若是看到一樣的寵就不再說明囉 ~ </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>史遣菃J海B1		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/sx.gif><BR>瓦特寶寶（水）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>瓦特寶寶卡 瓦特寶寶娃娃 柳葉刀 大祭司袍 鱉 月葵 王者寶石	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、裝死、吸血、亡命一擊、波之舞、冰刃術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>花瓶 ... 不用多說，看雷爵獸的說明就大概可以知道了  </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>鬱金香島		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/rx.gif><BR>火精靈（火）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>2<TD>2<TD>21	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>21<TD>22<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>火精靈卡 火精靈娃娃 灰龍斧 硬皮戎裝 鐵杉 鈦礦石 王者寶石	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、豬頭、裝死、賜福、亡命一擊、軟化護甲、火彈術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>火精靈跟雷爵獸一樣都是躲不了花瓶的命運，但是還是值得一提的是，火精靈的造型真的很可愛 ... 不過因為他們都是走智力的，所以或啾謒t或是土、木系的會比較有用吧？</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>椰子島		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/wx.gif><BR>卡拉龍（光）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>卡拉龍卡 卡拉龍娃娃 紫星棒 合金盾 鱉 鈦礦石 王者寶石	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、恢復、連擊 、裝死、賜福、推車、回復術、聖言術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>這隻稀有寵終於不再是花瓶的評語了，卡拉龍和寶石獸有異曲同工之處，並且技能同時擁有強化與連擊，還可使用光系法術跟自己本身的恢復術，使得阿卡在光系獸化寵上面是可攻可守，練到高等級再加上強化第三階的狂亂，應該有不錯的攻擊力。</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>趴趴迷宮B1		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/star2.gif><BR>亮晶晶（光）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>亮晶晶卡 亮晶晶娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 連擊、裝死、威脅、吸血、亡命一擊、回復術、聖言術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>光系平均加上海星偏一點體，練到後期想要拿牠當肉盾，體也是不夠，加上海星的技能並不會轉換回春，雖然有吸血連擊，但是沒有偏力，所以到後期根本不能拿來打人，因此也是一隻花瓶寵。</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>尼克草原		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/m25.gif><BR>木頭貝貝（木）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>11~15<td>15<TD>17<TD>14	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>126<td>16<TD>14<TD>14	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>木頭貝貝卡 木頭貝貝娃娃 青竹棍 軟皮袍 牛奶 優格 雜七集卡冊	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 恢復、轉換、賜福、吸血、亡命一擊、巨木之擊、禁言	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>好用的轉換純體寵，少了犧牲技卻比派艾波多了吸血寄生這一招，如果有錢或是運氣好抓得到的話用這隻是不錯的選擇，此外，由於貝貝類是屬於人魚傳說資料片的新寵，配戴上幻獸配件外型會有改變，不像舊寵戴上幻獸配件都不會改變 ... 但是不論怎麼比，少了犧牲總是有點可惜，還是無法動搖派艾波平民寵的冠軍地位。</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>史遣菃J海		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/sbe.gif><BR>水貝貝（水）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>21~25<td>28<TD>30<TD>26	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>278<td>26<TD>24<TD>28	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>水貝貝卡 水貝貝娃娃 褐木棒 方盾 香蕉 草莓 水晶原石	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 恢復、轉換、賜福、吸血、亡命一擊、波之舞、冰刃術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>水貝貝用途其實跟水窩蟲差不多，水鎧就是為了跟戰士火武 PK 用 ... 至於說拿來練伏Z化是很不好用的，因為會被大地之怒打到哭出來。還有這隻是 21~25 級，抓的時候別忘了帶二封。</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>天鵝湖		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/mxxx.gif><BR>小木精靈（木）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>65<td>85<TD>85<TD>85	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>10000<td>85<TD>85<TD>85	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>小木精靈卡 小木精靈娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、豬頭、裝死、賜福、亡命一擊、巨木之擊、禁言	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>官方將這隻稀寵血調成 10000，但抓到之後會恢復一般野生幻獸 65 級的血 !! 所以並不是抓到就有血 10000 喔 ~ 只是官方刻意將這隻稀寵做成有點像小魔王 ...
+<BR><BR>
+體智寵 ... 加上技能又不能轉換回春，叫出來打人也不夠力，所以還是只能變成一隻好看的花瓶寵</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>米夏島		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/fu.gif><BR>福瑞龍（水）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>65<td>98<TD>98<TD>98	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>10000<td>98<TD>98<TD>98	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>福瑞龍卡 福瑞龍娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、恢復、連擊 、裝死、賜福、推車、波之舞、冰刃術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>官方將這隻稀寵血調成 10000，但抓到之後會恢復一般野生幻獸 65 級的血 !! 所以並不是抓到就有血 10000 喔 ~ 只是官方刻意將這隻稀寵做成有點像小魔王 ...<BR><BR>
+
+雖然阿卡的技能很好，但是這隻抓到時卻無法派上多大用場，力量跟血都不夠高，有點像是布魯鯨的感覺，降級練就是一般的力敏寵 ... 想來想去還是只是抓來礎n看的，也陪偺躑娃m到 6x 級 ... 也會是一隻好用的獸化攻擊寵吧，不過要超暴力的獸化寵還是要純力的火系寵才有這麼高的力量</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>金銀湖		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/le.gif><BR>火雷獸（火）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>65<td>105<TD>105<TD>105	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>10000<td>105<TD>105<TD>105	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>火雷獸卡 火雷獸娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、裝死、吸血、亡命一擊、軟化護甲、火彈術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>官方將這隻稀寵血調成 10000，但抓到之後會恢復一般野生幻獸 65 級的血 !! 所以並不是抓到就有血 10000 喔 ~ 只是官方刻意將這隻稀寵做成有點像小魔王 ...
+<BR><BR>
+火雷的起始數值還算不錯，千萬不要降級練他，不然又變得跟雷爵獸一樣的命運，四不像 ... 變成花瓶，就直接抓來這樣用，力雖然不夠高但是雷爵獸有強化跟連擊可以補強，並且也有寄生可以讓牠在場上活久一點，加上火系寵的法術銷熔也有，所以還算是可以叫來實戰的一隻稀有寵。</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>Q 卡獎品		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/qlala.gif><BR>小丑兔（闇）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>敏<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>無	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、威脅、亡命一擊、推車、詛咒術、毒擊術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>Q 卡獎品 ... 敏捷闇寵 ... ? 花瓶乎 ? 不是跟邪惡兔子一樣嗎 ... 看來就是拿來走秀吧 ~_~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>玫瑰園		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/agx.gif><BR>金蘭花（金）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>1<td>23<TD>23<TD>23	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>24<TD>24<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>金蘭花卡 金蘭花娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 連擊、賜福、轉換、推車、犧牲、魔刃術、裂地斬	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>號稱不稀有的稀有寵 ... 因為鈴蘭花的其他一些屬性可以抓得到，不像卡拉龍或是人魚、雷爵獸這般都抓不到，所以感覺上就不稀有 ... 加上外形確實也是不怎麼樣啦 ...</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>羅比特草原		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/lf.gif><BR>藍鳳凰（水）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>35<td>50<TD>53<TD>53	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>613<td>53<TD>36<TD>36	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>藍鳳凰卡片 藍鳳凰娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、恢復、連擊、裝死、賜福、推車、波之舞、冰刃術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>這隻稀有寵的等級是 35 級，也就是要帶著二封來抓喔 ~ 可不要直覺帶著一級封印石來抓喔 @@ ~ 水系鳳凰呀 ... 更是隻花瓶了 ~ 純粹欣賞用吧 ... 反正現在二級封印石已經可以在巴格達幻獸店買得到了，無聊又有閒就去抓隻來玩吧 ~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>Q 卡獎品		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/sm.gif><BR>小惡魔（火）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>無	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 連擊、裝死、威脅、吸血、亡命一擊、軟化護甲、火彈術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>Q卡抽獎寶物，純力寵 ~ 官方沒有任何公開的文件有寫對 Q 卡寵有特別的設定 ... 應該了解站長說的意思吧 ~ 所以這類的 Q 卡寵應該都是花瓶成份居多吧 ~ 不過這樣也好，畢竟都要用台幣買的 Q 卡才有好寵 ~ 這樣對大部份玩家來說有點不公平呢 ^^</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>巨岩島		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/mto.gif><BR>饅頭象（光）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>饅頭象卡片 饅頭象娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、 恢復、連擊、威脅、轉換	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>嗯 ... 技能很好的大象 ... 光系偏力 ... 卡拉龍跟這隻饅頭象有異曲同工之處吧 ~ 只是大象會轉換、卡拉龍會光系法術 ... 好像會轉換比較有用一點吧 ? 不過卡拉龍會推車 ... 大象不會 ... 這 ...</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>秘密古墓B3		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/gl.gif><BR>光雷獸（光）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>45<td>59<TD>68<TD>64	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>990<td>68<TD>50<TD>8	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>無	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、裝死、吸血、亡命一擊、回復術、聖言術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>光系智寵 ... 嗯 ... 稀有 ~ 但是 ...... <B>為什麼這些智寵的技能不像智寵像力寵呀 !!</b> 跟撲克士兵一樣 >_< ~ 沒有賜福 ~ 就把牠當做是高等的智寵吧 ~ 但是就實用來說我覺得還是白羊好 ... 不過這隻是 45 級的稀寵喔 !! 也就是說你要帶著三封石去抓 ~ 別帶一封唷，這隻剛抓到的時候可以當做獸化寵來使用，因為牠的魔防非常之高，在咕嚕的怪用法術打牠都是 1 唷 ~ 不過碰到魔王級或是更高等的就開始擋不住了 ... 大家參考參考吧 ~ </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>冥界洞窟B2		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gif/sts.gif><BR>小天使（光）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>運<td>45<td>46<TD>55<TD>55	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>812<td>86<TD>77<TD>11	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>小天使卡片 小天使娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、恢復、賜福、轉換、推車、犧牲、回復術、聖言術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>偏幸運的呀 ... 嗯 ~ 那可能還是木系或是土系比較有用，偏幸運就是鎧化比較有利了，而且小天使可以轉換回春加犧牲 ... 還有推車 !! 只是就光系來說 ... 不好用 :p ... 拿來做高擋的走秀推車寵吧 @@ ~ 這跟光雷獸一樣 ~ 是 45 級的 ... 所以要用三封抓喔 !! </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>冥界洞窟B3		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/aya.gif><BR>闇夜獸（闇）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>闇夜獸卡片 闇夜獸娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、威脅、轉換、亡命一擊、詛咒術、毒擊術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>有當過網聚寵送過 ...（當然力量官方有調過），想自己練的 ... 就要用融合來轉成純力闇寵囉。</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>哈辛島		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gg/sg.gif><BR>水燈巨魔（水）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>敏<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>水燈巨魔卡片 水燈巨魔娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 連擊、豬頭、裝死、賜福、推車、波之舞、冰刃術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b></td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>試煉洞窟B1		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/sg.gif><BR>死光精靈（闇）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>敏<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>55<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>死光精靈卡片 死光精靈娃娃	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 連擊、豬頭、裝死、賜福、推車、詛咒術、毒擊術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>水燈巨魔好歹是純敏寵，這隻就真的一點都沒有稀有的感覺了 ......</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>瓦尼島		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gg/hh.gif><BR>火燒摳拉（火）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>5<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>火燒摳拉娃娃 火燒摳拉卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、豬頭、裝死、轉換、亡命一擊、軟化護甲、火彈術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>嗚 ... 國王的新衣資料片終於有不用四封抓的寵了 !! 還是隻超實用寵呀 ~~~~ 太讚啦 !!! 大家快點個什麼逃命娃娃 ( 遇敵沒遇到就逃 ) 跟穿上敏裝 ( 島上企鵝敏有 15x ) 去抓吧 !! 比較有困難的大概就是瓦尼島等級比較高而已，不過對抓寵高手們來說一定不是問題的啦 ... 接下來就是時間而已 ~ 強化、連擊、法術 ... 嗯 ... 大概就學這些吧 ~ 其他應該是用不到啦 ~ 不過可愛呀 !! 純力又可愛 !! 讚啦 ~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>遺跡地下4F		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gg/gm.gif><BR>光美哆（光）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>5<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>掉寶資料：
+光美哆娃娃 光美哆卡片
+ 
+	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 連擊、裝死、賜福、吸血、推車、犧牲、回復術、聖言術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>光系的呀 ... 不過有五格可學技能術真的很方便，偏力嘛 ... 少了強化，但是有連擊，也有掛網走秀的推車技，犧牲 ... 這個技能對獸化肉盾體寵比較有用，總之這隻寵先留著吧，等日後拿到什麼融合道具再配合著融成其他屬性的吧 ~ 畢竟蕃茄也是可愛幻獸榜 ( 我自己設的 = = ) 上面的前幾名呢 ~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>遺跡地下7F		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gg/77.gif><BR>青草企鵝（木）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>5<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>青草企鵝娃娃 青草企鵝卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 恢復、豬頭、裝死、轉換、推車、亡命一擊、巨木之擊、禁言	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>純體寵、五格技能、推車 ... 讚呀 !!! 但是 ... 就是差了個犧牲啊啊啊啊 ~~~ 實用是很實用，但是跟平民派艾波比 ... 不相上下，就因為派艾波有犧牲這招，相信大家都來到遺跡地下7F抓寵，都有打過釵h魔王了吧，肉盾寵要是有犧牲技的話，真的是吃了一顆定心丸，雖然親和 100 也不見得 100% 當自己死掉時寵物一定會犧牲救自己，但是絕對都有一半一上的機率會救，萬一沒有光使的話，在魔王戰中少一個隊友真的是會令戰局不利，而且健保卡的價格一直都不便宜，所以 ... 但是說那麼多，這隻寵依舊有牠的魅力在，有多一個推車的技能，這樣就省養一隻推車寵了 ... 嗯嗯 ~ 把牠拿來鎧化就不用煩會不會犧牲啦 ... 嗯 ... 不過鎧起來就一定是木屬性，遺跡戰後面的魔王老是會用碎金刀 ... 真是 ...</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>遺跡地下12F		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gg/hp.gif><BR>黑皮怕啃（闇）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>5<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>黑皮怕啃娃娃 黑皮怕啃卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、賜福、威脅、推車、犧牲、亡命一擊、詛咒術、毒擊術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>很讚喔 ! 雖然身處遺跡12F，但是牠仍是隻很完美的純智寵，除了純智法化之外，牠的技能更是完美，賜福就不提了，推車外加犧牲，叫出來幫忙放虛弱術時還可兼當肉盾 ( 反正後期魔王的威力幾乎都是一擊殺，血多不多根本沒差 )，所以這隻是隻很不錯的稀寵，只是真的太遠了 ... 要抓牠自己也得要有一定的等級才行，算來算去，新手愛用的小黑羊果然還是有牠的魅力在呀 ~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>遺跡地下14F		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/gg/fs.gif><BR>浮水大可獸（水）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>5<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>浮水大可獸娃娃 浮水大可獸卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 恢復、連擊、豬頭、賜福、推車、亡命一擊、波之舞、冰刃術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>搞笑寵 ... 真的有人去遺跡14F抓的話 ... 站長只能說 ... 佩服佩服!! </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>斷頭谷		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/lu/die.gif><BR>死神（闇）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>65<td>85<TD>79<TD>85	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>1778<td>150<TD>85<TD>12	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>死神娃娃 死神卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 連擊、豬頭、威脅、推車、亡命一擊、詛咒術、毒擊術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>要用四封抓的純智寵呀 ... 少了賜福是挺可惜的，還有死神的技能站長覺得挺爛的，這隻寵頂多就是抓來推車很屌 ... 純粹用來法化加推車而已，若是跟其他純智寵比，隨便找隻技能都比牠好很多，只是這隻有推車就是了 ... 嗯 ~ 突然翻翻舊資料寵，愛麗絲資料片的墨汁毛蟲就很不錯，只是沒推車而已 ~ 大家也別喜新厭舊喔，無聊找找舊資料片幻獸的技能，可能可以挖出不少寶 :p</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>陽光森林		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/lu/su.gif><BR>超合金機器人（火）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>超合金機器人娃娃 超合金機器人卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、恢復、連擊、轉換、推車、軟化護甲、火彈術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>讚喔讚喔 !! 技能符合暴力獸化寵的要求 ~ 拿來推車也屌 ~ 又是一封寵 !! 無可挑剔呀 ~ 讚讚讚 ~ 比火燒摳拉還好用 ^^ ~ 大家快去抓吧 ~ 重點是推車走在路上就是有風啦 ~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>彩色田		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/lu/lt.gif><BR>綠草包（木）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>綠草包娃娃 綠草包卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 可學技能	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>純體的呀 ... ( 搔搔腦袋 ) ... 只是技能實在是不怎樣，頂多就是很少見到吧 ~ 叫出來大家會『哇~~~』一下，可以取代這隻的純體寵實在太多了，站長覺得平民寵派艾波會的犧牲技就實用太多了 ...</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>百花谷		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/lu/tt.gif><BR>稻草人（土）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>稻草人娃娃 稻草人卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 化、恢復、裝死、轉換、亡命一擊、再生術、落石術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>轉換回春寵 ... 跟綠草包一樣的評語囉 ~ 比牠好的體寵很多 ... @@ ... 守護天使就是一個例子，不過喜歡幻獸造型最重要啦 ~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>坦林平原		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/lu/t7.gif><BR>鐵樵夫（光）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>鐵樵夫娃娃 鐵樵夫卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、恢復、連擊、轉換、推車、回復術、聖言術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>嗯 ... 白色機器人推車還滿特別的，利用核心或營養劑來融成純力寵也是不錯啦，四格技能挺好運用的</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>拇指花園		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/mu/t7.gif><BR>綠草菇（木）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>體<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>綠草菇娃娃 綠草菇卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 恢復、轉換、吸血、推車、犧牲、巨木之擊、禁言	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>果然出現了 !! 稀寵綠草菇 ~ 比派艾波更棒的寵 ~ 就是可學技能數少了點，全部技能都好用 ~ 抓個兩隻來用也不賴，一隻當普通肉盾推車寵、一隻當打王肉盾犧牲寵 ~ 也可愛 ^^ </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>罐頭地道B2		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/mu/l.gif><BR>熔岩獨角仙（火）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>熔岩獨角仙娃娃 熔岩獨角仙卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、轉換、吸血、推車、軟化護甲、火彈術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>不錯的獸化暴力寵，雖然少了恢復技能，不過有吸血技可以補強、外加可以推車 ... 造型也不錯 ~ 實在是隻可以去抓來玩的寵 ~</td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>荷花池塘		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/mu/hh.gif><BR>壞壞司瓦諾（闇）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>2<TD>2<TD>2	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>4<td>56<td>2<TD>2<TD>2	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>壞壞司瓦諾娃娃 壞壞司瓦諾卡片	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 恢復、賜福、威脅、吸血、亡命一擊、詛咒術、毒擊術	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>純智闇寵其實要的技能也不多，有個賜福跟法術就夠了，而司瓦諾(燕子)又可以吸血恢復，叫出來要補血也方便 ~ 這次拇指姑娘資料片的稀寵都是讚讚讚啦 !! </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>活動寵		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/mu/ya.gif><BR>大嘴鴨系列（）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>敏<td>1<td>X<TD>X<TD>X	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>6<td>X<td>X<TD>X<TD>X	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>X	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 豬頭、裝死、威脅、吸血、犧牲、推車、亡命一擊、各系法術<br>( 法術看這隻是哪一系 ) 	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>大嘴鴨聽說是雷爵另一款線上遊戲『萬王之王二』裡面的怪物，應行銷宣傳來童話打廣告，在萬二練到 20 級就可以領取一隻金系的澄汁大嘴鴨，六格的技能突然會讓人眼睛一亮 ... 不過牠可以學的技能多是多 ... 但是少了強化、連擊、恢復這幾項技能 ... 讓技能是很難搭配咧 = =，外加這還是隻偏敏的寵，真的感覺是隻很炫的花瓶寵，還好牠會推車可以叫出來走秀 ... 不過也是啦 ~ 活動寵每個都那麼神，玩家一定抱怨到不行，期待日後大嘴鴨會出現在童話遊戲中讓大家來抓囉 ~ </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/lu/mi.gif><BR>麋鹿系列（）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>力<td>1<td>X<TD>X<TD>X	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>6<td>X<td>X<TD>X<TD>X	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、恢復、賜福、犧牲、推車、各系法術<br>
+( 法術看這隻是哪一系 )	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>這是 2004 聖誕節活動送的寵，哇靠靠靠靠！！可以學六項技能是怎樣啦～連犧牲都有！！因為當時聖誕節活動是隨機七系取得一隻麋鹿，所以這邊就只列出一隻圖就好了，至於因為牠是偏力的，所以火系的麋鹿當然就比較值錢囉，而且技能也是屬暴力寵該有的，並且重點是可以學六項啦！！要是配上『宇宙奧秘』再加一項技能上去 ... 幹～太猛了啦～神寵～我不敢再想下去了 ... ( 不好意思，太興奮用了髒字 ... ) </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/lu/dog.gif><BR>小狗托托系列（）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>X<TD>X<TD>X	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>6<td>X<td>X<TD>X<TD>X	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 可學技能 : 強化、恢復、連擊、轉換、推車、犧牲、亡命一擊、各系法術<BR>
+( 法術看這隻是哪一系 )	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>目前是 Q 卡有機會抽到 ... 太神啦 ... What can I say ?? 只是要靠買 Q 卡才有機會抽到 ... 嗯 ... 或陴{在童話官方的行銷手法是這樣吧 ~ </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+	<table border="1" cellpadding="4" cellspacing="0" bordercolor="#CD9723" bgcolor="#FCD88B" width="80%">
+	<TR><TD width="23%"><cENTER>幻獸名<TD width="77%"><cENTER>幻獸解析
+	<TR><TD><cENTER><font color=green>		</font><BR><img src=http://dsps.case.eorz.net/htm/huan/lu/lion.gif><BR>紳士獅子系列（）
+		<BR><BR><font color=brown>★ 稀有寵 ★</font>		<TD><cENTER>
+	<table width=90% border=0 cellpadding="6" cellspacing="2">
+	<TR align=center><TD><b>偏向性<TD><b>出現等級<TD><b>力量<td><b>體質<td><b>敏捷
+	<TR align=center><TD>智<td>1<td>X<TD>X<TD>X	<TR align=center><TD><b>技能數量<TD><b>大約生命<TD><b>智慧<td><b>幸運<td><b>魅力
+	<TR align=center><TD>6<td>X<td>X<TD>X<TD>X	<tr><td width="100%" colspan="5"><center><table border=1 cellpadding="6" cellspacing="0" bgcolor=#D48C44 bordercolor=#A95C0F width=85%>
+	<TR><TD><font color=white>掉寶資料：<P>	</table>
+	<tr><td width="100%" colspan="5"><font color=blue>可學技能 : 強化、連擊、恢復、裝死、賜福、轉換、推車、各系法術<BR>
+( 法術看這隻是哪一系 )	<tr><td width="100%" colspan="5"><font color=red><b>備註：</b>已經沒什麼好再說明了 ... 這麼神 ... 如果再加上奧秘附上個轉換或是犧牲 ... </td>
+	</tr></td></table>
+	</tr></td></table>
+	<BR>
+
+
+

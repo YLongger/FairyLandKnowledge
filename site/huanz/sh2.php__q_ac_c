@@ -1,0 +1,46 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=big5" />
+</head>
+<body>
+<STYLE>
+<!--
+    body { scrollbar-3d-light-color: #D6EEFC;
+          scrollbar-arrow-color: ##99FFFF;
+          scrollbar-base-color: ##99FFFF;
+          scrollbar-dark-shadow-color: ##99FFFF;
+          scrollbar-face-color: #707070;
+          scrollbar-highlight-color: ##99FFFF;
+          scrollbar-shadow-color: #69EC7;
+    }
+-->
+</STYLE>
+<link href='../link3.css' rel='stylesheet' type='text/css'>
+<Center>
+</script><Br><font color=green>幻獸資料庫 / Made by 敗家一族<BR><BR><font color=reD>詳細資料請點選 -> 幻獸大全 -> 幻獸數值 （網頁列出資料可用 Ctrl + F 加速查詢）</font></font><BR><BR>
+請選擇你要查詢的方式：<a href="sh2.php?ac=a"><font color=blue>名字</font></a>　<a href="sh2.php?ac=m"><font color=blue>地圖</font></a>　<a href="sh2.php?ac=b"><font color=blue>掉寶</font></a>　<a href="sh2.php?ac=c"><font color=blue>技能名</font></a>　<a href="sh2.php?ac=d"><font color=blue>備註</font></a>　<a href="sh2.php?ac=e"><font color=blue>稀有</font></a> ||  <a href="sh2.php"><font color=blue>回說明頁</font></a>
+<BR><BR>
+
+
+
+
+
+
+
+	<table border="0">
+		<form method="post" Enctype="multipart/form-data">
+		<tr><td>
+		請選擇幻獸要有的技能：<BR><BR>
+		<input type="checkbox" name="a16" value="1"><font color=green>能學法術 ( 會什麼法術看是哪一系 )</font>
+		<BR><BR>
+		<input type="checkbox" name="a1" value="1">強化 <input type="checkbox" name="a2" value="1">恢復 <input type="checkbox" name="a3" value="1">連擊 <input type="checkbox" name="a4" value="1">豬頭 <input type="checkbox" name="a5" value="1">裝死
+		<BR><BR>
+		<input type="checkbox" name="a6" value="1">賜福 <input type="checkbox" name="a7" value="1">威脅 <input type="checkbox" name="a8" value="1">轉換 <input type="checkbox" name="a9" value="1">吸血 <input type="checkbox" name="a10" value="1">推車
+		<BR><BR>
+		<input type="checkbox" name="a11" value="1">犧牲 <input type="checkbox" name="a12" value="1">亡命一擊 <input type="checkbox" name="a13" value="1">三連擊 <input type="checkbox" name="a14" value="1">吸魂術 <input type="checkbox" name="a15" value="1">拉拉舞
+		<BR><input type=submit value=送出>
+		<input type=hidden name=acc value=c>
+		</tr></td>
+		</form>
+	</table>
+

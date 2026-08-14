@@ -1,0 +1,96 @@
+a:link	{color:#AADDff;text-decoration: none}
+a:visited	{color:#AADDff;text-decoration: none}
+a:active	{color:#AADDff;text-decoration: none}
+a:hover 	{color:#AADDff;;text-decoration: underline}
+body		{background-color: AAccFF;font-size: 12px}
+td			{font-size: 12px}
+input,textarea	{border-width: 1px;border-style: solid;border-color: #E5E5E5;padding: 2px;}
+
+.small{font-size: 12px}
+.post_date{color:#ff6633;}
+.line2{line-height: 150%;}
+.step_title{font-size: 18px;color: #330099;font-weight: bolder}
+.title {font-size: 18px;color: #330099;font-weight: bolder}
+.code_textarea{
+	font-family: MS Sans Serif;
+	width: 98 %;
+	color: #334050;
+	font-size: 7pt;
+	background-color: #FFFFFF;
+	padding:3px;
+	border : solid Gray 1;
+}
+
+
+
+
+.main_body {
+	font-size: 12px ; 
+	background-color: #9EBCDD;
+}
+
+
+
+
+td.tab          {
+    border-top: 1px solid #999;
+    border-right: 1px solid #666;
+    border-left: 1px solid #999;
+    border-bottom: none;
+    font-size: 12px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+td.tab_left          {
+    border-top: 1px solid #999;
+    border-right: 1px solid #666;
+    border-left: none;
+    border-bottom: 1px solid #999;
+    font-size: 12px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+td.tab_all          {
+    border-top: 1px solid #999;
+    border-right: 1px solid #666;
+    border-left: 1px solid #999;
+    border-bottom: 1px solid #999;
+    font-size: 12px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+}
+
+table.tabs{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #666;
+}
+
+.like_button	{
+	font-size: small;
+	background-color: lightGray; 
+	border-width: 2px;
+	border-color: #efefef #696969 #696969 #efefef;
+	border-style: solid; 
+	padding: 2px
+}
+
+.border_thin{
+	border-width: thin;
+	border-style: solid;
+	border-color: #EAF6FF;
+	background-color: #FAFAFA ;
+}
+
+.border_no{
+	border-style: none;
+}
+
+
+.button{
+	border: 1px outset #EAF6FF
+}
+

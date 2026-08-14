@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>全文檢索範例</title>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+
+<style>
+<!--
+    body { scrollbar-3d-light-color: #D6EEFC;
+          scrollbar-arrow-color: #FFFFFF;
+          scrollbar-base-color: #ffffff;
+          scrollbar-dark-shadow-color: #FFFFFF;
+          scrollbar-face-color: #707070;
+          scrollbar-highlight-color: #FFFFFF;
+          scrollbar-shadow-color: #69EC7;
+    }
+-->
+</style>
+<style>
+body,td     {font-family:細明體;font-size:12px;cursor:default}
+input       {font-family:細明體;font-size:12px}
+.memo       {color:#0066d0}
+a           {text-decoration:none}
+a:visited   {color:#0048e0}
+a:link      {color:#0048e0}
+a:hover     {color:#55aaff}
+a:active    {color:#ff0000}
+a.ml        {font-family:arial;font-size:11px;letter-spacing:1px;padding:4px 4px 3px 6px}
+a.ml:visited{color:#0066ee;background:#eaf0ff}
+a.ml:link   {color:#0066ee;background:#eaf0ff}
+a.ml:hover  {color:#ffffff;background:#0080d0}
+a.ml:active {color:#fffee0;background:#ca0000}
+</style>
+<script language="JavaScript" src="Archie_db.js"></script>
+<script language="JavaScript" src="Archie_core.js"></script>
+</head>
+<body bgcolor=#ffffff onLoad="initmsg()">
+<table border=0 cellpadding=3 cellspacing=1 bgcolor=#4070a0>
+<tr><td bgcolor=#fafcff>
+<table border=0 cellpadding=0 cellspacing=2 width=596>
+<tr><td class=memo>敗家查詢系統說明：</td></tr>
+<tr><td class=memo>&nbsp;一. 這個查詢系統是參考<font color=blue> DOB 網站建置擺寶箱</FONT> 網站教學製作的</td></tr>
+<tr><td class=memo>&nbsp;二. 請在輸入框內輸入要檢索的關鍵字，或點選右方之超連結檢索樣本進行全文檢索。</td></tr>
+<tr><td class=memo>&nbsp;三. 如果覺得哪邊還需要再增加查詢重點的，麻煩請來信提醒站長。</td></tr>
+<tr><td align=right><a href="mailto:489521731@s89.tku.edu.tw" class=ml hidefocus=true>489521731@s89.tku.edu.tw</a></td></tr>
+</table>
+</td></tr></table>
+<form onSubmit="Query(this.QT.value);return false">
+<table border=0 cellpadding=0 cellspacing=2><tr>
+<td>請輸入關鍵字</td>
+<td><input type=text name="QT" size=18 maxlength=30 onKeypress="canclekey()"></td>
+<td width=50><input name="Act" type=submit value="送出" disabled hidefocus=true></td>
+<td nowrap>（ 可使用超連結檢索：
+<a href="javascript:Query('幻獸')"   hidefocus=true>幻獸</a>
+<a href="javascript:Query('家族')"   hidefocus=true>家族</a>
+<a href="javascript:Query('寶物')"   hidefocus=true>寶物</a>
+<a href="javascript:Query('武器加工')" hidefocus=true>武器加工</a>
+）</td>
+</tr>
+<tr><td colspan=4 width=600><hr size=1 color=#c0c0c0></td></tr>
+<tr><td colspan=4>
+
+<div id=Show_Result style="width:600px"><font color=#0066ee>正在載入中，請稍候...</font></div>
+</td></tr>
+</table>
+</form>
+</body>
+</html>

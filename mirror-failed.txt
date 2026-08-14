@@ -1,0 +1,36 @@
+https://dsps.case.eorz.net/friend/	HTTP Error 500: Internal Server Error
+https://dsps.case.eorz.net/dsps/maps/	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/share/	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/share/wishboard.php	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/teach/fairyland.lager.com.tw	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/new/h/g1.htm	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/new/h/g0.htm	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/bea/x.oSrc	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/bea/a[i];}}	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/bea/x.src	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/bea/a[i+2];}	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/toy/x.oSrc	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/toy/a[i];}}	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/toy/x.src	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/toy/a[i+2];}	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/files/QA.htm	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/files/fairyland.rar	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/lalala/s.gif	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/work/樂器105頭銜.JPG	'ascii' codec can't encode characters in position 14-15: ordinal not in range(128)
+https://dsps.case.eorz.net/htm/work/樂器105頭銜名稱.JPG	'ascii' codec can't encode characters in position 14-15: ordinal not in range(128)
+https://dsps.case.eorz.net/htm/work/樂器125頭銜.JPG	'ascii' codec can't encode characters in position 14-15: ordinal not in range(128)
+https://dsps.case.eorz.net/htm/work/樂器125頭銜名稱.JPG	'ascii' codec can't encode characters in position 14-15: ordinal not in range(128)
+https://dsps.case.eorz.net/htm/mission/this.options[this.selectedIndex].value	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/photo/n/jo.gif	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/bow/this.options[this.selectedIndex].value	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/files/files/ball2-1.jpg	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/bad/2b/6.htm	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/teach/aaaa.files/filelist.xml	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/teach/aaaa.files/editdata.mso	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/teach/aaaa.files/oledata.mso	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/new/h/gbb1.htm	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/photo/n/jo.jpg	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/allgif/171.htm	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/allgif/201.htm	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/pic/rg/3222.jpg	HTTP Error 404: Not Found
+https://dsps.case.eorz.net/htm/bad/ben2.jpg	HTTP Error 404: Not Found

@@ -1,0 +1,870 @@
+<STYLE>
+<!--
+    body { scrollbar-3d-light-color: #D6EEFC;
+          scrollbar-arrow-color: ##99FFFF;
+          scrollbar-base-color: ##99FFFF;
+          scrollbar-dark-shadow-color: ##99FFFF;
+          scrollbar-face-color: #707070;
+          scrollbar-highlight-color: ##99FFFF;
+          scrollbar-shadow-color: #69EC7;
+    }
+-->
+</STYLE>
+<title>童話-人物數值調整計算</title></head>
+<SCRIPT language=JavaScript>
+var flag1=5; 
+var flag2=5; 
+var flag3=5; 
+var flag4=5; 
+var flag5=5; 
+var flag6=5;
+var flager1=new Array(1,1,1,1,1); 
+var flager2=new Array(1,1,1,1,1); 
+var flager3=new Array(1,1,1,1,1);
+var flager4=new Array(1,1,1,1,1); 
+var flager5=new Array(1,1,1,1,1); 
+var flager6=new Array(1,1,1,1,1);
+//計算花費
+function cost(y){
+colin=parseInt(document.form1.colin.value,10);
+budget=parseInt(document.form1.budget.value,10);
+document.form1.colin.value=colin+y;
+if(budget>0)
+  document.form1.budget.value=budget-y;
+else
+  document.form1.budget.value="錢不夠哦";
+}
+//檢查點數
+function account(){
+lev=parseInt(document.form1.lev.value,10);
+str=parseInt(document.form1.str.value,10);
+agi=parseInt(document.form1.agi.value,10);
+int=parseInt(document.form1.int.value,10);
+pow=parseInt(document.form1.pow.value,10);
+luc=parseInt(document.form1.luc.value,10);
+all=parseInt(document.form1.all.value,10);
+point=parseInt(document.form1.point.value,10);
+var total1=str+agi+int+pow+luc+all+point;
+var total2=(lev-1)*6+40;
+if(total1!=total2)
+  alert("數值輸入不正確!");
+else
+  document.form1.total.value=total1;
+}
+//修改屬性點數阻止
+function change(){
+alert("修改此數值將有可能會使計算失誤哦!");
+}
+//+體質
+function strp(){
+point=parseInt(document.form1.point.value,10);
+var tmp=parseInt(document.form1.str.value,10);
+if(point>0){
+  document.form1.str.value=tmp+1;
+  document.form1.point.value=point-1;
+}
+else
+  document.form1.point.value=point;
+if(point==0)
+  alert("點數不足，無法增加");
+}
+//+敏捷
+function agip(){
+point=parseInt(document.form1.point.value,10);
+var tmp=parseInt(document.form1.agi.value,10);
+if(point>0){
+  document.form1.agi.value=tmp+1;
+  document.form1.point.value=point-1;
+}
+else
+  document.form1.point.value=point;
+if(point==0)
+  alert("點數不足，無法增加");
+}
+//+智慧
+function intp(){
+point=parseInt(document.form1.point.value,10);
+var tmp=parseInt(document.form1.int.value,10);
+if(point>0){
+  document.form1.int.value=tmp+1;
+  document.form1.point.value=point-1;
+}
+else
+  document.form1.point.value=point;
+if(point==0)
+  alert("點數不足，無法增加");
+}
+//+力量
+function powp(){
+point=parseInt(document.form1.point.value,10);
+var tmp=parseInt(document.form1.pow.value,10);
+if(point>0){
+  document.form1.pow.value=tmp+1;
+  document.form1.point.value=point-1;
+}
+else
+  document.form1.point.value=point;
+if(point==0)
+  alert("點數不足，無法增加");
+}
+//+幸運
+function lucp(){
+point=parseInt(document.form1.point.value,10);
+var tmp=parseInt(document.form1.luc.value,10);
+if(point>0){
+  document.form1.luc.value=tmp+1;
+  document.form1.point.value=point-1;
+}
+else
+  document.form1.point.value=point;
+if(point==0)
+  alert("點數不足，無法增加");
+}
+//+魅力
+function allp(){
+point=parseInt(document.form1.point.value,10);
+var tmp=parseInt(document.form1.all.value,10);
+if(point>0){
+  document.form1.all.value=tmp+1;
+  document.form1.point.value=point-1;
+}
+else
+  document.form1.point.value=point;
+if(point==0)
+  alert("點數不足，無法增加");
+}
+//屬性調整藥丸
+function appadjb(){
+lev=parseInt(document.form1.lev.value,10);
+str=parseInt(document.form1.str.value,10);
+agi=parseInt(document.form1.agi.value,10);
+int=parseInt(document.form1.int.value,10);
+pow=parseInt(document.form1.pow.value,10);
+luc=parseInt(document.form1.luc.value,10);
+all=parseInt(document.form1.all.value,10);
+point=parseInt(document.form1.point.value,10)
+appadj=parseInt(document.form2.appadj.value,10);
+appadja=parseInt(document.form2.appadja.value,10);
+if(lev>9 && str>(lev/2) && agi>(lev/2) && int>(lev/2) && pow>(lev/2) && luc>(lev/2) && all>(lev/2)){
+  document.form1.str.value=str-1;
+  document.form1.agi.value=agi-1;
+  document.form1.int.value=int-1;
+  document.form1.pow.value=pow-1;
+  document.form1.luc.value=luc-1;
+  document.form1.all.value=all-1;
+  document.form1.point.value=point+6;
+  document.form2.appadja.value=appadja+1;
+  cost(appadj);
+  
+}
+}
+//調整藥丸
+function adjb(){
+lev=parseInt(document.form1.lev.value,10);
+str=parseInt(document.form1.str.value,10);
+agi=parseInt(document.form1.agi.value,10);
+int=parseInt(document.form1.int.value,10);
+pow=parseInt(document.form1.pow.value,10);
+luc=parseInt(document.form1.luc.value,10);
+all=parseInt(document.form1.all.value,10);
+point=parseInt(document.form1.point.value,10);
+adj=parseInt(document.form2.adj.value,10);
+adja=parseInt(document.form2.adja.value,10);
+var levr=Math.round(lev/2);
+if(lev>9 && str>levr && agi>levr && int>levr && pow>levr && luc>levr && all>levr){  
+  var rand=Math.round(Math.random()*5);
+  switch(rand){
+      case 0:
+          document.form1.str.value=str-1;
+          break;
+      case 1:
+          document.form1.agi.value=agi-1;
+          break;
+      case 2:
+          document.form1.int.value=int-1;
+          break;
+      case 3:
+          document.form1.pow.value=pow-1;
+          break;
+      case 4:
+          document.form1.luc.value=luc-1;
+          break;
+      case 5:
+          document.form1.all.value=all-1;
+          break;
+  }  
+  document.form1.point.value=point+1;
+  document.form2.adja.value=adja+1;
+  cost(adj);
+}
+}
+//體質調整藥丸
+function stradjb(){
+lev=parseInt(document.form1.lev.value,10);
+str=parseInt(document.form1.str.value,10);
+point=parseInt(document.form1.point.value,10);
+stradj=parseInt(document.form2.stradj.value,10);
+stradja=parseInt(document.form2.stradja.value,10);
+if(lev>9 && str>Math.round(lev*(2/3))){
+  document.form1.str.value=str-1;
+  document.form1.point.value=point+1;
+  document.form2.stradja.value=stradja+1;
+  cost(stradj);
+}
+}
+//敏捷調整藥丸
+function agiadjb(){
+lev=parseInt(document.form1.lev.value,10);
+agi=parseInt(document.form1.agi.value,10);
+point=parseInt(document.form1.point.value,10);
+agiadj=parseInt(document.form2.agiadj.value,10);
+agiadja=parseInt(document.form2.agiadja.value,10);
+if(lev>9 && agi>Math.round(lev*(2/3))){
+  document.form1.agi.value=agi-1;
+  document.form1.point.value=point+1;
+  document.form2.agiadja.value=agiadja+1;
+  cost(agiadj);
+}
+}
+//智慧調整藥丸
+function intadjb(){
+lev=parseInt(document.form1.lev.value,10);
+int=parseInt(document.form1.int.value,10);
+point=parseInt(document.form1.point.value,10);
+intadj=parseInt(document.form2.intadj.value,10);
+intadja=parseInt(document.form2.intadja.value,10);
+if(lev>9 && int>Math.round(lev*(2/3))){
+  document.form1.int.value=int-1;
+  document.form1.point.value=point+1;
+  document.form2.intadja.value=intadja+1;
+  cost(intadj);
+}
+}
+//力量調整藥丸
+function powadjb(){
+lev=parseInt(document.form1.lev.value,10);
+pow=parseInt(document.form1.pow.value,10);
+point=parseInt(document.form1.point.value,10);
+powadj=parseInt(document.form2.powadj.value,10);
+powadja=parseInt(document.form2.powadja.value,10);
+if(lev>9 && pow>Math.round(lev*(2/3))){
+  document.form1.pow.value=pow-1;
+  document.form1.point.value=point+1;
+  document.form2.powadja.value=powadja+1;
+  cost(powadj);
+}
+}
+//幸運調整藥丸
+function lucadjb(){
+lev=parseInt(document.form1.lev.value,10);
+luc=parseInt(document.form1.luc.value,10);
+point=parseInt(document.form1.point.value,10);
+lucadj=parseInt(document.form2.lucadj.value,10);
+lucadja=parseInt(document.form2.lucadja.value,10);
+if(lev>9 && luc>Math.round(lev*(2/3))){
+  document.form1.luc.value=luc-1;
+  document.form1.point.value=point+1;
+  document.form2.lucadja.value=lucadja+1;
+  cost(lucadj);
+}
+}
+//魅力調整藥丸
+function alladjb(){
+lev=parseInt(document.form1.lev.value,10);
+all=parseInt(document.form1.all.value,10);
+point=parseInt(document.form1.point.value,10);
+alladj=parseInt(document.form2.alladj.value,10);
+alladja=parseInt(document.form2.alladja.value,10);
+if(lev>9 && all>Math.round(lev*(2/3))){
+  document.form1.all.value=all-1;
+  document.form1.point.value=point+1;
+  document.form2.alladja.value=alladja+1;
+  cost(alladj);
+}
+}
+//屬性搗蛋藥丸
+function apphelb(){
+lev=parseInt(document.form1.lev.value,10);
+str=parseInt(document.form1.str.value,10);
+agi=parseInt(document.form1.agi.value,10);
+int=parseInt(document.form1.int.value,10);
+pow=parseInt(document.form1.pow.value,10);
+luc=parseInt(document.form1.luc.value,10);
+all=parseInt(document.form1.all.value,10);
+apphel=parseInt(document.form2.apphel.value,10);
+apphela=parseInt(document.form2.apphela.value,10);
+var levr=Math.round(lev/2);
+if(lev>9 && str>levr && agi>levr && int>levr && pow>levr && luc>levr && all>levr){
+  document.form1.str.value=str-1;
+  document.form1.agi.value=agi-1;
+  document.form1.int.value=int-1;
+  document.form1.pow.value=pow-1;
+  document.form1.luc.value=luc-1;
+  document.form1.all.value=all-1;
+  document.form2.apphela.value=apphela+1; 
+  for(i=0;i<6;i++){
+     var rand=Math.round(Math.random()*5);
+     switch(rand){
+         case 0:
+             document.form1.str.value=parseInt(document.form1.str.value,10)+1;
+             break;
+         case 1:
+             document.form1.agi.value=parseInt(document.form1.agi.value,10)+1;
+             break;
+         case 2:
+             document.form1.int.value=parseInt(document.form1.int.value,10)+1;
+             break;
+         case 3:
+             document.form1.pow.value=parseInt(document.form1.pow.value,10)+1;
+             break;
+         case 4:
+             document.form1.luc.value=parseInt(document.form1.luc.value,10)+1;
+             break;
+         case 5:
+             document.form1.all.value=parseInt(document.form1.all.value,10)+1;
+             break;
+     }
+  }
+  cost(apphel);
+}
+}
+//搗蛋藥丸
+function helb(){
+lev=parseInt(document.form1.lev.value,10);
+str=parseInt(document.form1.str.value,10);
+agi=parseInt(document.form1.agi.value,10);
+int=parseInt(document.form1.int.value,10);
+pow=parseInt(document.form1.pow.value,10);
+luc=parseInt(document.form1.luc.value,10);
+all=parseInt(document.form1.all.value,10);
+hel=parseInt(document.form2.hel.value,10);
+hela=parseInt(document.form2.hela.value,10);
+var levr=Math.round(lev/2);
+var leva=lev*3+1;
+if(lev>9&&str>levr&&str<leva&&agi>levr&&agi<leva&&int>levr&&int<leva&&pow>levr&&pow<leva&&luc>levr&&luc<leva&&all>
+levr&&all<leva){
+  var rand=Math.round(Math.random()*5);
+  switch(rand){
+      case 0:
+          document.form1.str.value=str-1;
+          break;
+      case 1:
+          document.form1.agi.value=agi-1;
+          break;
+      case 2:
+          document.form1.int.value=int-1;
+          break;
+      case 3:
+          document.form1.pow.value=pow-1;
+          break;
+      case 4:
+          document.form1.luc.value=luc-1;
+          break;
+      case 5:
+          document.form1.all.value=all-1;
+          break;
+  }
+  var rand1=Math.round(Math.random()*5);
+  switch(rand1){
+      case 0:
+          document.form1.str.value=parseInt(document.form1.str.value,10)+1;
+          break;
+      case 1:
+          document.form1.agi.value=parseInt(document.form1.agi.value,10)+1;
+          break;
+      case 2:
+          document.form1.int.value=parseInt(document.form1.int.value,10)+1;
+          break;
+      case 3:
+          document.form1.pow.value=parseInt(document.form1.pow.value,10)+1;
+          break;
+      case 4:
+          document.form1.luc.value=parseInt(document.form1.luc.value,10)+1;
+          break;
+      case 5:
+          document.form1.all.value=parseInt(document.form1.all.value,10)+1;
+          break;
+  }
+  cost(hel);    
+  document.form2.hela.value=hela+1;
+}
+}
+//體質搗蛋藥丸
+function strhelb(){
+var app=new Array(6);
+str=parseInt(document.form1.str.value,10);
+app[0]=parseInt(document.form1.agi.value,10);
+app[1]=parseInt(document.form1.int.value,10);
+app[2]=parseInt(document.form1.pow.value,10);
+app[3]=parseInt(document.form1.luc.value,10);
+app[4]=parseInt(document.form1.all.value,10);
+lev=parseInt(document.form1.lev.value,10);  
+strhel=parseInt(document.form2.strhel.value,10);
+strhela=parseInt(document.form2.strhela.value,10);
+var levr=Math.round(lev/2);
+if(lev>9 && str<(lev*3)){
+  while(flag1!=0){
+      var rand=Math.round(Math.random()*4);
+      if(app[rand]<(levr) && flager1[rand]==1){
+        flager1[rand]--;
+        flag1--;
+        break;
+      }
+      if(app[rand]==(levr+1)){
+        flag1--;
+        app[rand]--;
+        document.form1.str.value=str+1;
+        document.form2.strhela.value=strhela+1; 
+        cost(strhel);
+        break;
+      }
+      if(app[rand]>levr){
+        app[rand]--;
+        document.form1.str.value=str+1;
+        document.form2.strhela.value=strhela+1;
+        cost(strhel);        
+        break;
+      }
+  }
+  switch(rand){
+      case 0:
+          document.form1.agi.value=app[rand];
+          break;
+      case 1:
+          document.form1.int.value=app[rand];
+          break;
+      case 2:
+          document.form1.pow.value=app[rand];
+          break;
+      case 3:
+          document.form1.luc.value=app[rand];
+          break;
+      case 4:
+          document.form1.all.value=app[rand];
+          break;
+  }
+  
+}
+}
+//敏捷搗蛋藥丸
+function agihelb(){
+var app=new Array(6);
+agi=parseInt(document.form1.agi.value,10);
+app[0]=parseInt(document.form1.str.value,10);
+app[1]=parseInt(document.form1.int.value,10);
+app[2]=parseInt(document.form1.pow.value,10);
+app[3]=parseInt(document.form1.luc.value,10);
+app[4]=parseInt(document.form1.all.value,10);
+lev=parseInt(document.form1.lev.value,10);  
+agihel=parseInt(document.form2.agihel.value,10);
+agihela=parseInt(document.form2.agihela.value,10);
+var levr=Math.round(lev/2);
+var flagtotal;
+for(i=0;i<5;i++){
+   flagtotal=flagtotal+flager2[i];
+}
+if(lev>9 && agi<(lev*3)){
+  while(flag2!=0){
+      var rand=Math.round(Math.random()*4);
+      if(flagtotal==0)
+        break;
+      if(app[rand]<(levr) && flager2[rand]==1){
+        flager2[rand]--;
+        flag2--;
+        break;
+      }
+      if(app[rand]==(levr+1)){
+        flag2--;
+        app[rand]--;
+        document.form1.agi.value=agi+1;
+        document.form2.agihela.value=agihela+1;
+        cost(agihel);
+        break;
+      }
+      if(app[rand]>levr){
+        app[rand]--;
+        document.form1.agi.value=agi+1;
+        document.form2.agihela.value=agihela+1;
+        cost(agihel);
+        break;
+      }
+  }
+  switch(rand){
+      case 0:
+          document.form1.str.value=app[rand];
+          break;
+      case 1:
+          document.form1.int.value=app[rand];
+          break;
+      case 2:
+          document.form1.pow.value=app[rand];
+          break;
+      case 3:
+          document.form1.luc.value=app[rand];
+          break;
+      case 4:
+          document.form1.all.value=app[rand];
+          break;
+  }
+}
+}
+//智慧搗蛋藥丸
+function inthelb(){
+var app=new Array(6);
+int=parseInt(document.form1.int.value,10);
+app[0]=parseInt(document.form1.str.value,10);
+app[1]=parseInt(document.form1.agi.value,10);
+app[2]=parseInt(document.form1.pow.value,10);
+app[3]=parseInt(document.form1.luc.value,10);
+app[4]=parseInt(document.form1.all.value,10);
+lev=parseInt(document.form1.lev.value,10);  
+inthel=parseInt(document.form2.inthel.value,10);
+inthela=parseInt(document.form2.inthela.value,10);
+var levr=Math.round(lev/2);
+if(lev>9 && int<(lev*3)){
+  while(flag3!=0){
+      var rand=Math.round(Math.random()*4);
+      if(app[rand]<(levr) && flager3[rand]==1){
+        flager3[rand]--;
+        flag3--;
+        break;
+      }
+      if(app[rand]==(levr+1)){
+        flag3--;
+        app[rand]--;
+        document.form1.int.value=int+1;
+        document.form2.inthela.value=inthela+1;
+        cost(inthel);
+        break;
+      }
+      if(app[rand]>levr){
+        app[rand]--;
+        document.form1.int.value=int+1;
+        document.form2.inthela.value=inthela+1;
+        cost(inthel);
+        break;
+      }
+  }
+  switch(rand){
+      case 0:
+          document.form1.str.value=app[rand];
+          break;
+      case 1:
+          document.form1.agi.value=app[rand];
+          break;
+      case 2:
+          document.form1.pow.value=app[rand];
+          break;
+      case 3:
+          document.form1.luc.value=app[rand];
+          break;
+      case 4:
+          document.form1.all.value=app[rand];
+          break;
+  }
+}
+}
+//力量搗蛋藥丸
+function powhelb(){
+var app=new Array(6);
+pow=parseInt(document.form1.pow.value,10);
+app[0]=parseInt(document.form1.str.value,10);
+app[1]=parseInt(document.form1.agi.value,10);
+app[2]=parseInt(document.form1.int.value,10);
+app[3]=parseInt(document.form1.luc.value,10);
+app[4]=parseInt(document.form1.all.value,10);
+lev=parseInt(document.form1.lev.value,10);  
+powhel=parseInt(document.form2.powhel.value,10);
+powhela=parseInt(document.form2.powhela.value,10);
+var levr=Math.round(lev/2);
+if(lev>9 && pow<(lev*3)){
+  while(flag4!=0){
+      var rand=Math.round(Math.random()*4);
+      if(app[rand]<(levr) && flager4[rand]==1){
+        flager4[rand]--;
+        flag4--;
+        break;
+      }
+      if(app[rand]==(levr+1)){
+        flag4--;
+        app[rand]--;
+        document.form1.pow.value=pow+1;
+        document.form2.powhela.value=powhela+1;
+        cost(powhel);
+        break;
+      }
+      if(app[rand]>levr){
+        app[rand]--;
+        document.form1.pow.value=pow+1;
+        document.form2.powhela.value=powhela+1;
+        cost(powhel);
+        break;
+      }
+  }
+  switch(rand){
+      case 0:
+          document.form1.str.value=app[rand];
+          break;
+      case 1:
+          document.form1.agi.value=app[rand];
+          break;
+      case 2:
+          document.form1.int.value=app[rand];
+          break;
+      case 3:
+          document.form1.luc.value=app[rand];
+          break;
+      case 4:
+          document.form1.all.value=app[rand];
+          break;
+  }
+}
+}
+//幸運搗蛋藥丸
+function luchelb(){
+var app=new Array(6);
+luc=parseInt(document.form1.luc.value,10);
+app[0]=parseInt(document.form1.str.value,10);
+app[1]=parseInt(document.form1.agi.value,10);
+app[2]=parseInt(document.form1.int.value,10);
+app[3]=parseInt(document.form1.pow.value,10);
+app[4]=parseInt(document.form1.all.value,10);
+lev=parseInt(document.form1.lev.value,10);  
+luchel=parseInt(document.form2.luchel.value,10);
+luchela=parseInt(document.form2.luchela.value,10);
+var levr=Math.round(lev/2);
+if(lev>9 && luc<(lev*3)){
+  while(flag5!=0){
+      var rand=Math.round(Math.random()*4);
+      if(app[rand]<=(levr) && flager5[rand]==1){
+        flager5[rand]--;
+        flag5--;
+        break;
+      }
+      if(app[rand]==(levr+1)){
+        flag5--;
+        app[rand]--;
+        document.form1.luc.value=luc+1;
+        document.form2.luchela.value=luchela+1;
+        cost(luchel);
+        break;
+      }
+      if(app[rand]>levr){
+        app[rand]--;
+        document.form1.luc.value=luc+1;
+        document.form2.luchela.value=luchela+1;
+        cost(luchel);
+        break;
+      }
+  }
+  switch(rand){
+      case 0:
+          document.form1.str.value=app[rand];
+          break;
+      case 1:
+          document.form1.agi.value=app[rand];
+          break;
+      case 2:
+          document.form1.int.value=app[rand];
+          break;
+      case 3:
+          document.form1.pow.value=app[rand];
+          break;
+      case 4:
+          document.form1.all.value=app[rand];
+          break;
+  }  
+}
+}
+//魅力搗蛋藥丸
+function allhelb(){
+var app=new Array(6);
+all=parseInt(document.form1.all.value,10);
+app[0]=parseInt(document.form1.str.value,10);
+app[1]=parseInt(document.form1.agi.value,10);
+app[2]=parseInt(document.form1.int.value,10);
+app[3]=parseInt(document.form1.pow.value,10);
+app[4]=parseInt(document.form1.luc.value,10);
+lev=parseInt(document.form1.lev.value,10);  
+allhel=parseInt(document.form2.allhel.value,10);
+allhela=parseInt(document.form2.allhela.value,10);
+var levr=Math.round(lev/2);
+if(lev>9 && all<(lev*3)){
+  while(flag6!=0){
+      var rand=Math.round(Math.random()*4);
+      if(app[rand]<(levr) && flager6[rand]==1){
+        flager6[rand]--;
+        flag6--;
+        break;
+      }
+      if(app[rand]==(levr+1)){
+        flag6--;
+        app[rand]--;
+        document.form1.all.value=all+1;
+        document.form2.allhela.value=allhela+1; 
+        cost(allhel);
+        break;
+      }
+      if(app[rand]>levr){
+        app[rand]--;
+        document.form1.all.value=all+1;
+        document.form2.allhela.value=allhela+1; 
+        cost(allhel);
+        break;
+      }
+  }
+  switch(rand){
+      case 0:
+          document.form1.str.value=app[rand];
+          break;
+      case 1:
+          document.form1.agi.value=app[rand];
+          break;
+      case 2:
+          document.form1.int.value=app[rand];
+          break;
+      case 3:
+          document.form1.pow.value=app[rand];
+          break;
+      case 4:
+          document.form1.luc.value=app[rand];
+          break;
+  }
+}
+}
+</SCRIPT>
+<body bgcolor="#AADDff">
+<FORM name=form1>
+<CENTER>
+等級:<INPUT style="TEXT-ALIGN: right" size=4 value=1 name=lev><BR><BR>
+總點數:<INPUT style="TEXT-ALIGN: right" size=4 readOnly=true value=0 name=total> 
+調整點數:<INPUT style="TEXT-ALIGN: right" onchange=change() size=3 value=0 name=point><BR><BR>
+體質:<INPUT style="TEXT-ALIGN: right" size=4 value=0 name=str> 
+<INPUT onclick=strp() type=button value=+> 
+敏捷:<INPUT style="TEXT-ALIGN: right" size=4 value=0 name=agi> 
+<INPUT onclick=agip() type=button value=+><BR><BR>
+智慧:<INPUT style="TEXT-ALIGN: right" size=4 value=0 name=int>
+<INPUT onclick=intp() type=button value=+> 
+力量:<INPUT style="TEXT-ALIGN: right" size=4 value=0 name=pow> 
+<INPUT onclick=powp() type=button value=+><BR><BR>
+幸運:<INPUT style="TEXT-ALIGN: right" size=4 value=0 name=luc>
+<INPUT onclick=lucp() type=button value=+>
+魅力:<INPUT style="TEXT-ALIGN: right" size=4 value=0 name=all>
+<INPUT onclick=allp() type=button value=+><BR><BR>
+<INPUT onclick=account() type=button value=檢查點數>
+<FONT color=red size=2>(檢查是否輸入正確)</FONT><BR>
+可因:<INPUT style="TEXT-ALIGN: right" size=8 readOnly=true value=0 name=colin>(藥丸花費)
+<INPUT style="TEXT-ALIGN: right" size=8 value=0 name=budget>(買藥丸預算)
+<INPUT type="reset" value=清除> </FORM>
+<FORM name=form2>
+<FONT color=red size=2>空格填入市價可以計算總費用(單位:萬)</FONT>
+<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="45%" height="166">
+  <tr>
+    <td width="30%" bordercolor="#FFCCFF" height="19"> 
+<INPUT onclick=appadjb() type=button value=屬性調整藥丸></td>
+    <td width="10%" height="19"><INPUT style="TEXT-ALIGN: right" size=4 value=160 name=appadj></td>
+    <td width="9%" height="19">
+    <p align="center">&nbsp;<input name="appadja" size="3" value="0" style="text-align: right"></td>
+    <td width="32%" height="19">&nbsp;<INPUT onclick=adjb() type=button value="         調整藥丸"></td>
+    <td width="4%" height="19"> 
+<INPUT style="TEXT-ALIGN: right" size=4 value=50 name=adj></td>
+    <td width="32%" height="19" align="left">
+    <input name="adja" size="3" value="0" style="text-align: right"></td>
+  </tr>
+  <tr>
+    <td width="31%" height="21">
+<INPUT onclick=stradjb() type=button value=體質調整藥丸></td>
+    <td width="10%" height="21"><INPUT style="TEXT-ALIGN: right" size=4 value=90 name=stradj></td>
+    <td width="9%" height="21">&nbsp;<input name="stradja" size="3" value="0" style="text-align: right"></td>
+    <td width="32%" height="21">&nbsp;<INPUT onclick=agiadjb() type=button value=敏捷調整藥丸></td>
+    <td width="4%" height="21"> 
+<INPUT style="TEXT-ALIGN: right" size=4 value=30 name=agiadj></td>
+    <td width="32%" height="21" align="left"> 
+<input name="agiadja" size="3" value="0" style="text-align: right">&#12288;</td>
+  </tr>
+  <tr>
+    <td width="31%" height="21">
+<INPUT onclick=intadjb() type=button value=智慧調整藥丸></td>
+    <td width="10%" height="21"><INPUT style="TEXT-ALIGN: right" size=4 value=50 name=intadj></td>
+    <td width="9%" height="21">&nbsp;<input name="intadja" size="3" value="0" style="text-align: right"></td>
+    <td width="32%" height="21">&nbsp;<INPUT onclick=powadjb() type=button value=力量調整藥丸></td>
+    <td width="4%" height="21">
+<INPUT style="TEXT-ALIGN: right" size=4 value=30 name=powadj></td>
+    <td width="32%" height="21" align="left">
+<input name="powadja" size="3" value="0" style="text-align: right">&#12288;</td>
+  </tr>
+  <tr>
+    <td width="31%" height="21">
+<INPUT onclick=lucadjb() type=button value=幸運調整藥丸></td>
+    <td width="10%" height="21"><INPUT style="TEXT-ALIGN: right" size=4 value=50 name=lucadj></td>
+    <td width="9%" height="21">&nbsp;<input name="lucadja" size="3" value="0" style="text-align: right"></td>
+    <td width="32%" height="21">&nbsp;<INPUT onclick=alladjb() type=button value=魅力調整藥丸></td>
+    <td width="4%" height="21">
+<INPUT style="TEXT-ALIGN: right" size=4 value=50 name=alladj></td>
+    <td width="32%" height="21" align="left">
+<input name="alladja" size="3" value="0" style="text-align: right">&#12288;</td>
+  </tr>
+  <tr>
+    <td width="26%" height="21"><INPUT onclick=apphelb() type=button value=屬性搗蛋藥丸></td>
+    <td width="10%" height="21">
+<INPUT style="TEXT-ALIGN: right" size=4 value=50 name=apphel></td>
+    <td width="9%" height="21">
+&nbsp;<input name="apphela" size="3" value="0" style="text-align: right"></td>
+    <td width="31%" height="21">
+&nbsp;<INPUT onclick=helb() type=button value="         搗蛋藥丸"> </td>
+    <td width="11%" height="21">
+<INPUT style="TEXT-ALIGN: right" size=4 value=30 name=hel></td>
+    <td width="54%" height="21" align="left">
+<input name="hela" size="3" value="0" style="text-align: right">&#12288;</td>
+  </tr>
+  <tr>
+    <td width="26%" height="21">
+<INPUT onclick=strhelb() type=button value=體質搗蛋藥丸></td>
+    <td width="10%" height="21"> 
+<INPUT style="TEXT-ALIGN: right" size=4 value=30 name=strhel></td>
+    <td width="9%" height="21"> 
+&nbsp;<input name="strhela" size="3" value="0" style="text-align: right"></td>
+    <td width="31%" height="21">
+&nbsp;<INPUT onclick=agihelb() type=button value=敏捷搗蛋藥丸>&nbsp; </td>
+    <td width="11%" height="21"> 
+<INPUT style="TEXT-ALIGN: right" size=4 value=70 name=agihel></td>
+    <td width="54%" height="21" align="left"> 
+<input name="agihela" size="3" value="0" style="text-align: right">&#12288;</td>
+  </tr>
+  <tr>
+    <td width="26%" height="21">
+<INPUT onclick=inthelb() type=button value=智慧搗蛋藥丸></td>
+    <td width="10%" height="21">
+<INPUT style="TEXT-ALIGN: right" size=4 value=50 name=inthel></td>
+    <td width="9%" height="21">
+&nbsp;<input name="inthela" size="3" value="0" style="text-align: right"></td>
+    <td width="31%" height="21">
+&nbsp;<INPUT onclick=powhelb() type=button value=力量搗蛋藥丸></td>
+    <td width="11%" height="21">
+<INPUT style="TEXT-ALIGN: right" size=4 value=40 name=powhel></td>
+    <td width="54%" height="21" align="left">
+<input name="powhela" size="3" value="0" style="text-align: right">&#12288;</td>
+  </tr>
+  <tr>
+    <td width="26%" height="21">
+<INPUT onclick=luchelb() type=button value=幸運搗蛋藥丸></td>
+    <td width="10%" height="21"> 
+<INPUT style="TEXT-ALIGN: right" size=4 value=20 name=luchel></td>
+    <td width="9%" height="21"> 
+&nbsp;<input name="luchela" size="3" value="0" style="text-align: right"></td>
+    <td width="31%" height="21">
+&nbsp;<INPUT onclick=allhelb() type=button value=魅力搗蛋藥丸></td>
+    <td width="11%" height="21">
+<INPUT style="TEXT-ALIGN: right" size=4 value=20 name=allhel></td>
+    <td width="54%" height="21" align="left">
+<input name="allhela" size="3" value="0" style="text-align: right">&#12288;</td>
+  </tr>
+</table>
+</FORM>
+<FONT size=3>本網頁由</font>
+<FONT color=red size=4>彩虹城的莫隱刀&緹露米</FONT>
+<font size=3>製作 v 1.0</font><BR>
+<font size=2>計算公式複雜，撰寫仍有部分問題，請盡量只做正常計算<a href=QA.htm>其他疑問</a></font><BR><BR>
+</CENTER>
+</BODY>
+</HTML>

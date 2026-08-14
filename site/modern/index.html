@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>童話資料網 · 敗家一族 典藏版</title>
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div id="shell">
+  <aside id="side">
+    <div class="brand" onclick="location.hash='#/'">
+      <div class="brand-mark">敗</div>
+      <div class="brand-text">
+        <div class="brand-title">童話資料網</div>
+        <div class="brand-sub">敗家一族 · 典藏版</div>
+      </div>
+    </div>
+    <button id="searchBtn" class="search-trigger" title="全站搜尋 (Ctrl+K)">
+      <span class="st-icon">⌕</span><span>搜尋資料、幻獸、物品…</span><kbd>Ctrl K</kbd>
+    </button>
+    <nav id="nav"></nav>
+    <div class="side-foot">資料典藏自 dsps.case.eorz.net<br>2004 – 2022 · 離線重製版<br><a href="../index8.htm" target="_blank" style="color:#b8ceb9">瀏覽 2019 原版網站 ↗</a></div>
+  </aside>
+  <div id="sideMask"></div>
+  <main id="main">
+    <header id="topbar">
+      <button id="menuBtn" title="目錄">☰</button>
+      <div id="crumb"></div>
+    </header>
+    <div id="view"></div>
+  </main>
+</div>
+
+<div id="palette" hidden>
+  <div class="pal-box">
+    <input id="palInput" type="text" placeholder="輸入關鍵字：幻獸名、地圖、物品、任務…" autocomplete="off">
+    <div id="palHint">↑↓ 選擇 · Enter 開啟 · Esc 關閉</div>
+    <div id="palResults"></div>
+  </div>
+</div>
+
+<div id="monPanel" hidden></div>
+
+<script>window.__ART=[];</script>
+<script src="data-nav.js"></script>
+<script src="data-monsters.js"></script>
+<script src="data-a0.js"></script><script src="data-a1.js"></script><script src="data-a2.js"></script><script src="data-a3.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
