@@ -111,6 +111,17 @@ TITLE_OVERRIDES = {
     "htm/6060/protect2.htm": "護具類 170–200",
     "htm/6060/weapon2.htm": "武器類 170–200",
     "htm/protect2.htm": "防具類・衣袍製作",
+    "copy/map2.htm": "三大村莊與城市官方地圖",
+    "htm/map/bird.htm": "青鳥城NPC地點",
+    "htm/map/bird2.htm": "青鳥城NPC完整地圖",
+    "htm/map/rainbow.htm": "彩虹城NPC地點",
+    "htm/map/rainbow2.htm": "彩虹城NPC完整地圖",
+    "htm/map/rainbow3.htm": "彩虹城NPC完整地圖（另一版）",
+    "htm/map/gold2.htm": "金銀城NPC與倉庫地點",
+    "htm/map/tenf.htm": "天方地圖總覽",
+    "htm/newb2.htm": "新手教學文選",
+    "htm/wawa/wawawawa.htm": "幻獸娃娃圖庫",
+    "htm/wield/wield2.htm": "幻獸配件一覽",
     "htm/master/masterb.htm": "一般魔王（第二頁）",
     "htm/master/masterc.htm": "一般魔王（第三頁）",
     "htm/master/master22.htm": "任務魔王（第二頁）",
@@ -327,12 +338,29 @@ def clean(soup_root, page_path, collect_links):
             continue
         img.attrs = {"src": "../" + p, "loading": "lazy", "alt": img.get("alt", "")}
     for a in soup_root.find_all("a"):
+        # <a name="X"> 錨點：轉成帶 id 的 span，供頁內／跨頁定位
+        nm = (a.get("name") or "").strip()
+        if nm and not (a.get("href") or "").strip():
+            a.name = "span"
+            a.attrs = {"id": "anch-" + re.sub(r"[^\w-]", "_", nm)}
+            continue
         href = (a.get("href") or "").strip()
         if not href or href.lower().startswith(("javascript:", "mailto:")):
             a.unwrap()
             continue
         if re.match(r"^https?://", href, re.I) and not DSPS_ABS.match(href):
             a.attrs = {"href": href, "target": "_blank", "rel": "noopener", "class": "ext"}
+            continue
+        frag = ""
+        if "#" in href:
+            href, frag = href.split("#", 1)
+            frag = re.sub(r"[^\w-]", "_", frag.strip())
+        if not href:
+            # 同頁錨點連結：交給前端 data-anchor 捲動（頁面 id 在建置時未必可知）
+            if frag:
+                a.attrs = {"href": "#", "data-anchor": "anch-" + frag}
+            else:
+                a.unwrap()
             continue
         p = norm_path(href, base_dir)
         if p is None:
@@ -341,25 +369,26 @@ def clean(soup_root, page_path, collect_links):
         if is_html_path(p) and not excluded(p) and (SITE / p).exists():
             text = a.get_text(" ", strip=True)
             found.append((p, text))
-            a.attrs = {"href": "#/p/" + page_id(p), "data-pid": page_id(p)}
+            pid = page_id(p) + ("@anch-" + frag if frag else "")
+            a.attrs = {"href": "#/p/" + pid, "data-pid": page_id(p)}
         elif (SITE / p).exists():
             a.attrs = {"href": "../" + p, "target": "_blank"}
         else:
             a.unwrap()
     # 剝除表現層屬性（data-cx 轉為 class）
-    keep = {"a": {"href", "target", "rel", "class", "data-pid"},
+    keep = {"a": {"href", "target", "rel", "class", "data-pid", "data-anchor"},
             "img": {"src", "loading", "alt"},
             "td": {"colspan", "rowspan", "data-cx"},
             "th": {"colspan", "rowspan", "data-cx"},
-            "span": {"class"}}
+            "span": {"class", "id"}}
     for t in soup_root.find_all(True):
         allowed = keep.get(t.name, set())
         t.attrs = {k: v for k, v in t.attrs.items() if k in allowed}
         if "data-cx" in t.attrs:
             t["class"] = t.attrs.pop("data-cx")
-    # 移除完全空白的表格列（原站用隱形文字／佔位圖排版的殘留）
+    # 移除完全空白的表格列（原站用隱形文字／佔位圖排版的殘留）；留有錨點的列不砍
     for tr in soup_root.find_all("tr"):
-        if not tr.find("img") and not tr.get_text(strip=True):
+        if not tr.find("img") and not tr.get_text(strip=True) and not tr.find(attrs={"id": True}):
             tr.decompose()
     transform_boss_tables(soup_root)
     if collect_links:

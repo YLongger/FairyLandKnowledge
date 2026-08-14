@@ -77,12 +77,16 @@ with sync_playwright() as p:
     pg = b.new_page(viewport={"width": 1360, "height": 900})
     pg.goto(BASE)
     pg.wait_for_timeout(1200)
-    ids = pg.evaluate("() => window.__META.pages.map(x => [x.id, x.t])")
+    ids = pg.evaluate("() => window.__META.pages.map(x => ['#/p/' + x.id, x.t])")
+    # 數據寶典 + 計算機路由一併審計
+    tools = pg.evaluate(
+        "() => window.ToolsUI ? ToolsUI.pages.map(p => ['#/g/' + p.id, p.t]) : []")
+    ids = [["#/g", "寶典總覽"], ["#/t/calc", "降級計算機"], ["#/y", "童話時分"]] + tools + ids
     print("pages to audit:", len(ids), flush=True)
     report = {}
     t0 = time.time()
     for i, (pid, title) in enumerate(ids):
-        pg.evaluate("(h) => { location.hash = h; }", "#/p/" + pid)
+        pg.evaluate("(h) => { location.hash = h; }", pid)
         pg.wait_for_timeout(60)
         # 讓 lazy 圖片開始載入並等它們有結果
         pg.evaluate("""() => new Promise(res => {

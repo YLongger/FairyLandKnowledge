@@ -11,6 +11,7 @@
 - `童話資料網離線版_交付包/` 與同名 `.zip`：1:1 原版交付成品，格式比照 `tai-tong-tools/成品`（exe + Big5 使用說明.txt）。
 - `build_modern.py` + `app/`：現代版（典藏版）建置管線與 App 原始碼，輸出到 `site/modern/`。1110 篇文獻清洗重排 + 559 隻幻獸結構化資料庫。改 `app/` 後重跑 `python build_modern.py` 再重壓 site.zip。
 - `launcher_modern.py`：典藏版啟動器（由 launcher.py 產生，起始頁 `/modern/index.html`）。
+- `site/memory/` + `app/memory.js`：卷末「童話時分」致敬與回憶錄（`#/y`）——2026/08/13 台服大合照 5 照 4 影片、致敬書、鳴謝名牆、63 人點名冊（名單由合照辨識，改名單只需編輯 memory.js 的 ROLL）。
 - `童話資料網典藏版_交付包/` 與同名 `.zip`：現代版交付成品。
 - UI 驗證：`python shot.py`（需 `$env:PLAYWRIGHT_BROWSERS_PATH="$env:LOCALAPPDATA\ms-playwright"`，先起 `python -m http.server 8777 --directory site`），截圖在 `shots/`。
 - 全站品質審計：`python audit_all.py`——1109 頁逐頁檢測隱形字（前景/背景對比 <1.8）、破圖（naturalWidth=0）、水平溢出，報告存 `audit-report.json`，交付前必須 0 缺陷。色板 class（cx-head/band/soft）只掛 td/th（建置時逐格解算 bgcolor），掛 table/tr 會因 color 繼承污染巢狀表格。
