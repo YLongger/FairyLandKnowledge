@@ -10,8 +10,11 @@
 |---|---|
 | `site/` | 原站完整鏡像（約 7000 檔，Big5 原始位元組保存） |
 | `site/modern/` | 典藏版（現代化重製）建置輸出 |
-| `app/` | 典藏版前端原始碼（index.html / app.css / app.js） |
+| `site/memory/` | 「童話時分」回憶錄照片與影片素材 |
+| `app/` | 典藏版前端原始碼（app.js／tools.js／memory.js…） |
+| `data/童话资料.xlsx` | 老玩家整理的 23 張數據表，數據寶典的資料源 |
 | `mirror.py` | 整站爬蟲（含 Referer 防盜連處理、UTF-8 中文檔名） |
+| `build_tools.py` | xlsx → 結構化資料（簡轉繁），產出 `app/data-tools.js` |
 | `build_modern.py` | 典藏版建置管線：1073 篇文獻清洗重排＋559 隻幻獸結構化資料庫 |
 | `launcher.py` / `launcher_modern.py` | 離線瀏覽啟動器（記憶體直服 site.zip，不落地解壓） |
 | `audit_all.py` | 全站逐頁品質審計（隱形字對比、破圖、版面溢出），交付前需 0 缺陷 |
@@ -21,14 +24,16 @@
 
 - 全站導覽重新編排：新手上路、攻略集、幻獸大全、裝備產物
 - 幻獸資料庫：559 隻幻獸即時篩選（名稱／地圖／掉寶／技能），掉寶可反查
-- 幻獸解析 75 頁全部重製為統一卡片版式，原站未收錄數值標示「資料不足」
-- 魔王攻略重製為檔案卡、任務表格語意配色
-- 寵物降級計算機：旅程軌道＋單站編輯＋收據式費用帳單
+- 數據寶典：19 頁互動圖表——技能矩陣、掉寶地圖、武器配方、成長傾向、出手順序…
+- 寵物降級計算機：全屬性支援、寶石對應、官方費率帳單
+- 童話時分：卷末致敬書、鳴謝名牆，與 2026/08/13 台服集體大合照回憶錄
 - 全站搜尋（Ctrl+K），左側目錄可切回 2019 原版網站
 
 ## 怎麼建
 
 ```powershell
+pip install -r requirements.txt
+python build_tools.py                 # 僅 data/童话资料.xlsx 變更時
 python build_modern.py                # 產出 site/modern/
 # 壓 site.zip（site/ 內容置於 zip 根層）後，用 Python 3.7 打 exe（Win7 相容）：
 py -3.7 -m PyInstaller --onefile --console --name "童話資料網典藏版" `
@@ -42,6 +47,8 @@ python make_package_modern.py         # 組交付包
 python -m http.server 8777 --directory site   # 預覽
 python audit_all.py                           # 全站 0 缺陷才算通過
 ```
+
+維護細節與踩坑紀錄見 `AGENTS.md`；接手狀態與常見任務對照見 `HANDOFF.md`。
 
 ## 授權與致謝
 
