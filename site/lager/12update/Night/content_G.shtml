@@ -1,0 +1,580 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>童話一千零一夜官方網站-結婚系統</title>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 13px;
+	line-height: 130%;
+	color: #81551D;
+}
+.service {
+	font-size: 12px;
+	color: #666666;
+	line-height: 150%;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/BG.gif);
+}
+a:link {
+	color: #FF9966;
+	text-decoration: none;
+}
+a:visited {
+	color: #BD7D63;
+	text-decoration: none;
+}
+a:hover {
+	color: #FFC5A6;
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+-->
+</style>
+
+</head>
+<body onLoad="MM_preloadImages('images/titleBar_over_15.gif','images/titleBar_over_16.gif','images/titleBar_over_17.gif','images/mainBar_over_05.gif','images/mainBar_over_09.gif','images/mainBar_over_13.gif','images/mainBar_over_16.gif','images/mainBar_over_21.gif','images/mainBar_over_25.gif','images/mainBar_over_27.gif')">
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td colspan="2" valign="top"><script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<body onLoad="MM_preloadImages('images/titleBar_over_15.gif','images/titleBar_over_16.gif','images/titleBar_over_17.gif')">
+<table id="Table_01" width="770" height="152" border="0" cellpadding="0" cellspacing="0" onLoad="MM_preloadImages('images/titleBar_over_15.gif','images/titleBar_over_16.gif','images/titleBar_over_17.gif')">
+	<tr>
+		<td colspan="2">
+			<img src="images/titleBar_01.jpg" width="154" height="48" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_02.jpg" width="154" height="48" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_03.jpg" width="154" height="48" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_04.jpg" width="154" height="48" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_05.jpg" width="154" height="48" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/titleBar_06.jpg" width="154" height="47" alt=""></td>
+		<td colspan="2">
+			<img src="./images/titleBar_07.jpg" width="154" height="47" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_08.jpg" width="154" height="47" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_09.jpg" width="154" height="47" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_10.jpg" width="154" height="47" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/titleBar_11.jpg" width="112" height="56" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_12.jpg" width="113" height="56" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_13.jpg" width="112" height="56" alt=""></td>
+		<td>
+			<img src="images/titleBar_14.jpg" width="112" height="56" alt=""></td>
+		<td colspan="2">
+			<a href="/lager/05download/download.htm" target="_blank" onMouseOver="MM_swapImage('Image30','','images/titleBar_over_15.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/titleBar_15.jpg" name="Image30" width="102" height="56" border="0"></a></td>
+		<td colspan="2">
+			<a href="index.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image31','','images/titleBar_over_16.gif',1)"><img src="images/titleBar_16.jpg" name="Image31" width="121" height="56" border="0"></a></td>
+		<td>
+			<a href="http://fairyland.lager.com.tw" target="_blank" onMouseOver="MM_swapImage('Image32','','images/titleBar_over_17.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/titleBar_17.jpg" name="Image32" width="92" height="56" border="0"></a></td>
+		<td>
+			<img src="images/titleBar_18.jpg" width="6" height="56" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="112" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="42" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="71" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="83" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="29" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="112" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="13" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="89" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="65" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="56" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="92" height="1" alt=""></td>
+	  <td>
+	  <img src="images/spacer.gif" width="6" height="1" alt=""></td>
+	</tr>
+</table>
+</td>
+  </tr>
+  <tr>
+    <td width="186" valign="top"><script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script><body onLoad="MM_preloadImages('images/mainBar_over_05.gif','images/mainBar_over_09.gif','images/mainBar_over_13.gif','images/mainBar_over_16.gif','images/mainBar_over_21.gif','images/mainBar_over_25.gif','images/mainBar_over_27.gif')">
+<table id="Table_01" width="171" height="330" border="0" cellpadding="0" cellspacing="0" onLoad="MM_preloadImages('images/mainBar_over_05.gif','images/mainBar_over_09.gif','images/mainBar_over_13.gif','images/mainBar_over_16.gif','images/mainBar_over_21.gif','images/mainBar_over_25.gif','images/mainBar_over_27.gif')">
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_01.jpg" width="85" height="44" alt=""></td>
+		<td colspan="4">
+			<img src="images/mainBar_02.jpg" width="85" height="44" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="44" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="4">
+			<img src="images/mainBar_03.jpg" width="40" height="53" alt=""></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/mainBar_04.jpg" width="11" height="27" alt=""></td>
+		<td colspan="2" bgcolor="#FFEFB5">
+			<a href="content_A.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image58','','images/mainBar_over_05.gif',1)"><img src="images/mainBar_05.jpg" name="Image58" width="80" height="22" border="0"></a></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/mainBar_06.jpg" width="10" height="27" alt=""></td>
+		<td rowspan="4">
+			<img src="images/mainBar_07.jpg" width="29" height="53" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/mainBar_08.jpg" width="80" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" bgcolor="#EFDBA5">
+			<a href="content_B.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image59','','images/mainBar_over_09.gif',1)"><img src="images/mainBar_09.jpg" name="Image59" width="101" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" rowspan="2">
+			<img src="images/mainBar_10.jpg" width="101" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="4" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="5">
+			<img src="images/mainBar_11.jpg" width="40" height="53" alt=""></td>
+		<td rowspan="5">
+			<img src="images/mainBar_12.jpg" width="29" height="53" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" bgcolor="#EFDBA5">
+			<a href="content_C.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image60','','images/mainBar_over_13.gif',1)"><img src="images/mainBar_13.jpg" name="Image60" width="101" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<img src="images/mainBar_14.jpg" width="101" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="9">
+			<img src="images/mainBar_15.jpg" width="8" height="130" alt=""></td>
+		<td colspan="4" bgcolor="#EFDBA5">
+			<a href="content_D.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image61','','images/mainBar_over_16.gif',1)"><img src="images/mainBar_16.jpg" name="Image61" width="85" height="22" border="0"></a></td>
+		<td rowspan="9">
+			<img src="images/mainBar_17.jpg" width="8" height="130" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" rowspan="2">
+			<img src="images/mainBar_18.jpg" width="85" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="3" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="images/mainBar_19.jpg" width="40" height="52" alt=""></td>
+		<td rowspan="3">
+			<img src="images/mainBar_20.jpg" width="29" height="52" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="2" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#EFDBA5">
+			<a href="content_E.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image62','','images/mainBar_over_21.gif',1)"><img src="images/mainBar_21.jpg" name="Image62" width="85" height="40" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="40" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" rowspan="2">
+			<img src="images/mainBar_22.jpg" width="85" height="14" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="10" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="4">
+			<img src="images/mainBar_23.jpg" width="40" height="53" alt=""></td>
+		<td rowspan="4">
+			<img src="images/mainBar_24.jpg" width="29" height="53" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="4" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#EFDBA5">
+			<a href="content_F.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image63','','images/mainBar_over_25.gif',1)"><img src="images/mainBar_25.jpg" name="Image63" width="85" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_26.jpg" width="85" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#F7E3AD">
+			<a href="content_G.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image64','','images/mainBar_over_27.gif',1)"><img src="images/mainBar_27.jpg" name="Image64" width="85" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_28.jpg" width="85" height="37" alt=""></td>
+		<td colspan="4">
+			<img src="images/mainBar_29.jpg" width="85" height="37" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="37" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_30.jpg" width="85" height="37" alt=""></td>
+		<td colspan="4">
+			<img src="images/mainBar_31.jpg" width="85" height="37" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="37" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="40" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="8" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="3" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="34" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="46" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="2" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="8" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="29" height="1" alt=""></td>
+		<td></td>
+	</tr>
+</table></td>
+    <td width="586" align="center" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="20" valign="bottom">&nbsp;</td>
+      </tr>
+    </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td><img src="images/content_G/content_G_03.jpg" width="577" height="151"></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr align="center">
+          <td height="50" align="left" valign="bottom"><img src="images/content_G/content_G_06.jpg" width="140" height="24"></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="10" cellpadding="0">
+        <tr>
+          <td valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+            <tr valign="top">
+              <td width="4%"><img src="images/content_B/1.jpg" width="15" height="15"></td>
+              <td><div align="justify">辦理結婚的新人必須是一男一女，目前還沒辦法開始同性結婚喔!<br>
+                      <br>
+              </div></td>
+            </tr>
+            <tr valign="top">
+              <td><img src="images/content_B/2.jpg" width="15" height="15"></td>
+              <td><div align="justify">求婚發動與結婚過程有一定困難度，以考驗準新人玩家們的真心，經過考驗的愛情，會更加珍惜喔!<br>
+                <br>
+              </div></td>
+            </tr>
+            <tr valign="top">
+              <td><img src="images/content_B/3.jpg" width="15" height="15"></td>
+              <td><div align="justify">結婚後必須廝守終生，不得離婚。<br>
+                <br>
+              </div></td>
+            </tr>
+            <tr valign="top">
+              <td><img src="images/content_B/4.jpg" width="15" height="15"></td>
+              <td><div align="justify">結婚之後絕對不得離婚，雙方其中一人的ID遭刪除(刪除角色、帳號失效等)時，婚姻關係亦不會自動結束!請玩家在結婚前務必三思。<br>
+              </div></td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="40" align="left" valign="bottom"><img src="images/content_G/content_Gtitle_11.jpg" width="110" height="24"></td>
+        </tr>
+        <tr>
+          <td align="center"><table width="100%"  border="0" cellspacing="10" cellpadding="0">
+            <tr>
+              <td>                  <table width="100%"  border="0" align="right" cellpadding="0" cellspacing="0">
+                    <tr valign="top">
+                      <td width="4%"><img src="images/content_B/1.jpg" width="15" height="15"></td>
+                      <td width="98%"><div align="justify">準新人的其中一位玩家必須先取得求婚戒指，站在求婚對象的身旁，點開物品欄，點滑鼠右鍵使用求婚戒指，然後輸入想要求婚的對象名字。<br>
+                        <br>
+                      </div></td>
+                    </tr>
+                    <tr align="left" valign="top">
+                      <td height="127" colspan="2" align="right"><img src="images/content_G/content_G_13.jpg" width="562" height="107"></td>
+                    </tr>
+                    <tr valign="top">
+                      <td><img src="images/content_B/2.jpg" width="15" height="15"></td>
+                      <td><div align="justify">玩家使用了求婚戒指後，如果對方答應了，求婚戒指就會變成雙方身上的婚約石，這時候就完成訂婚手續。如果沒有答應的話，求婚者還是可以保有該求婚戒指，不過求婚戒指有使用耐用度，當你求婚太多次都沒成功，耐用度變成０的時候，這顆戒指就會消失喔。<br>
+                        <br>
+                      </div></td>
+                    </tr>
+                    <tr align="right" valign="top">
+                      <td height="134" colspan="2"><img src="images/content_G/content_G_15.jpg" width="562" height="114"></td>
+                    </tr>
+                    <tr align="right" valign="top">
+                      <td align="left"><img src="images/content_B/3.jpg" width="15" height="15"></td>
+                      <td align="left"><div align="justify">訂婚手續完成後，男方玩家要拿著婚約石去教堂跟小天使預約教堂的結婚時段，預約的時候要付定金喔!<br>                        
+                          <br>
+                      </div></td>
+                    </tr>
+                    <tr align="right" valign="top">
+                      <td height="129" colspan="2" align="right"><img src="images/content_G/content_G_21.jpg" width="562" height="109"></td>
+                    </tr>
+                    <tr align="right" valign="top">
+                      <td align="left"><img src="images/content_B/4.jpg" width="15" height="15"></td>
+                      <td align="left"><div align="justify">教堂婚禮的使用時段以一小時為單位，小天使會先問玩家要預約哪一個時段的教堂，同時在列出那個時段裡面適合的時間跟日期給準新人做選擇。<br>
+                        <br>
+                      </div></td>
+                    </tr>
+                    <tr align="center" valign="top">
+                      <td height="136" colspan="2"><img src="images/content_G/content_G_24.jpg" width="442" height="116"></td>
+                    </tr>
+                    <tr align="center" valign="top">
+                      <td align="left"><img src="images/content_B/5.jpg" width="15" height="15"></td>
+                      <td align="left"><div align="justify">跟教堂小天使訂好婚禮時間後，就可以向小天使購買結婚邀請卡，邀請雙方的親朋好友在婚禮時間來參加婚禮。<br>
+                        <br>
+                      </div></td>
+                    </tr>
+                    <tr align="center" valign="top">
+                      <td height="126" colspan="2"><img src="images/content_G/content_G_28.jpg" width="295" height="106"></td>
+                    </tr>
+                    <tr align="center" valign="top">
+                      <td align="left"><img src="images/content_B/6.jpg" width="15" height="15"></td>
+                      <td align="left"><div align="justify">婚戒方面，新人在婚禮前要先跟婚禮小天使購買婚戒，如果希望自己的婚戒更與眾不同，也可以準備更好的寶石，請戒指小天使加工。<br>
+                        <br>
+                      </div></td>
+                    </tr>
+                    <tr align="center" valign="top">
+                      <td align="left"><img src="images/content_B/7.jpg" width="15" height="15"></td>
+                      <td align="left"><div align="justify">想要讓婚禮更浪漫的新娘可購買新娘捧花，在婚禮完成後可丟給親友做紀念。但僅限持有婚約石的女生角色購買喔!
+<br>
+                        <br>
+                      </div></td>
+                    </tr>
+                </table>                </td>
+            </tr>
+          </table>
+            <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr align="center">
+                <td height="50" align="left" valign="bottom"><img src="images/content_G/content_Gtitle_13.jpg" width="106" height="24"></td>
+              </tr>
+            </table>
+            <table width="100%"  border="0" cellspacing="10" cellpadding="0">
+              <tr>
+                <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="4%" height="70" align="left" valign="top"><img src="images/content_B/1.jpg" width="15" height="15"></td>
+                    <td width="96%" align="left" valign="top">當到了預約教堂的時間時，請新人到到每個世界的第二伺服器甜蜜天空找看門小天使說話。看門小天使會檢查新人身上是否有婚約石與婚戒。要結婚的新人通過檢查即會被傳送進入教堂的紅地毯中。</td>
+                  </tr>
+                  <tr>
+                    <td height="60" align="left" valign="top"><img src="images/content_B/2.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 結婚儀式由男方先開始動作，準新郎先點證婚小天使，然後證婚小天使會徵求女方的意願，(這時候是無法反悔的唷!)雙方交換婚戒就完成結婚儀式，之後兩個人就一生一世綁在一起囉!</td>
+                  </tr>
+                  <tr>
+                    <td height="30" align="left" valign="top"><img src="images/content_B/3.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 婚禮完成後，新郎新娘身上的結婚戒指會進行交換。</td>
+                  </tr>
+                  <tr>
+                    <td height="50" align="left" valign="top"><img src="images/content_B/4.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top">如果新娘在婚禮前購買了捧花，於婚禮完成後可將捧花拋出，在場的每一位女性玩家都有機會獲得喔。</td>
+                  </tr>
+                  <tr>
+                    <td height="50" align="left" valign="top"><img src="images/content_B/5.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 婚禮終於完成了，放個煙火慶祝一下吧!新人可以在結婚開始前預約煙火小天使，在結婚儀式完成時，將會有煙火一同慶祝結婚的喜悅。 </td>
+                  </tr>
+                  <tr>
+                    <td height="50" align="left" valign="top"><img src="images/content_B/6.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 婚禮完成後，新狀可以找看門小天使領取賓客致贈的禮金，小天使會替新人保管20小時，逾時未領的禮金，將會被小天使當捐款，奉獻給教堂喔! </td>
+                  </tr>
+                  <tr>
+                    <td height="70" align="left" valign="top"><img src="images/content_B/7.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 租用教堂的時間一到，在該教堂內的所有玩家都會被傳送離開。所以要把握時間喔!如果兩人沒有在教堂使用期間內完成婚禮，則婚約就算取消，兩人都恢復成單身，之前的訂婚也就不算囉。</td>
+                  </tr>
+                  <tr>
+                    <td align="left" valign="top"><img src="images/content_B/8.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 結過婚之後，玩家可以拿著結婚戒指到甜蜜天空找戒指小天使，進行鑲嵌寶石。可以鑲嵌的寶石包括：
+                      <ul>
+                        <li>紅玉髓(鑲嵌之後增加力量4)
+                        <li>藍玉髓(鑲嵌之後增加敏捷4)
+                        <li>黃玉髓(鑲嵌之後增加運氣4)
+                        <li>青玉髓(鑲嵌之後增加智慧4)
+                        <li>綠玉髓(鑲嵌之後增加體質4)
+                        <li>鑽石(鑲嵌之後增加魅力4)<br>
+鑲嵌完成的結婚戒指才可以配帶裝備。</li>
+                      </ul></td>
+                  </tr>
+                </table>                </td>
+              </tr>
+            </table>
+            <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr align="center">
+                <td height="50" align="left" valign="bottom"><img src="images/content_G/content_Gtitle_15.jpg" width="91" height="24"></td>
+              </tr>
+            </table>
+            <table width="100%"  border="0" cellspacing="10" cellpadding="0">
+              <tr>
+                <td><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="4%" height="70" align="left" valign="top"><img src="images/content_B/1.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 只要有婚禮邀請卡的玩家，都可以帶著邀請卡於婚禮舉行的時候，到每個世界的第二伺服器的甜蜜天空，找看門的小天使說話才能進入教堂。 小天使會替新人代收禮金，玩家付的禮金，會全部歸新娘所有。(別問為什麼不是歸新郎，這是台灣的傳統囉!) </td>
+                  </tr>
+                  <tr>
+                    <td height="50" align="left" valign="top"><img src="images/content_B/2.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 觀禮的玩家在婚禮開始後，請儘量保持肅靜或用悄悄話交談，好聆聽證婚小天使的證婚辭以及新郎新娘互許終身的承諾，並避免干擾婚禮的進行。 </td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table>
+            <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr align="center">
+                <td height="50" align="left" valign="bottom"><img src="images/content_G/content_Gtitle_17.jpg" width="108" height="24"></td>
+              </tr>
+            </table>
+            <table width="100%"  border="0" cellspacing="10" cellpadding="0">
+              <tr>
+                <td align="left" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+                  <tr>
+                    <td width="4%" height="80" align="left" valign="top"><img src="images/content_B/1.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 飛向你:飛奔到另一半的身邊(某些特殊狀況不能使用) 夫妻雙方其中一人，只要打開物品欄，使用結婚戒指，可以召喚小天使；讓小天使將你傳送到你另一半的身邊。不過如果對方不在線上或者正在下列地區則無法使用這個功能: 在另一個分站、家族房間、保衛戰的戰場、天空、監獄、某些解任務才能進入的區域 </td>
+                  </tr>
+                  <tr>
+                    <td height="80" align="left" valign="top"><img src="images/content_B/2.jpg" width="15" height="15"></td>
+                    <td align="left" valign="top"> 經驗值加倍: <br>
+兩個人一起組隊練功，可以得到較高的經驗值。 <br>
+只要是經過小天使證婚有正式婚約的夫妻，一起組隊去打怪練功的時候，所得到的經驗值會比原本的高出近三分之一喔!這就是所謂的「愛的力量」嘛! </td>
+                  </tr>
+                </table></td>
+              </tr>
+            </table>
+            <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="30" align="center" valign="bottom"><img src="images/content_A/content_A_07.jpg" width="554" height="11"></td>
+              </tr>
+            </table>
+            <table width="90%"  border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td bgcolor="#FAF3F1"><div align="justify">你是不是已經挑好你的另一半了呢？快去準備好你的求婚戒指，替自己的愛情留下見證，許他(她)一個幸福的未來吧!</div></td>
+              </tr>
+            </table>
+            <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td height="80" align="center" valign="top"><img src="images/content_A/content_A_07.jpg" width="554" height="11"></td>
+              </tr>
+            </table></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr align="right">
+    <td colspan="2"><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/underBar_01.jpg" width="600" height="16"></td>
+  </tr>
+  <tr>
+    <td height="60" align="center" valign="bottom"><img src="images/underBar_04.jpg" width="274" height="47"></td>
+  </tr>
+  <tr>
+    <td height="80" align="center" valign="top"><span class="service">客服專線:(02)2925-9455 &nbsp;&nbsp;傳真專線:(02)2925-5345<br>
+
+客服信箱:<a href="mailto:fo@lager.com.tw">fo@lager.com.tw</a></span></td>
+  </tr>
+</table>
+
+</td>
+  </tr>
+</table>
+</body>
+<script language=JavaScript>
+if(document.all){
+var tags=document.all.tags("a")
+for (var i=0;i<tags.length;i++)
+tags(i).outerHTML=tags(i).outerHTML.replace(">"," hidefocus=true>")}
+</script>
+</html>

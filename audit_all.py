@@ -81,7 +81,10 @@ with sync_playwright() as p:
     # 數據寶典 + 計算機路由一併審計
     tools = pg.evaluate(
         "() => window.ToolsUI ? ToolsUI.pages.map(p => ['#/g/' + p.id, p.t]) : []")
-    ids = [["#/g", "寶典總覽"], ["#/t/calc", "降級計算機"], ["#/y", "童話時分"]] + tools + ids
+    offs = pg.evaluate(
+        "() => window.OfficialUI ? OfficialUI.groups.map(g => ['#/o/' + g.id, g.name]) : []")
+    ids = ([["#/g", "寶典總覽"], ["#/t/calc", "降級計算機"], ["#/y", "童話時分"], ["#/o", "官方誌"]]
+           + offs + tools + ids)
     print("pages to audit:", len(ids), flush=True)
     report = {}
     t0 = time.time()

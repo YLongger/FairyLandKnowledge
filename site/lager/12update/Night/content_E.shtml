@@ -1,0 +1,456 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>童話一千零一夜官方網站-競技場&quot;競標機制&quot;</title>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 13px;
+	line-height: 130%;
+	color: #81551D;
+}
+.service {
+	font-size: 12px;
+	color: #666666;
+	line-height: 150%;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/BG.gif);
+}
+a:link {
+	color: #FF9966;
+	text-decoration: none;
+}
+a:visited {
+	color: #BD7D63;
+	text-decoration: none;
+}
+a:hover {
+	color: #FFC5A6;
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+-->
+</style>
+
+</head>
+<body onLoad="MM_preloadImages('images/titleBar_over_15.gif','images/titleBar_over_16.gif','images/titleBar_over_17.gif','images/mainBar_over_05.gif','images/mainBar_over_09.gif','images/mainBar_over_13.gif','images/mainBar_over_16.gif','images/mainBar_over_21.gif','images/mainBar_over_25.gif','images/mainBar_over_27.gif')">
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td colspan="2" valign="top"><script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<body onLoad="MM_preloadImages('images/titleBar_over_15.gif','images/titleBar_over_16.gif','images/titleBar_over_17.gif')">
+<table id="Table_01" width="770" height="152" border="0" cellpadding="0" cellspacing="0" onLoad="MM_preloadImages('images/titleBar_over_15.gif','images/titleBar_over_16.gif','images/titleBar_over_17.gif')">
+	<tr>
+		<td colspan="2">
+			<img src="images/titleBar_01.jpg" width="154" height="48" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_02.jpg" width="154" height="48" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_03.jpg" width="154" height="48" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_04.jpg" width="154" height="48" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_05.jpg" width="154" height="48" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/titleBar_06.jpg" width="154" height="47" alt=""></td>
+		<td colspan="2">
+			<img src="./images/titleBar_07.jpg" width="154" height="47" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_08.jpg" width="154" height="47" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_09.jpg" width="154" height="47" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_10.jpg" width="154" height="47" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/titleBar_11.jpg" width="112" height="56" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_12.jpg" width="113" height="56" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_13.jpg" width="112" height="56" alt=""></td>
+		<td>
+			<img src="images/titleBar_14.jpg" width="112" height="56" alt=""></td>
+		<td colspan="2">
+			<a href="/lager/05download/download.htm" target="_blank" onMouseOver="MM_swapImage('Image30','','images/titleBar_over_15.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/titleBar_15.jpg" name="Image30" width="102" height="56" border="0"></a></td>
+		<td colspan="2">
+			<a href="index.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image31','','images/titleBar_over_16.gif',1)"><img src="images/titleBar_16.jpg" name="Image31" width="121" height="56" border="0"></a></td>
+		<td>
+			<a href="http://fairyland.lager.com.tw" target="_blank" onMouseOver="MM_swapImage('Image32','','images/titleBar_over_17.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/titleBar_17.jpg" name="Image32" width="92" height="56" border="0"></a></td>
+		<td>
+			<img src="images/titleBar_18.jpg" width="6" height="56" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="112" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="42" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="71" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="83" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="29" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="112" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="13" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="89" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="65" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="56" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="92" height="1" alt=""></td>
+	  <td>
+	  <img src="images/spacer.gif" width="6" height="1" alt=""></td>
+	</tr>
+</table>
+</td>
+  </tr>
+  <tr>
+    <td width="186" valign="top"><script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script><body onLoad="MM_preloadImages('images/mainBar_over_05.gif','images/mainBar_over_09.gif','images/mainBar_over_13.gif','images/mainBar_over_16.gif','images/mainBar_over_21.gif','images/mainBar_over_25.gif','images/mainBar_over_27.gif')">
+<table id="Table_01" width="171" height="330" border="0" cellpadding="0" cellspacing="0" onLoad="MM_preloadImages('images/mainBar_over_05.gif','images/mainBar_over_09.gif','images/mainBar_over_13.gif','images/mainBar_over_16.gif','images/mainBar_over_21.gif','images/mainBar_over_25.gif','images/mainBar_over_27.gif')">
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_01.jpg" width="85" height="44" alt=""></td>
+		<td colspan="4">
+			<img src="images/mainBar_02.jpg" width="85" height="44" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="44" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="4">
+			<img src="images/mainBar_03.jpg" width="40" height="53" alt=""></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/mainBar_04.jpg" width="11" height="27" alt=""></td>
+		<td colspan="2" bgcolor="#FFEFB5">
+			<a href="content_A.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image58','','images/mainBar_over_05.gif',1)"><img src="images/mainBar_05.jpg" name="Image58" width="80" height="22" border="0"></a></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/mainBar_06.jpg" width="10" height="27" alt=""></td>
+		<td rowspan="4">
+			<img src="images/mainBar_07.jpg" width="29" height="53" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/mainBar_08.jpg" width="80" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" bgcolor="#EFDBA5">
+			<a href="content_B.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image59','','images/mainBar_over_09.gif',1)"><img src="images/mainBar_09.jpg" name="Image59" width="101" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" rowspan="2">
+			<img src="images/mainBar_10.jpg" width="101" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="4" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="5">
+			<img src="images/mainBar_11.jpg" width="40" height="53" alt=""></td>
+		<td rowspan="5">
+			<img src="images/mainBar_12.jpg" width="29" height="53" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" bgcolor="#EFDBA5">
+			<a href="content_C.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image60','','images/mainBar_over_13.gif',1)"><img src="images/mainBar_13.jpg" name="Image60" width="101" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<img src="images/mainBar_14.jpg" width="101" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="9">
+			<img src="images/mainBar_15.jpg" width="8" height="130" alt=""></td>
+		<td colspan="4" bgcolor="#EFDBA5">
+			<a href="content_D.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image61','','images/mainBar_over_16.gif',1)"><img src="images/mainBar_16.jpg" name="Image61" width="85" height="22" border="0"></a></td>
+		<td rowspan="9">
+			<img src="images/mainBar_17.jpg" width="8" height="130" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" rowspan="2">
+			<img src="images/mainBar_18.jpg" width="85" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="3" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="images/mainBar_19.jpg" width="40" height="52" alt=""></td>
+		<td rowspan="3">
+			<img src="images/mainBar_20.jpg" width="29" height="52" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="2" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#EFDBA5">
+			<a href="content_E.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image62','','images/mainBar_over_21.gif',1)"><img src="images/mainBar_21.jpg" name="Image62" width="85" height="40" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="40" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" rowspan="2">
+			<img src="images/mainBar_22.jpg" width="85" height="14" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="10" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="4">
+			<img src="images/mainBar_23.jpg" width="40" height="53" alt=""></td>
+		<td rowspan="4">
+			<img src="images/mainBar_24.jpg" width="29" height="53" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="4" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#EFDBA5">
+			<a href="content_F.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image63','','images/mainBar_over_25.gif',1)"><img src="images/mainBar_25.jpg" name="Image63" width="85" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_26.jpg" width="85" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#F7E3AD">
+			<a href="content_G.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image64','','images/mainBar_over_27.gif',1)"><img src="images/mainBar_27.jpg" name="Image64" width="85" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_28.jpg" width="85" height="37" alt=""></td>
+		<td colspan="4">
+			<img src="images/mainBar_29.jpg" width="85" height="37" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="37" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_30.jpg" width="85" height="37" alt=""></td>
+		<td colspan="4">
+			<img src="images/mainBar_31.jpg" width="85" height="37" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="37" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="40" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="8" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="3" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="34" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="46" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="2" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="8" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="29" height="1" alt=""></td>
+		<td></td>
+	</tr>
+</table></td>
+    <td width="586" align="center" valign="top"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="295" valign="bottom"><table  border="0" cellpadding="0" cellspacing="0">
+          <tr>
+            <td><img src="images/content_E/content_E_03.jpg" width="289" height="149"></td>
+            <td><img src="images/content_E/content_E_04.jpg" width="288" height="149"></td>
+          </tr>
+          <tr>
+            <td><img src="images/content_E/content_E_06.jpg" width="289" height="126"></td>
+            <td><img src="images/content_E/content_E_07.jpg" width="288" height="126"></td>
+          </tr>
+        </table></td>
+      </tr>
+    </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30" align="center"><img src="images/content_A/content_A_07.jpg" width="554" height="11"></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr align="center">
+          <td align="left"><img src="images/content_E/content_E_08.jpg" width="92" height="24"></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="10" cellpadding="0">
+        <tr>
+          <td>
+            <table width="100%"  border="0" cellspacing="3" cellpadding="0">
+              <tr valign="top">
+                <td width="5%"><img src="images/content_B/1.jpg" width="15" height="15"></td>
+                <td width="98%" bgcolor="#FBFCEB"><div align="justify">獲得獎品的方式分為競標與兌換兩種，兩種的物品亦不相同。
+                </div></td>
+              </tr>
+              <tr valign="top">
+                <td><img src="images/content_B/2.jpg" width="15" height="15"></td>
+                <td bgcolor="#FBFCEB"><div align="justify">獎品兌換處固定於每個伺服器的第四分流才可進入。
+                </div></td>
+              </tr>
+              <tr valign="top">
+                <td><img src="images/content_B/3.jpg" width="15" height="15"></td>
+                <td bgcolor="#FBFCEB"><div align="justify">玩家可以憑單人闖關模式所獲得的積分兌換或競標獎品；之前闖過競技場的玩家，積分將繼續累積，查詢積分請洽獎品兌換處ＮＰＣ小甜甜。
+                </div></td>
+              </tr>
+              <tr valign="top">
+                <td><img src="images/content_B/4.jpg" width="15" height="15"></td>
+                <td bgcolor="#FBFCEB"><div align="justify">每項商品皆會設定底標。
+                </div></td>
+              </tr>
+              <tr valign="top">
+                <td><img src="images/content_B/5.jpg" width="15" height="15"></td>
+                <td bgcolor="#FBFCEB"><div align="justify">每項商品競標時間一到將由最高標者獲得，若玩家競標點數相同時，以先競標者為準，得標者可在競標結束後與競標專員領取，若在下次競標開始前未來領取，則視為放棄。
+                </div></td>
+              </tr>
+              <tr valign="top">
+                <td><img src="images/content_B/6.jpg" width="15" height="15"></td>
+                <td bgcolor="#FBFCEB"><div align="justify">玩家標價的點數不得高於所擁有的點數。
+                </div></td>
+              </tr>
+              <tr valign="top">
+                <td><img src="images/content_B/7.jpg" width="15" height="15"></td>
+                <td bgcolor="#FBFCEB"><div align="justify">同一時間只能對一項商品競標，在標價後無法在進行兌換獎品的動作，需先放棄競標的權利後才可進行兌換。             
+                </div></td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30" align="left" valign="top"><img src="images/content_E/content_E_11.jpg" width="148" height="24"></td>
+        </tr>
+    </table>
+      <table width="95%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="60" align="left" valign="top" bgcolor="#FFFFEF"><div align="justify">固定於週六下午13：00至週日下午21：00為競標時間。<br>
+        兌換時間則沒有時間的限制。</div></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td>&nbsp;</td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="30" align="left" valign="top"><img src="images/content_E/content_E_17.jpg" width="148" height="24"></td>
+        </tr>
+      </table>
+      <table width="95%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="40" align="left" valign="top" bgcolor="#FFFFEF"><div align="justify">&lt;獎品兌換處&gt;</div></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="40" align="center" valign="top"><img src="images/content_A/content_A_07.jpg" width="554" height="11"></td>
+        </tr>
+      </table></td>
+  </tr>
+  <tr align="right">
+    <td colspan="2"><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/underBar_01.jpg" width="600" height="16"></td>
+  </tr>
+  <tr>
+    <td height="60" align="center" valign="bottom"><img src="images/underBar_04.jpg" width="274" height="47"></td>
+  </tr>
+  <tr>
+    <td height="80" align="center" valign="top"><span class="service">客服專線:(02)2925-9455 &nbsp;&nbsp;傳真專線:(02)2925-5345<br>
+
+客服信箱:<a href="mailto:fo@lager.com.tw">fo@lager.com.tw</a></span></td>
+  </tr>
+</table>
+
+</td>
+  </tr>
+</table>
+</body>
+<script language=JavaScript>
+if(document.all){
+var tags=document.all.tags("a")
+for (var i=0;i<tags.length;i++)
+tags(i).outerHTML=tags(i).outerHTML.replace(">"," hidefocus=true>")}
+</script>
+</html>

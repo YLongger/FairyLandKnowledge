@@ -29,9 +29,14 @@ NAMES = set(ZF.namelist())
 LOCK = threading.Lock()
 
 mimetypes.add_type("text/html", ".htm")
+# 鏡像中的 .php 檔存的是原站輸出的 HTML；不標型別瀏覽器會跳下載框（banner.php 問題）
+mimetypes.add_type("text/html", ".php")
+mimetypes.add_type("text/html", ".shtml")  # 資料片官網鏡像（SSI 已由原站解析）
 mimetypes.add_type("image/gif", ".gif")
 mimetypes.add_type("image/jpeg", ".jpg")
 mimetypes.add_type("application/javascript", ".js")
+mimetypes.add_type("application/wasm", ".wasm")  # Ruffle（Flash 模擬器）需要
+mimetypes.add_type("application/x-shockwave-flash", ".swf")
 
 
 def lookup(path: str, query: str):

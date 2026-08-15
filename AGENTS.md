@@ -14,12 +14,19 @@
 典藏版原始碼（改功能改這裡）：
 - `app/index.html|app.css|app.js`：SPA 骨架、全部樣式、路由／導覽／搜尋／幻獸資料庫／降級計算機。
 - `app/tools.js`：數據寶典 19 頁互動圖表的渲染邏輯。
-- `app/data-tools.js`：**產生檔**，由 `build_tools.py` 從 xlsx 產出，不要手改。
+- `app/data-tools.js`：**產生檔**，由 `build_tools.py` 從 xlsx 產出，不要手改。先手敏捷表（出手順序頁上半）的資料不在 xlsx，是 `build_tools.py` 內的 FS_* 常數（來源截圖存 `data/先手敏捷表2023-02.png`，技能圖示裁在 `app/img/strike/`）。
+- `app/official.js` + `app/data-official.js`：官方誌（`#/o`）——官方公告截圖典藏。data 檔由 `build_official.py` 產出，不要手改。
 - `app/memory.js`：卷末「童話時分」致敬與回憶錄（`#/y`）。點名冊改 `ROLL` 陣列即可。
 - `site/memory/`：回憶錄的 5 照 4 影片。
+- `site/official/`：官方誌壓縮圖（42 篇公告 + 封面），由 `build_official.py` 產出。
+- `site/lager/`：九個資料片官網（fairyland.lager.com.tw）整站鏡像（約 1770 檔含 8 支 SWF），由 `fetch_expac.py` 抓取。
+- `site/ruffle/`：Ruffle Flash 模擬器（npm @ruffle-rs/ruffle，js+wasm 約 28MB），讓 SWF 頁離線重現；`inject_ruffle.py` 負責把載入標籤注入含 SWF 的鏡像頁。
 
 建置管線（依序）：
 - `build_tools.py`：xlsx → `app/data-tools.js`（簡轉繁、結構化）。只有 xlsx 變了才需要跑。
+- `build_official.py <來源資料夾>`：官方公告 JPG → `site/official/` 壓縮圖 + `app/data-official.js`。來源結構＝三個子資料夾（资料片介绍／官方活动玩法／新功能以及调整），有新公告丟同結構重跑即可（檔名取內容 MD5，重跑不會重複）。
+- `fetch_mission.py`：從原站補抓任務攻略地區頁（藏在下拉選單、爬蟲跟不到的 33 頁）。已抓齊，只在原站更新時才需要重跑。
+- `fetch_expac.py` + `fetch_rollover.py` + `inject_ruffle.py`：鏡像九個資料片官網到 `site/lager/`，補抓藏在 JS 字串裡的 rollover 換圖（MM_swapImage 等，首輪只掃 HTML 屬性會漏），再給含 SWF 的頁面注入 Ruffle。已抓齊，只在原站更新時才需要重跑（三支都可重複執行）。
 - `build_modern.py`：`site/` 原始頁 + `app/` → `site/modern/`。1073 篇文獻清洗重排 + 559 隻幻獸結構化。**改了 `app/` 任何檔都要重跑**（它會把 app/ 複製進 modern/）。
 - `launcher.py` / `launcher_modern.py`：離線瀏覽啟動器，從 exe 內嵌 site.zip 記憶體直服（不落地解壓），127.0.0.1 隨機 port。
 - `make_package.py` / `make_package_modern.py`：組交付包（exe + Big5 使用說明.txt + zip）。
@@ -53,7 +60,12 @@ python make_package_modern.py            # 組交付包（1:1 原版則用 launc
 - `--add-data` 搭配 `--specpath` 時必須用絕對路徑。
 - 原站中文檔名要用 UTF-8 百分比編碼抓（Big5 編碼會 404）。
 - 色板 class（cx-head/band/soft）只掛 td/th（建置時逐格解算 bgcolor），掛 table/tr 會因 color 繼承污染巢狀表格。
-- 錨點：建置把 `<a name>` 轉成 `<span id="anch-*">`，跨頁連結格式 `#/p/<id>@anch-*`；改 clean() 時別把含 id 的空列刪掉。
+- 錨點：建置把 `<a name>` 轉成 `<span id="anch-*">`，跨頁連結格式 `#/p/<id>@anch-*`；改 clean() 時別把含 id 的空列刪掉。中文錨點會被瀏覽器百分比編碼，artView 有 decodeURIComponent。
+- 原站有些頁藏在 `<select onChange>` 下拉選單裡（如任務攻略 32 地區頁），爬蟲只跟 `<a href>` 會漏抓；發現缺頁先查是不是這種。
+- 鏡像 `.php` 檔是 HTML 內容，launcher 要標 `text/html`，否則瀏覽器跳下載框（banner.php 事件）。
+- 原站內容筆誤用 `build_modern.py` 的 `CONTENT_FIXES` 勘誤（不動 site/ 原始位元組）。
 - 審計的對比檢測讀 backgroundColor，純 gradient 背景會誤判成透明——深色區塊要留純色 fallback。
 - 交付包 exe 若在跑會鎖檔，重打前先關掉。
 - PowerShell 5 不支援 `&&`；跨程序用 `;` 串接。
+- launcher 的 MIME 要含 `.shtml`→text/html、`.wasm`→application/wasm、`.swf`→application/x-shockwave-flash，缺了 Ruffle 或資料片鏡像頁會壞（瀏覽器跳下載框）。本地預覽用 `python -m http.server` 沒有 .shtml 對應，驗資料片頁要另起有註冊 MIME 的伺服器。
+- 資料片官網少數中文檔名是 Big5 百分比編碼（如 間距.gif），與主站的 UTF-8 相反；`fetch_expac.py` 兩種都會試。

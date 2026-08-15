@@ -80,7 +80,51 @@ EXCLUDE_PREFIX = (
     "lalala/", "files/files", "files/ad", "files/archie", "2019/my2019",
     "htm/our", "htm/menu", "htm/join", "htm/note", "htm/web",
     "count", "top", "index", "news", "fyboard",
+    "htm/mission/area",  # 舊版框架選單頁，由任務攻略 hub 取代
 )
+
+# 任務攻略地區頁（原站藏在 area.htm 下拉選單，鏡像爬蟲跟不到，另行補抓）
+# (檔名, 地區名, 分組)
+MISSION_REGIONS = [
+    ("rainbow.htm", "彩虹城", "三大城市"),
+    ("bird.htm", "青鳥城", "三大城市"),
+    ("gold-city.htm", "金銀城", "三大城市"),
+    ("gn2.htm", "吉恩村", "村莊聚落"),
+    ("green.htm", "綠夫村", "村莊聚落"),
+    ("move-easy.htm", "伊利村", "村莊聚落"),
+    ("headgear.htm", "紅帽村", "村莊聚落"),
+    ("lettuce.htm", "萵苣村", "村莊聚落"),
+    ("sleep-village.htm", "沉睡村", "村莊聚落"),
+    ("moon.htm", "月光村", "村莊聚落"),
+    ("babe.htm", "貝伯港", "村莊聚落"),
+    ("smile.htm", "微笑森林", "野地湖泊"),
+    ("legume.htm", "碗豆湖", "野地湖泊"),
+    ("swan.htm", "天鵝湖", "野地湖泊"),
+    ("rose.htm", "玫瑰湖", "野地湖泊"),
+    ("candy.htm", "糖果山", "野地湖泊"),
+    ("north.htm", "北綠野", "野地湖泊"),
+    ("west.htm", "西綠野", "野地湖泊"),
+    ("frog.htm", "青蛙沼澤", "野地湖泊"),
+    ("pineapples.htm", "鳳梨山", "野地湖泊"),
+    ("afaird.htm", "害怕峽谷", "野地湖泊"),
+    ("puppet.htm", "木偶山", "野地湖泊"),
+    ("g1h.htm", "金銀湖", "野地湖泊"),
+    ("sea.htm", "史蓋窩克海", "野地湖泊"),
+    ("alice.htm", "愛麗絲夢遊仙境", "資料片世界"),
+    ("88.htm", "天方夜譚", "資料片世界"),
+    ("lul.htm", "綠野仙蹤", "資料片世界"),
+    ("muz.htm", "拇指姑娘", "資料片世界"),
+    ("menuu.htm", "美女與野獸", "資料片世界"),
+    ("toutt.htm", "桃太郎", "資料片世界"),
+    ("canndd.htm", "糖果屋", "資料片世界"),
+    ("1234.htm", "封印石任務", "特別任務"),
+]
+# 進階技能任務（skill.htm 一頁九職業，錨點：劍刀斧格魔祭巫光闇）
+MISSION_SKILL_JOBS = [
+    ("劍", "大劍士"), ("刀", "刀狂"), ("斧", "狂戰士"),
+    ("格", "格鬥師"), ("魔", "魔獸使"), ("祭", "祭師"),
+    ("巫", "巫師"), ("光", "光術師"), ("闇", "闇術師"),
+]
 # 純裝飾圖：以「解析後完整路徑」精準過濾，避免誤殺他目錄同名內容圖
 DECOR_PATHS = {
     # 站根裝飾
@@ -259,11 +303,21 @@ def excluded(p):
     return any(low.startswith(x) for x in EXCLUDE_PREFIX)
 
 
+# 內容勘誤（原站筆誤，套用在解碼後全文；來源見 HANDOFF「使用者回報」）
+CONTENT_FIXES = {
+    # 獸王劈任務：萵苣村迪雷爾座標原站漏一位數（KK/Shadow 回報）
+    "htm/mission/skill.htm": [("(8.16)", "(8.160)")],
+}
+
+
 def read_page(path):
     f = SITE / path
     if not f.exists():
         return None
-    return f.read_bytes().decode("big5", errors="replace")
+    text = f.read_bytes().decode("big5", errors="replace")
+    for old, new in CONTENT_FIXES.get(path, ()):
+        text = text.replace(old, new)
+    return text
 
 
 def page_id(path):
@@ -499,6 +553,13 @@ def collect():
     for ci, (cat, _desc, items) in enumerate(NAV):
         for label, entry in items:
             queue.append((entry, cat, label, True))
+    # 地區任務頁：原站藏在下拉選單裡，這裡直接排入
+    for fn, region, _grp in MISSION_REGIONS:
+        p = f"htm/mission/{fn}"
+        title_hint[p] = f"{region}任務"
+        queue.append((p, "攻略集", None, False))
+    title_hint["htm/mission/skill.htm"] = "進階技能任務"
+    queue.append(("htm/mission/skill.htm", "攻略集", None, False))
     while queue:
         path, cat, label, is_entry = queue.pop(0)
         if path in seen:
@@ -676,9 +737,12 @@ def emit():
     (OUT / "data-monsters.js").write_text(
         "window.__MON=" + json.dumps(monsters, ensure_ascii=False) + ";",
         encoding="utf-8")
-    # App 靜態檔
+    # App 靜態檔（子資料夾如 img/ 一併複製）
     for f in APP.iterdir():
-        shutil.copy2(f, OUT / f.name)
+        if f.is_dir():
+            shutil.copytree(f, OUT / f.name, dirs_exist_ok=True)
+        else:
+            shutil.copy2(f, OUT / f.name)
     # index.html 注入資料檔清單
     idx = (OUT / "index.html").read_text(encoding="utf-8")
     tags = "".join(f'<script src="{fn}"></script>' for fn in files)
@@ -691,7 +755,39 @@ def emit():
         print("  fail:", f, n)
 
 
+def mission_hub_html():
+    """任務攻略總覽 hub：取代原站的框架＋下拉選單。"""
+    groups = {}
+    for fn, region, grp in MISSION_REGIONS:
+        groups.setdefault(grp, []).append((f"htm/mission/{fn}", region))
+    h = ['<div class="qh"><p class="qh-lead">全 32 個地區的一般任務，加上二轉九職業的進階技能任務，'
+         '整理自敗家一族任務攻略。點選地區直達該區任務列表。</p>']
+    for grp, items in groups.items():
+        h.append(f'<div class="qh-group"><h3>{grp}</h3><div class="qh-grid">')
+        for path, region in items:
+            if path in pages:
+                h.append(f'<a class="qh-card" href="#/p/{page_id(path)}">{region}</a>')
+        h.append("</div></div>")
+    if "htm/mission/skill.htm" in pages:
+        sid = page_id("htm/mission/skill.htm")
+        h.append('<div class="qh-group"><h3>進階技能任務（二轉）</h3>'
+                 '<p class="qh-note">每個職業 60 級後可接的進階技能任務，點職業直達流程。</p>'
+                 '<div class="qh-grid">')
+        for anch, job in MISSION_SKILL_JOBS:
+            h.append(f'<a class="qh-card job" href="#/p/{sid}@anch-{anch}">'
+                     f'<b>{job}</b><span>{anch}系</span></a>')
+        h.append(f'<a class="qh-card job all" href="#/p/{sid}">完整一覽</a></div></div>')
+    h.append("</div>")
+    return "".join(h)
+
+
 if __name__ == "__main__":
     collect()
+    # 任務攻略入口改為 hub（原 gn.htm 是「選單框架＋吉恩村」的框架頁）
+    if "htm/mission/gn.htm" in pages:
+        hub = pages["htm/mission/gn.htm"]
+        hub["html"] = mission_hub_html()
+        hub["text"] = "任務攻略總覽 地區任務 進階技能任務 " + " ".join(
+            r for _f, r, _g in MISSION_REGIONS)
     print("collected pages:", len(pages))
     emit()

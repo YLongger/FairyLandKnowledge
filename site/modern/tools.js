@@ -30,7 +30,7 @@
     { id: "loc", t: "技能學習地點", d: "去哪學、去哪做、工會在哪＋職業頭銜", g: "生產製造", ico: "🏠" },
     { id: "family", t: "家族升級指南", d: "二至九級集卡冊與新增功能", g: "江湖百事", ico: "🏯" },
     { id: "playground", t: "遊樂場攻略", d: "六關挑戰規則與全獎品清單", g: "江湖百事", ico: "🎡" },
-    { id: "turnorder", t: "出手順序表", d: "21 檔敏捷系數 全職業技能先後", g: "江湖百事", ico: "⚡" },
+    { id: "turnorder", t: "出手順序表", d: "先手敏捷速查＋21 檔全技能先後", g: "江湖百事", ico: "⚡" },
   ];
   var GROUPS = ["幻獸養成", "尋寶指南", "生產製造", "江湖百事"];
   var byId = {};
@@ -557,9 +557,57 @@
   /* ---------------- 出手順序 ---------------- */
   function turnorderView(view) {
     var id = "turnorder", p = byId.turnorder;
-    view.innerHTML = head(p, "戰鬥出手先後＝技能的敏捷系數 × 角色敏捷。系數越高越先動；同檔比敏捷。（2019-07-10 版）") +
-      searchBox(id, "搜職業或技能，例：僧侶 ／ 冲鋒 ／ 拉拉舞…") + '<div id="tlBody"></div>';
+    var FS = D.firststrike;
+    var s0 = st(id);
+    if (s0.boss === undefined) s0.boss = 0;
+
+    view.innerHTML = head(p, "戰鬥出手先後＝技能的敏捷系數 × 角色敏捷。系數越高越先動；同檔比敏捷。") +
+      searchBox(id, "搜職業或技能，例：地裂閃 ／ 巫師 ／ 拉拉舞…") +
+      '<div id="fsWrap"></div>' +
+      '<h3 class="fs-h3">全技能出手順序（2019-07-10 版）</h3>' +
+      '<p class="fs-note">上表未列的技能（一轉、輔助、幻獸、拉拉舞…）依此表比較先後。</p>' +
+      '<div id="tlBody"></div>';
+
+    function fsRender() {
+      var q = st(id).q.trim();
+      var bi = st(id).boss;
+      var h = '<div class="fs-head"><div><h3>先手敏捷速查</h3>' +
+        '<p>選一個 BOSS 戰場，看每招在<b>使用黑暗儀式後</b>要多少敏捷才能先出手。</p></div>' +
+        '<span class="fs-src">' + esc(FS.src) + "</span></div>";
+      h += '<div class="fs-bosses">' + FS.bosses.map(function (b, i) {
+        return '<button class="fs-boss' + (i === bi ? " on" : "") + '" data-b="' + i + '">' + esc(b) + "</button>";
+      }).join("") + "</div>";
+      h += '<div class="fs-grid">';
+      FS.jobs.forEach(function (jb) {
+        var list = q ? jb.s.filter(function (s) {
+          return s.n.indexOf(q) >= 0 || jb.j.indexOf(q) >= 0;
+        }) : jb.s;
+        if (!list.length) return;
+        h += '<div class="fs-job"><h4>' + esc(jb.j) + "</h4>";
+        list.forEach(function (s) {
+          h += '<div class="fs-skill"><img src="img/strike/s' +
+            (s.i < 10 ? "0" + s.i : s.i) + '.png" alt="" loading="lazy">' +
+            '<div class="fs-sk-txt"><b>' + esc(s.n) + "</b>" +
+            "<i>第 " + s.o + " 檔・係數 " + esc(s.k) + "</i></div>" +
+            '<div class="fs-req"><b>' + s.v[bi] + "</b><i>敏捷</i></div></div>";
+        });
+        h += "</div>";
+      });
+      h += "</div>";
+      h += '<p class="fs-note">同一檔（同係數）需求相同；未用黑暗儀式時 BOSS 更快，需求會更高。' +
+        "數字＝比「" + esc(FS.bosses[bi]) + "」先動的最低敏捷。</p>";
+      var w = document.getElementById("fsWrap");
+      w.innerHTML = h;
+      w.querySelectorAll(".fs-boss").forEach(function (b) {
+        b.onclick = function () {
+          st(id).boss = +this.getAttribute("data-b");
+          fsRender();
+        };
+      });
+    }
+
     function rerender() {
+      fsRender();
       var q = st(id).q.trim();
       var h2 = "";
       D.turnorder.forEach(function (t2) {

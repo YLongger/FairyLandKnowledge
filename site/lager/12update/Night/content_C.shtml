@@ -1,0 +1,803 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>童話一千零一夜官方網站-新區域介紹</title>
+<meta http-equiv="Content-Type" content="text/html; charset=big5">
+<style type="text/css">
+<!--
+body,td,th {
+	font-size: 13px;
+	line-height: 130%;
+	color: #81551D;
+}
+.service {
+	font-size: 12px;
+	color: #666666;
+	line-height: 150%;
+}
+body {
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+	background-image: url(images/BG.gif);
+}
+a:link {
+	color: #FF9966;
+	text-decoration: none;
+}
+a:visited {
+	color: #BD7D63;
+	text-decoration: none;
+}
+a:hover {
+	color: #FFC5A6;
+	text-decoration: underline;
+}
+a:active {
+	text-decoration: none;
+}
+.style1 {
+	font-size: 11px;
+	color: #666666;
+}
+-->
+</style>
+
+<script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_openBrWindow(theURL,winName,features) { //v2.0
+  window.open(theURL,winName,features);
+}
+//-->
+</script>
+</head>
+<body onLoad="MM_preloadImages('images/titleBar_over_15.gif','images/titleBar_over_16.gif','images/titleBar_over_17.gif','images/mainBar_over_05.gif','images/mainBar_over_09.gif','images/mainBar_over_13.gif','images/mainBar_over_16.gif','images/mainBar_over_21.gif','images/mainBar_over_25.gif','images/mainBar_over_27.gif')">
+<table border="0" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+  <tr>
+    <td colspan="2" valign="top"><script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script>
+<body onLoad="MM_preloadImages('images/titleBar_over_15.gif','images/titleBar_over_16.gif','images/titleBar_over_17.gif')">
+<table id="Table_01" width="770" height="152" border="0" cellpadding="0" cellspacing="0" onLoad="MM_preloadImages('images/titleBar_over_15.gif','images/titleBar_over_16.gif','images/titleBar_over_17.gif')">
+	<tr>
+		<td colspan="2">
+			<img src="images/titleBar_01.jpg" width="154" height="48" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_02.jpg" width="154" height="48" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_03.jpg" width="154" height="48" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_04.jpg" width="154" height="48" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_05.jpg" width="154" height="48" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/titleBar_06.jpg" width="154" height="47" alt=""></td>
+		<td colspan="2">
+			<img src="./images/titleBar_07.jpg" width="154" height="47" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_08.jpg" width="154" height="47" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_09.jpg" width="154" height="47" alt=""></td>
+		<td colspan="3">
+			<img src="images/titleBar_10.jpg" width="154" height="47" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/titleBar_11.jpg" width="112" height="56" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_12.jpg" width="113" height="56" alt=""></td>
+		<td colspan="2">
+			<img src="images/titleBar_13.jpg" width="112" height="56" alt=""></td>
+		<td>
+			<img src="images/titleBar_14.jpg" width="112" height="56" alt=""></td>
+		<td colspan="2">
+			<a href="/lager/05download/download.htm" target="_blank" onMouseOver="MM_swapImage('Image30','','images/titleBar_over_15.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/titleBar_15.jpg" name="Image30" width="102" height="56" border="0"></a></td>
+		<td colspan="2">
+			<a href="index.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image31','','images/titleBar_over_16.gif',1)"><img src="images/titleBar_16.jpg" name="Image31" width="121" height="56" border="0"></a></td>
+		<td>
+			<a href="http://fairyland.lager.com.tw" target="_blank" onMouseOver="MM_swapImage('Image32','','images/titleBar_over_17.gif',1)" onMouseOut="MM_swapImgRestore()"><img src="images/titleBar_17.jpg" name="Image32" width="92" height="56" border="0"></a></td>
+		<td>
+			<img src="images/titleBar_18.jpg" width="6" height="56" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="112" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="42" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="71" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="83" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="29" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="112" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="13" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="89" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="65" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="56" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="92" height="1" alt=""></td>
+	  <td>
+	  <img src="images/spacer.gif" width="6" height="1" alt=""></td>
+	</tr>
+</table>
+</td>
+  </tr>
+  <tr>
+    <td width="186" valign="top"><script language="JavaScript" type="text/JavaScript">
+<!--
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+//-->
+</script><body onLoad="MM_preloadImages('images/mainBar_over_05.gif','images/mainBar_over_09.gif','images/mainBar_over_13.gif','images/mainBar_over_16.gif','images/mainBar_over_21.gif','images/mainBar_over_25.gif','images/mainBar_over_27.gif')">
+<table id="Table_01" width="171" height="330" border="0" cellpadding="0" cellspacing="0" onLoad="MM_preloadImages('images/mainBar_over_05.gif','images/mainBar_over_09.gif','images/mainBar_over_13.gif','images/mainBar_over_16.gif','images/mainBar_over_21.gif','images/mainBar_over_25.gif','images/mainBar_over_27.gif')">
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_01.jpg" width="85" height="44" alt=""></td>
+		<td colspan="4">
+			<img src="images/mainBar_02.jpg" width="85" height="44" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="44" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="4">
+			<img src="images/mainBar_03.jpg" width="40" height="53" alt=""></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/mainBar_04.jpg" width="11" height="27" alt=""></td>
+		<td colspan="2" bgcolor="#FFEFB5">
+			<a href="content_A.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image58','','images/mainBar_over_05.gif',1)"><img src="images/mainBar_05.jpg" name="Image58" width="80" height="22" border="0"></a></td>
+		<td colspan="2" rowspan="2">
+			<img src="images/mainBar_06.jpg" width="10" height="27" alt=""></td>
+		<td rowspan="4">
+			<img src="images/mainBar_07.jpg" width="29" height="53" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+			<img src="images/mainBar_08.jpg" width="80" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" bgcolor="#EFDBA5">
+			<a href="content_B.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image59','','images/mainBar_over_09.gif',1)"><img src="images/mainBar_09.jpg" name="Image59" width="101" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" rowspan="2">
+			<img src="images/mainBar_10.jpg" width="101" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="4" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="5">
+			<img src="images/mainBar_11.jpg" width="40" height="53" alt=""></td>
+		<td rowspan="5">
+			<img src="images/mainBar_12.jpg" width="29" height="53" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="1" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6" bgcolor="#EFDBA5">
+			<a href="content_C.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image60','','images/mainBar_over_13.gif',1)"><img src="images/mainBar_13.jpg" name="Image60" width="101" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="6">
+			<img src="images/mainBar_14.jpg" width="101" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="9">
+			<img src="images/mainBar_15.jpg" width="8" height="130" alt=""></td>
+		<td colspan="4" bgcolor="#EFDBA5">
+			<a href="content_D.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image61','','images/mainBar_over_16.gif',1)"><img src="images/mainBar_16.jpg" name="Image61" width="85" height="22" border="0"></a></td>
+		<td rowspan="9">
+			<img src="images/mainBar_17.jpg" width="8" height="130" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" rowspan="2">
+			<img src="images/mainBar_18.jpg" width="85" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="3" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="3">
+			<img src="images/mainBar_19.jpg" width="40" height="52" alt=""></td>
+		<td rowspan="3">
+			<img src="images/mainBar_20.jpg" width="29" height="52" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="2" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#EFDBA5">
+			<a href="content_E.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image62','','images/mainBar_over_21.gif',1)"><img src="images/mainBar_21.jpg" name="Image62" width="85" height="40" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="40" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" rowspan="2">
+			<img src="images/mainBar_22.jpg" width="85" height="14" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="10" alt=""></td>
+	</tr>
+	<tr>
+		<td rowspan="4">
+			<img src="images/mainBar_23.jpg" width="40" height="53" alt=""></td>
+		<td rowspan="4">
+			<img src="images/mainBar_24.jpg" width="29" height="53" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="4" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#EFDBA5">
+			<a href="content_F.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image63','','images/mainBar_over_25.gif',1)"><img src="images/mainBar_25.jpg" name="Image63" width="85" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_26.jpg" width="85" height="5" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="5" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4" bgcolor="#F7E3AD">
+			<a href="content_G.shtml" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Image64','','images/mainBar_over_27.gif',1)"><img src="images/mainBar_27.jpg" name="Image64" width="85" height="22" border="0"></a></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="22" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_28.jpg" width="85" height="37" alt=""></td>
+		<td colspan="4">
+			<img src="images/mainBar_29.jpg" width="85" height="37" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="37" alt=""></td>
+	</tr>
+	<tr>
+		<td colspan="4">
+			<img src="images/mainBar_30.jpg" width="85" height="37" alt=""></td>
+		<td colspan="4">
+			<img src="images/mainBar_31.jpg" width="85" height="37" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="1" height="37" alt=""></td>
+	</tr>
+	<tr>
+		<td>
+			<img src="images/spacer.gif" width="40" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="8" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="3" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="34" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="46" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="2" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="8" height="1" alt=""></td>
+		<td>
+			<img src="images/spacer.gif" width="29" height="1" alt=""></td>
+		<td></td>
+	</tr>
+</table></td>
+    <td width="586" align="center" valign="top" background="images/content_C/content_C_BG.jpg"><table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="20">&nbsp;</td>
+      </tr>
+    </table>
+    <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <td height="80" valign="top"><img src="images/content_C/content_C_03.jpg" width="577" height="71"></td>
+      </tr>
+    </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr align="center">
+          <td valign="bottom"><img src="images/content_C/allMap.jpg" width="566" height="309" border="0" usemap="#Map"></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="60" align="center" valign="bottom"><img src="images/content_C/content_C_10.jpg" width="145" height="21"></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="20" align="center" valign="top"><img src="images/content_A/content_A_07.jpg" width="554" height="11"></td>
+        </tr>
+      </table>      
+      <table width="100%" height="170"  border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="35%" rowspan="2" valign="top"><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap01.jpg','','resizable=yes,width=800,height=600')"><img src="images/content_C/map01.jpg" width="163" height="146" border="0"></a></td>
+          <td width="74%" height="30" valign="top"><a name="01"></a></td>
+        </tr>
+        <tr>
+          <td height="180" valign="top"><div align="justify">這裡是一千零一夜資料片中最主要的城市，不但城市機能完整，該有的商店、醫院、家族管理員、銀行、各種店舖都應有盡有，能夠與三大城媲美，這大城地理位置也是在所有新開放地圖的最中心，佔有交通樞紐的地位，是串起所有區域的機要重鎮！美術風格上，這裡採用了童話之前沒有出現過的的新地上物─帳篷。<br>
+          是的，為了配合阿拉伯當地的民俗風情，一千零一夜所有區域的民宅或商店，幾乎都是帳篷的形式。其中挾著一些椰子樹，實在是讓你有置身中東的錯覺呢！</div></td>
+        </tr>
+      </table>
+      <table width="100%" height="180"  border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="35%" rowspan="2" valign="top"><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap02.jpg','','resizable=yes')"><img src="images/content_C/map02.jpg" width="163" height="89" border="0"></a>
+            <table width="158"  border="0" cellpadding="0" cellspacing="5">
+              <tr align="left">
+                <td colspan="4"><strong>區域產物</strong></td>
+              </tr>
+              <tr align="left" bgcolor="#ECD2CC">
+                <td height="1" colspan="4"></td>
+              </tr>
+              <tr align="left">
+                <td width="17"><img src="images/content_C/icon_d.gif" width="17" height="17"></td>
+                <td width="80" class="style1">鱸魚</td>
+                <td width="12"><img src="images/content_C/icon_d.gif" width="17" height="17"></td>
+                <td width="79" class="style1">鰻魚</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_d.gif" width="17" height="17"></td>
+                <td class="style1">黃魚</td>
+                <td><img src="images/content_C/icon_d.gif" width="17" height="17"></td>
+                <td class="style1">鱉</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_d.gif" width="17" height="17"></td>
+                <td class="style1">黃鱔</td>
+                <td><img src="images/content_C/icon_d.gif" width="17" height="17"></td>
+                <td class="style1">草蝦</td>
+              </tr>
+            </table></td>
+          <td width="74%" height="30" valign="top"><a name="02"></a></td>
+        </tr>
+        <tr>
+          <td height="190" valign="top"><div align="justify">緊鄰著巴格達城市的南邊，巴斯拉港是巴格達對外聯絡的門戶，所有的商人旅人都要從這港口進入巴格達城呢！講到港口，聰明的玩家有沒有想到童話中的另一個港口呢？答對了！就是人魚傳說資料片推出的貝伯港，是的是的！港口跟港口之間當然有船可以互相聯絡囉！沒錯啦～兩個港口都有定期航行在貝伯港與巴斯拉港之間的商船，要進入一千零一夜資料片最主要的關鍵點，就是要從貝伯港找船長搭船，請他送你到巴斯拉港囉！除了往來舊區域之外，巴斯拉港還有別的航線可以送你去一些適合冒險的小島。</div></td>
+        </tr>
+      </table>
+      <table width="100%" height="220"  border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="35%" rowspan="2" valign="top"><a name="03"><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap03.jpg','','resizable=yes')"><img src="images/content_C/map03.jpg" width="163" height="202" border="0"></a>
+            <table width="158"  border="0" cellpadding="0" cellspacing="5">
+              <tr align="left">
+                <td colspan="4"><strong>區域產物</strong></td>
+              </tr>
+              <tr align="left" bgcolor="#ECD2CC">
+                <td height="1" colspan="4"></td>
+              </tr>
+              <tr align="left">
+                <td width="17"><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+                <td width="80" class="style1">仙人掌</td>
+                <td width="12"><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+                <td width="79" class="style1">金猴毛</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+                <td class="style1">露珠兒</td>
+                <td><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+                <td class="style1">還魂草</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+                <td class="style1">象牙</td>
+                <td>&nbsp;</td>
+                <td class="style1">&nbsp;</td>
+              </tr>
+            </table></td>
+          <td width="74%" height="30" valign="top"><a name="03"></a></td>
+        </tr>
+        <tr>
+          <td height="300" valign="top"><div align="justify">在巴格達城跟甘泉村之間，是一片荒涼的以利暗沙漠。你可別小看這座看似貧瘠的沙漠喔，他可是暗藏玄機呢！除了東接巴格達城、西接甘泉村之外，以利暗沙漠的北邊可以到達試煉洞窟，總共有地下一層跟第下二層，這地區聽名字就很狠 &gt;”&lt;，看來應該是個練功的好地方！往南走的話呢，所到的地方就更偉大了，在以利暗地圖的最右下角，有一個鑲在山壁裡的門，硬要走過去，是行不通的，在仔細檢查一下，原來就是鼎鼎大名的阿里巴巴的「芝麻開門」呢！所以照理說，通過這扇門就是四十大盜的洞穴囉！嗯～這洞穴深入地下三層，應該是有不少寶箱裝著金銀財寶等著我們才對，看來絕對是個一定要去的好地方呢！</div></td>
+        </tr>
+      </table>
+      <table width="100%" height="150"  border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="35%" rowspan="2" valign="top"><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap04.jpg','','resizable=yes')"><img src="images/content_C/map04.jpg" width="163" height="97" border="0"></a>
+            <table width="158"  border="0" cellpadding="0" cellspacing="5">
+              <tr align="left">
+                <td colspan="4"><strong>區域產物</strong></td>
+              </tr>
+              <tr align="left" bgcolor="#ECD2CC">
+                <td height="1" colspan="4"></td>
+              </tr>
+              <tr align="left">
+                <td width="17"><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+                <td width="80" class="style1">煤</td>
+                <td width="12"><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+                <td width="79" class="style1">銅礦石</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+                <td class="style1">鐵礦石</td>
+                <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+                <td class="style1">銀礦石</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+                <td class="style1">金剛砂</td>
+                <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+                <td class="style1">青銅礦</td>
+              </tr>
+            </table></td>
+          <td width="74%" height="30" valign="top"><a name="04"></a></td>
+        </tr>
+        <tr>
+          <td height="210" valign="top"><div align="justify">在巴格達城北邊的卡拉斯山區，外表看起來是個寸草不生的山區，不過呢，這裡有一個地方你一定很有興趣，那就是「神燈古墓」。沒錯！這個神燈就是阿拉丁的神燈，就是那個磨擦一下會有精靈從裡面冒出來的神燈！這座刻有神燈圖樣的門就是神燈古墓的入口，古墓共分為三層，看起來也是個練功打怪打寶的好地方，請玩家們好好利用吧！</div></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="40" align="center" valign="bottom"><img src="images/content_C/content_C_22.jpg" width="128" height="22"></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="20" align="center" valign="top"><img src="images/content_A/content_A_07.jpg" width="554" height="11"></td>
+        </tr>
+      </table>
+      <table width="100%" height="276"  border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="35%" rowspan="2" valign="top"><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap05.jpg','','resizable=yes')"><img src="images/content_C/map05.jpg" width="163" height="145" border="0"></a>          </td>
+          <td width="74%" height="30" valign="top"><a name="05"></a></td>
+        </tr>
+        <tr>
+          <td height="120"><div align="justify">甘泉村在以利暗沙漠的西方，這是個純樸的小村落，依傍著綠洲畜牧，居民偶爾做些小買賣維生，在這樣的地區裡，會隱藏著什麼樣的寶物讓玩家來發掘呢？
+          </div></td>
+        </tr>
+        <tr align="center">
+          <td height="120" colspan="2" valign="top"><table width="520"  border="0" cellpadding="0" cellspacing="5">
+            <tr align="left">
+              <td colspan="10"><strong>區域產物</strong></td>
+            </tr>
+            <tr align="left" bgcolor="#ECD2CC">
+              <td height="1" colspan="10"></td>
+            </tr>
+            <tr align="left">
+              <td width="17"><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+              <td width="42" class="style1">銅礦石</td>
+              <td width="17"><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+              <td width="54" class="style1">金沙</td>
+              <td width="17" class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td width="35" class="style1"> 雞肉 </td>
+              <td width="17" class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td width="34" class="style1"> 羊皮 </td>
+              <td width="17" class="style1"><img src="images/content_C/icon_d.gif" width="17" height="17"></td>
+              <td width="215" class="style1"> 電鰻 </td>
+            </tr>
+            <tr align="left">
+              <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+              <td class="style1">青銅礦</td>
+              <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+              <td class="style1">白金礦石</td>
+              <td class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td class="style1"> 羊肉 </td>
+              <td class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td class="style1"> 牛皮 </td>
+              <td class="style1">&nbsp;</td>
+              <td class="style1">&nbsp;</td>
+            </tr>
+            <tr align="left">
+              <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+              <td class="style1">鈦礦石</td>
+              <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+              <td class="style1">鎢礦石</td>
+              <td class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td class="style1"> 牛肉 </td>
+              <td class="style1"><img src="images/content_C/icon_d.gif" width="17" height="17"></td>
+              <td class="style1"> 鱉 </td>
+              <td class="style1">&nbsp;</td>
+              <td class="style1">&nbsp;</td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+      <table width="100%" height="340"  border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="35%" rowspan="2" valign="top"><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap06.jpg','','resizable=yes')"><img src="images/content_C/map06.jpg" width="163" height="221" border="0"></a>
+          </td>
+          <td width="74%" height="30" valign="top"><a name="06"></a></td>
+        </tr>
+        <tr>
+          <td height="200"><div align="justify">這裡往西可以通到巴格達城，往北則接西里亞高原，迦蘭谷地裡長滿了好多好多的椰子樹，椰子樹是這次一千零一夜新增加的樹種，以前看不到的喔！這個谷地其實還暗藏了一個地下洞穴－冥界洞窟，這又是另一個提供練功的好地方囉！因為一千零一夜的故事多為冒險故事，所以特別設計了很多個可以讓玩家冒險的迷宮，讓大家體驗一下在異國冒險的刺激感！
+          </div></td>
+        </tr>
+        <tr align="center">
+          <td height="140" colspan="2" valign="top"><table width="520"  border="0" cellpadding="0" cellspacing="5">
+            <tr align="left">
+              <td colspan="16"><strong>區域產物</strong></td>
+            </tr>
+            <tr align="left" bgcolor="#ECD2CC">
+              <td height="1" colspan="16"></td>
+            </tr>
+            <tr align="left">
+              <td width="17"><img src="images/content_C/icon_f.gif" width="17" height="17"></td>
+              <td width="34" class="style1">蘋果</td>
+              <td width="17"><img src="images/content_C/icon_h.gif" width="17" height="17"></td>
+              <td width="34" class="style1">羊絨</td>
+              <td width="17" class="style1"><img src="images/content_C/icon_e.gif" width="17" height="17"></td>
+              <td width="37" class="style1"> 鮮花 </td>
+              <td width="17" class="style1"><img src="images/content_C/icon_g.gif" width="17" height="17"> </td>
+              <td width="42" class="style1">紫杉</td>
+              <td width="17" class="style1"><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+              <td width="42" class="style1"> 無根蓮 </td>
+              <td width="17" class="style1"><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+              <td width="58" class="style1"> 蔓陀羅根 </td>
+              <td width="17" class="style1"><img src="images/content_C/icon_a.gif" width="17" height="17"> </td>
+              <td width="45" class="style1"> 碧幽果 </td>
+              <td width="17" class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td width="36" class="style1"> 羊皮 </td>
+            </tr>
+            <tr align="left">
+              <td><img src="images/content_C/icon_f.gif" width="17" height="17"></td>
+              <td class="style1">葡萄</td>
+              <td><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td class="style1">羊毛</td>
+              <td class="style1"><img src="images/content_C/icon_g.gif" width="17" height="17"></td>
+              <td class="style1"> 柚木 </td>
+              <td class="style1"><img src="images/content_C/icon_g.gif" width="17" height="17"></td>
+              <td class="style1"> 黑檀木 </td>
+              <td class="style1"><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+              <td class="style1"> 續斷 </td>
+              <td class="style1"><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+              <td class="style1"> 露珠兒 </td>
+              <td class="style1"><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+              <td class="style1"> 通天草 </td>
+              <td class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td class="style1"> 牛肉 </td>
+            </tr>
+            <tr align="left">
+              <td><img src="images/content_C/icon_f.gif" width="17" height="17"></td>
+              <td class="style1">桃子</td>
+              <td><img src="images/content_C/icon_e.gif" width="17" height="17"></td>
+              <td class="style1">蠶繭</td>
+              <td class="style1"><img src="images/content_C/icon_g.gif" width="17" height="17"></td>
+              <td class="style1"> 紅檜 </td>
+              <td class="style1"><img src="images/content_C/icon_g.gif" width="17" height="17"></td>
+              <td class="style1"> 紅豆杉 </td>
+              <td class="style1"><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+              <td class="style1"> 蜂蜜 </td>
+              <td class="style1"><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+              <td class="style1"> 還魂草 </td>
+              <td class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td class="style1"> 羊肉 </td>
+              <td class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+              <td class="style1"> 牛皮 </td>
+            </tr>
+          </table></td>
+        </tr>
+      </table>
+      <table width="100%" height="299"  border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="35%" rowspan="2" valign="top"><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap07.jpg','','resizable=yes')"><img src="images/content_C/map07.jpg" width="163" height="184" border="0"></a>          </td>
+          <td width="74%" height="30" valign="top"><a name="07"></a></td>
+        </tr>
+        <tr>
+          <td height="160"><div align="justify">從巴格達的西北方走出來，就可以通到西里亞高原。在這高原的又上方，有一個特別的石柱，看起來好像有點別的用處，長的很像三大城市的傳送石柱，可是點下去又沒什麼動靜，嗯～值得思考一下喔！這裡先賣個關子，讓玩家自己去發掘吧！
+          </div></td>
+        </tr>
+        <tr align="center">
+          <td height="100" colspan="2" valign="top">
+<table width="520"  border="0" cellpadding="0" cellspacing="5">
+              <tr align="left">
+                <td colspan="10"><strong>區域產物</strong></td>
+              </tr>
+              <tr align="left" bgcolor="#ECD2CC">
+                <td height="1" colspan="10"></td>
+              </tr>
+              <tr align="left">
+                <td width="17"><img src="images/content_C/icon_e.gif" width="17" height="17"></td>
+                <td width="29" class="style1"> 小麥 </td>
+                <td width="17"><img src="images/content_C/icon_e.gif" width="17" height="17"></td>
+                <td width="29" class="style1">棉花 </td>
+                <td width="17" class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td width="33" class="style1"> 虎皮 </td>
+                <td width="17" class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td width="97" class="style1">犀牛皮</td>
+                <td width="13" class="style1">&nbsp;</td>
+                <td width="196" class="style1">&nbsp;</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_e.gif" width="17" height="17"></td>
+                <td class="style1"> 亞麻 </td>
+                <td><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td class="style1"> 象牙 </td>
+                <td class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td class="style1"> 犀角 </td>
+                <td class="style1"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td class="style1">鱷魚皮</td>
+                <td class="style1">&nbsp;</td>
+                <td class="style1">&nbsp;</td>
+              </tr>
+          </table></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="40" align="center" valign="bottom"><img src="images/content_C/content_C_32.jpg" width="96" height="21"></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="20" align="center" valign="top"><img src="images/content_A/content_A_07.jpg" width="554" height="11"></td>
+        </tr>
+      </table>
+      <table width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <tr align="center" valign="top">
+          <td height="350" align="right"><a name="08"></a><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap08.jpg','','resizable=yes')"><img src="images/content_C/map08.jpg" width="156" height="185" border="0"></a>
+            <table width="158"  border="0" cellpadding="0" cellspacing="5">
+              <tr align="left">
+                <td colspan="4"><strong>區域產物</strong></td>
+              </tr>
+              <tr align="left" bgcolor="#ECD2CC">
+                <td height="1" colspan="4"></td>
+              </tr>
+              <tr align="left">
+                <td width="17"><img src="images/content_C/icon_g.gif" width="17" height="17"></td>
+                <td width="80" class="style1"> 紅豆杉</td>
+                <td width="12"><img src="images/content_C/icon_g.gif" width="17" height="17"></td>
+                <td width="79" class="style1"> 彩虹木</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_g.gif" width="17" height="17"></td>
+                <td class="style1"> 晶石木</td>
+                <td><img src="images/content_C/icon_g.gif" width="17" height="17"></td>
+                <td class="style1"> 天杉</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+                <td class="style1"> 百合</td>
+                <td><img src="images/content_C/icon_a.gif" width="17" height="17"></td>
+                <td class="style1"> 紫菜</td>
+              </tr>
+            </table></td>
+          <td><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap09.jpg','','resizable=yes')"><img src="images/content_C/map09.jpg" width="154" height="185" border="0"></a>
+            <table width="158"  border="0" cellpadding="0" cellspacing="5">
+              <tr align="left">
+                <td colspan="4"><strong>區域產物</strong></td>
+              </tr>
+              <tr align="left" bgcolor="#ECD2CC">
+                <td height="1" colspan="4"></td>
+              </tr>
+              <tr align="left">
+                <td width="17"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td width="80" class="style1"> 龍鱗</td>
+                <td width="12"><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td width="79" class="style1"> 龍涎</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td class="style1"> 龍鬚</td>
+                <td><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td class="style1"> 龍牙</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td valign="top" class="style1"> 虎皮</td>
+                <td><img src="images/content_C/icon_b.gif" width="17" height="17"></td>
+                <td valign="top" class="style1"> 犀角</td>
+              </tr>
+              <tr align="left">
+                <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+                <td class="style1">米拉茲礦石 </td>
+                <td><img src="images/content_C/icon_c.gif" width="17" height="17"></td>
+                <td class="style1">諾亞礦石 </td>
+              </tr>
+            </table></td>
+          <td align="left"><a href="#" onClick="MM_openBrWindow('images/content_C/map/Bmap10.jpg','','resizable=yes')"><img src="images/content_C/map10.jpg" width="154" height="185" border="0"></a></td>
+        </tr>
+      </table>
+      <table width="85%"  border="0" cellspacing="0" cellpadding="0">
+        <tr>
+          <td height="180" align="center" valign="top"><div align="justify">從貝伯港出發的商船們，除了會抵達巴斯拉大港之外，中途還會停靠摩摩島跟哈辛島，這兩個島小雖小，建築物少人也少，不過啊，他們分別是大盜巢穴跟冥界洞窟的出口處呢，從這兩個洞穴出來後，都可以在港口搭船回到巴斯拉港或貝伯港，是不是很方便呢！<br>
+          另外，禿禿島雖然不是什麼有名地底洞穴的出入口，坐船也只可以到巴斯拉港，不能通貝伯港，不過這個島有另外一個更重要的任務呢！</div></td>
+        </tr>
+    </table></td>
+  </tr>
+  <tr align="right">
+    <td colspan="2"><table border="0" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><img src="images/underBar_01.jpg" width="600" height="16"></td>
+  </tr>
+  <tr>
+    <td height="60" align="center" valign="bottom"><img src="images/underBar_04.jpg" width="274" height="47"></td>
+  </tr>
+  <tr>
+    <td height="80" align="center" valign="top"><span class="service">客服專線:(02)2925-9455 &nbsp;&nbsp;傳真專線:(02)2925-5345<br>
+
+客服信箱:<a href="mailto:fo@lager.com.tw">fo@lager.com.tw</a></span></td>
+  </tr>
+</table>
+
+</td>
+  </tr>
+</table>
+<map name="Map">
+  <area shape="poly" coords="319,140,328,107" href="#">
+  <area shape="poly" coords="324,85,330,64,298,64,252,67,241,77,224,104,229,133,263,152,313,148,319,141,328,107" href="#01">
+  <area shape="poly" coords="268,147" href="#">
+  <area shape="poly" coords="279,122" href="#">
+  <area shape="poly" coords="267,113" href="#">
+  <area shape="poly" coords="274,207" href="#">
+  <area shape="poly" coords="310,207,333,194,334,176,310,169,277,166,256,163,234,162,224,166,234,177,231,189,241,200,259,207" href="#02">
+  <area shape="poly" coords="412,173" href="#">
+  <area shape="poly" coords="440,139,439,97,415,59,370,61,349,80,348,108,345,131,350,150,371,170,404,172,426,169,440,155" href="#03">
+  <area shape="poly" coords="181,65" href="#">
+  <area shape="poly" coords="214,63,237,58,245,40,238,33,237,25,216,21,187,23,168,24,152,27,144,40,147,53,160,62" href="#04">
+  <area shape="poly" coords="412,260" href="#">
+  <area shape="poly" coords="434,251,436,240,436,229,444,211,449,205,450,193,433,189,415,192,404,194,394,197,390,210,385,226,383,243,389,254,401,260,418,257" href="#08">
+  <area shape="poly" coords="303,295,323,289" href="#">
+  <area shape="poly" coords="314,281" href="#">
+  <area shape="poly" coords="315,293,333,284,344,273,350,255,350,238,329,235,308,233,298,228,287,239,288,253,287,269,289,281,291,291,314,292" href="#08">
+  <area shape="poly" coords="173,292" href="#">
+  <area shape="poly" coords="189,299,206,293,209,274,209,259,204,247,194,235,179,238,161,246,146,256,146,268,142,277,146,286,155,292,170,300" href="#08">
+  <area shape="poly" coords="485,119" href="#">
+  <area shape="poly" coords="509,120,533,117,551,105,546,91,544,80,542,69,539,62,518,62,502,63,491,65,476,73,464,87,464,99,474,110,486,117" href="#05">
+  <area shape="poly" coords="167,216" href="#">
+  <area shape="poly" coords="186,221,206,215,209,199,193,178,186,158,193,151,191,136,183,130,183,113,187,101,169,99,145,102,133,110,125,120,128,133,131,146,137,162,140,176,145,188,147,200,155,210,167,219" href="#06">
+  <area shape="poly" coords="75,110" href="#">
+  <area shape="poly" coords="99,107,114,89,114,67,107,43,98,24,83,17,68,18,52,19,32,16,16,22,14,37,11,51,8,67,9,82,16,95,30,108,50,113" href="#07">
+</map>
+</body>
+<script language=JavaScript>
+if(document.all){
+var tags=document.all.tags("a")
+for (var i=0;i<tags.length;i++)
+tags(i).outerHTML=tags(i).outerHTML.replace(">"," hidefocus=true>")}
+</script>
+</html>

@@ -39,8 +39,15 @@
         h += '<a class="nav-item" data-r="#/p/' + it.id + '" href="#/p/' + it.id + '">' + esc(it.t) + "</a>";
       });
     });
+    if (window.OfficialUI && OfficialUI.groups.length) {
+      h += '<div class="nav-cat"><span class="num">卷' + (CN[META.nav.length] || "伍") + "</span>官方誌</div>";
+      h += '<a class="nav-item special" data-r="#/o" href="#/o">📜 官方誌總覽</a>';
+      OfficialUI.groups.forEach(function (g) {
+        h += '<a class="nav-item" data-r="#/o/' + g.id + '" href="#/o/' + g.id + '">' + esc(g.name) + "</a>";
+      });
+    }
     if (window.ToolsUI) {
-      h += '<div class="nav-cat"><span class="num">卷' + (CN[META.nav.length] || "末") + "</span>數據寶典</div>";
+      h += '<div class="nav-cat"><span class="num">卷' + (CN[META.nav.length + (window.OfficialUI ? 1 : 0)] || "陸") + "</span>數據寶典</div>";
       h += '<a class="nav-item special" data-r="#/g" href="#/g">📖 寶典總覽</a>';
       ToolsUI.pages.forEach(function (p) {
         h += '<a class="nav-item" data-r="#/g/' + p.id + '" href="#/g/' + p.id + '">' + esc(p.t) + "</a>";
@@ -115,6 +122,13 @@
       });
       h += "</div></div>";
     }
+    if (window.OfficialUI && OfficialUI.groups.length) {
+      h += '<div class="home-sec"><div class="sec-head"><h2>官方誌</h2><span class="en">公告・活動・資料片</span></div><div class="home-of">';
+      OfficialUI.groups.forEach(function (g) {
+        h += '<a href="#/o/' + g.id + '"><b>' + esc(g.name) + "</b><span>" + g.items.length + " 篇官方公告</span></a>";
+      });
+      h += "</div></div>";
+    }
     if (window.MemoryUI) {
       h += '<div class="home-sec"><a class="home-mem" href="#/y"><span class="hm-bg"></span><span class="hm-body">' +
         '<span class="hm-kicker">FAIRYLAND MOMENTS · 2026.08.13</span>' +
@@ -139,6 +153,7 @@
     var frag = "";
     var at = id.indexOf("@");
     if (at > 0) { frag = id.slice(at + 1); id = id.slice(0, at); }
+    try { frag = decodeURIComponent(frag); } catch (e) { /* 保持原樣 */ }
     var a = byId[id];
     if (!a) { view.innerHTML = '<div class="art-head"><h1>找不到這一頁</h1></div><p>這份文獻不在典藏中，可能是原站已失效的頁面。</p>'; return; }
     view.innerHTML = '<div class="art-head"><div class="art-cat">' + esc(a.c) + "</div><h1>" + esc(a.t) + "</h1></div>" +
@@ -616,6 +631,21 @@
       : "<b>數據寶典</b>";
     window.scrollTo(0, 0);
   }
+  /* ---------------- 官方誌 ---------------- */
+  function offView(gid) {
+    if (!window.OfficialUI) { homeView(); return; }
+    if (gid) {
+      OfficialUI.group(view, gid);
+      var g = null;
+      OfficialUI.groups.forEach(function (x) { if (x.id === gid) g = x; });
+      crumb.innerHTML = '官方誌 ／ <b>' + esc(g ? g.name : "") + "</b>";
+    } else {
+      OfficialUI.hub(view);
+      crumb.innerHTML = "<b>官方誌</b>";
+    }
+    window.scrollTo(0, 0);
+  }
+
   /* ---------------- 童話時分 ---------------- */
   function memView() {
     if (!window.MemoryUI) { homeView(); return; }
@@ -670,6 +700,13 @@
         if (tix[k].t.indexOf(q) >= 0 || tix[k].d.indexOf(q) >= 0) tools.push(k);
       }
     }
+    var offs = [];
+    if (window.OfficialUI) {
+      if (!doSearch._oix) doSearch._oix = OfficialUI.searchIndex();
+      for (var o = 0; o < doSearch._oix.length && offs.length < 5; o++) {
+        if (doSearch._oix[o].t.indexOf(q) >= 0) offs.push(o);
+      }
+    }
     for (var j = 0; j < ARTS.length; j++) {
       var a = ARTS[j];
       if (a.t.indexOf(q) >= 0) { if (artT.length < 8) artT.push(a); }
@@ -694,6 +731,15 @@
         h += '<a class="pr-item" data-act="' + act + '"><span class="pt">' + esc(it.t) +
           ' <span class="badge">寶典</span></span>' +
           '<div class="px">' + esc(it.d) + "</div></a>";
+        palItems.push(act);
+      });
+    }
+    if (offs.length) {
+      h += '<div class="pr-group">官方誌</div>';
+      offs.forEach(function (k) {
+        var it = doSearch._oix[k], act = "off:" + k;
+        h += '<a class="pr-item" data-act="' + act + '"><span class="pt">' + esc(it.t) +
+          '</span><span class="ps">' + esc(it.sub) + "</span></a>";
         palItems.push(act);
       });
     }
@@ -734,6 +780,10 @@
       if (it.q) ToolsUI.setQuery(it.page, it.q);
       if (location.hash === it.hash) route();
       else location.hash = it.hash;
+    } else if (act.indexOf("off:") === 0) {
+      var oi = doSearch._oix[+act.slice(4)];
+      if (location.hash === oi.r) route();
+      else location.hash = oi.r;
     }
   }
   var palTimer = null;
@@ -767,10 +817,12 @@
     else if (h === "#/t/calc") calcView();
     else if (h === "#/g") toolsView(null);
     else if (h.indexOf("#/g/") === 0) toolsView(h.slice(4));
+    else if (h === "#/o") offView(null);
+    else if (h.indexOf("#/o/") === 0) offView(h.slice(4));
     else if (h === "#/y") memView();
     else if (h.indexOf("#/p/") === 0) artView(h.slice(4));
     else homeView();
-    markNav(h.indexOf("#/p/") === 0 || h.indexOf("#/g") === 0 ? h.split("@")[0] : (h === "#/m" || h === "#/t/calc" || h === "#/y") ? h : "#/");
+    markNav(h.indexOf("#/p/") === 0 || h.indexOf("#/g") === 0 || h.indexOf("#/o") === 0 ? h.split("@")[0] : (h === "#/m" || h === "#/t/calc" || h === "#/y") ? h : "#/");
     view.style.animation = "none";
     void view.offsetWidth;
     view.style.animation = "";

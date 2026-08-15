@@ -455,8 +455,92 @@ body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:
 .to-skills{display:flex;flex-wrap:wrap;gap:5px;padding-top:2px}
 .to-chip{background:#fff;border:1px solid var(--line);border-radius:5px;padding:2px 9px;font-size:12px}
 .to-chip i{font-style:normal;font-size:10px;color:var(--gold);margin-right:4px;letter-spacing:1px}
+/* 先手敏捷速查 */
+.fs-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;margin:4px 0 10px;flex-wrap:wrap}
+.fs-head h3{font-family:var(--serif);font-size:17px;margin:0 0 3px}
+.fs-head p{font-size:12px;color:var(--muted);margin:0}
+.fs-head p b{color:var(--ink)}
+.fs-src{font-size:10.5px;color:var(--muted);letter-spacing:1px;white-space:nowrap;border:1px solid var(--line);border-radius:99px;padding:3px 10px;background:#fff}
+.fs-bosses{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}
+.fs-boss{border:1px solid var(--line);background:#fff;border-radius:99px;padding:5px 13px;font-size:12.5px;cursor:pointer;color:var(--ink)}
+.fs-boss:hover{border-color:var(--gold)}
+.fs-boss.on{background-color:#96702a;background-image:linear-gradient(135deg,#a87c2f,#8a6423);color:#fff;border-color:#8a6423;font-weight:700}
+.fs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.fs-job{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.fs-job h4{margin:0 0 8px;font-family:var(--serif);font-size:14px;color:var(--gold);letter-spacing:2px;border-bottom:1px solid var(--line);padding-bottom:6px}
+.fs-skill{display:flex;align-items:center;gap:9px;padding:5px 0}
+.fs-skill+.fs-skill{border-top:1px dashed var(--line)}
+.fs-skill img{width:30px;height:30px;border-radius:6px;border:1px solid var(--line);flex:0 0 30px}
+.fs-sk-txt{flex:1;min-width:0}
+.fs-sk-txt b{display:block;font-size:12.5px}
+.fs-sk-txt i{font-style:normal;font-size:10px;color:var(--muted)}
+.fs-req{text-align:right}
+.fs-req b{display:block;font-family:var(--serif);font-size:17px;font-weight:900;color:var(--gold);line-height:1}
+.fs-req i{font-style:normal;font-size:9px;color:var(--muted);letter-spacing:2px}
+.fs-note{font-size:11.5px;color:var(--muted);margin:10px 0 4px}
+.fs-h3{font-family:var(--serif);font-size:16px;margin:26px 0 2px;padding-top:18px;border-top:1px solid var(--line)}
 @media(max-width:900px){.tl-hub{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:720px){.tl-hub{grid-template-columns:1fr}}
+
+/* ---------- 任務攻略 hub ---------- */
+.qh-lead{font-size:13.5px;color:var(--muted);line-height:1.9;margin-bottom:18px}
+.qh-group{margin-bottom:22px}
+.qh-group h3{font-family:var(--serif);font-size:16.5px;font-weight:900;letter-spacing:2px;color:#2b2a24;border-left:3px solid var(--gold);padding-left:10px;margin-bottom:10px}
+.qh-note{font-size:12px;color:var(--muted);margin:-2px 0 10px 13px}
+.qh-grid{display:flex;flex-wrap:wrap;gap:8px}
+.qh-card{display:inline-block;background:#fffdf4;border:1px solid var(--line2);border-radius:8px;padding:9px 18px;font-size:13.5px;color:#3d3728;text-decoration:none;letter-spacing:1px;transition:all .15s}
+.qh-card:hover{border-color:var(--gold);background:#faf3dd;transform:translateY(-1px)}
+.qh-card.job{display:inline-flex;flex-direction:column;align-items:center;gap:2px;min-width:86px}
+.qh-card.job b{font-family:var(--serif);font-size:14.5px}
+.qh-card.job span{font-size:10.5px;color:var(--muted);letter-spacing:2px}
+.qh-card.job.all{justify-content:center;background:#f3e6c3;border-color:#c9a04e;color:#6d4d15;font-weight:700}
+
+/* ---------- 官方誌 ---------- */
+.of-hero{position:relative;border-radius:14px;overflow:hidden;border:1px solid #0c1a13;background:#12251b}
+.of-hero img{width:100%;display:block;max-height:280px;object-fit:cover}
+.of-hero-txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;background:rgba(10,20,14,.18)}
+.oh-kicker{font-size:10.5px;letter-spacing:5px;color:#d8c58e;text-shadow:0 1px 6px rgba(0,0,0,.8)}
+.of-hero-txt h1{font-family:var(--serif);font-size:38px;font-weight:900;letter-spacing:14px;text-indent:14px;color:#f4e9c8;text-shadow:0 2px 12px rgba(0,0,0,.85);margin:8px 0 4px}
+.oh-sub{font-family:var(--serif);font-size:13.5px;letter-spacing:6px;color:#e8dcb2;text-shadow:0 1px 8px rgba(0,0,0,.85)}
+.of-lead{font-size:13.5px;color:var(--muted);line-height:1.9;margin:18px 2px 16px}
+.of-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.of-card{display:flex;flex-direction:column;gap:6px;background:var(--panel);border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:10px;padding:18px 20px;text-decoration:none;transition:all .15s}
+.of-card:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(60,45,20,.14)}
+.of-card b{font-family:var(--serif);font-size:17px;letter-spacing:2px;color:#2b2a24}
+.of-card span{font-size:12px;color:var(--muted);line-height:1.7;flex:1}
+.of-card i{font-style:normal;font-size:11px;color:var(--gold);letter-spacing:2px}
+.of-head{margin-bottom:16px}
+.of-back{font-size:12px;color:var(--gold);text-decoration:none;letter-spacing:1px}
+.of-head h1{font-family:var(--serif);font-size:26px;font-weight:900;letter-spacing:4px;margin:8px 0 4px}
+.of-head p{font-size:12.5px;color:var(--muted)}
+.of-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.of-shot{margin:0;background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden;cursor:zoom-in;transition:all .15s}
+.of-shot:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(60,45,20,.16);border-color:var(--gold-soft)}
+.of-thumb{height:170px;overflow:hidden;background:#eee6d2}
+.of-thumb img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.of-shot figcaption{padding:10px 12px;font-size:12.5px;color:#3d3728;line-height:1.6;letter-spacing:.5px}
+.of-links{margin-top:26px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:18px 20px}
+.of-links h3{font-family:var(--serif);font-size:16px;font-weight:900;letter-spacing:2px;margin-bottom:6px}
+.of-note{font-size:11.5px;color:var(--muted);margin-bottom:12px}
+.of-linkrow{display:flex;flex-wrap:wrap;gap:8px}
+.of-link{display:inline-block;background:#fffdf4;border:1px solid var(--line2);border-radius:16px;padding:5px 14px;font-size:12.5px;color:#3d3728;text-decoration:none;letter-spacing:1px}
+.of-link:hover{border-color:var(--gold);background:#faf3dd}
+.of-link.dead{color:#a49a83;border-style:dashed;cursor:default}
+.of-link.flash{background:#f3e6c3;border-color:#c9a04e;color:#6d4d15}
+#ofViewer{position:fixed;inset:0;background:rgba(15,18,14,.95);z-index:85;display:none;flex-direction:column}
+#ofViewer.show{display:flex}
+#ofViewer .ov-bar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#12251b;border-bottom:1px solid rgba(229,195,104,.3);flex-shrink:0}
+#ofViewer .ov-title{font-family:var(--serif);font-size:14.5px;color:#f0e5c4;letter-spacing:1px}
+#ofViewer .ov-close{color:#d8c58e;font-size:12.5px;letter-spacing:2px;cursor:pointer;padding:4px 10px;border:1px solid rgba(229,195,104,.4);border-radius:14px}
+#ofViewer .ov-close:hover{background:rgba(229,195,104,.15)}
+#ofViewer .ov-body{flex:1;overflow:auto;text-align:center;padding:18px}
+#ofViewer .ov-body img{max-width:min(960px,96%);border-radius:4px;box-shadow:0 10px 40px rgba(0,0,0,.6)}
+.home-of{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.home-of a{display:block;background:var(--panel);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:8px;padding:13px 16px;text-decoration:none}
+.home-of a b{display:block;font-family:var(--serif);font-size:14.5px;color:#2b2a24;letter-spacing:1px}
+.home-of a span{font-size:11.5px;color:var(--muted)}
+.home-of a:hover{background:#faf3dd}
+@media(max-width:900px){.of-cards,.of-grid,.home-of{grid-template-columns:1fr}.of-hero-txt h1{font-size:28px;letter-spacing:8px}}
 
 /* ---------- 童話時分（回憶錄） ---------- */
 .mem-hero{background:#12251b;background-image:radial-gradient(ellipse at 30% 20%,rgba(229,195,104,.14),transparent 55%),radial-gradient(ellipse at 75% 80%,rgba(80,140,110,.18),transparent 60%);border:1px solid #0c1a13;border-radius:14px;padding:56px 30px 48px;text-align:center;color:#efe9d4;position:relative;overflow:hidden}

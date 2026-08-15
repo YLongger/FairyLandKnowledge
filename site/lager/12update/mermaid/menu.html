@@ -1,0 +1,80 @@
+<HTML>
+	<HEAD>
+		<TITLE>人魚傳說</TITLE>
+		<META http-equiv="Content-Type" content="text/html; charset=big5">
+	</HEAD>
+	<SCRIPT language="JavaScript">
+		var load_image_flag = false;
+		if (document.images)
+		{
+			image_01 = load_image("images/button_01_down.gif");
+			image_02 = load_image("images/button_02_down.gif");
+			image_03 = load_image("images/button_03_down.gif");
+			image_04 = load_image("images/button_04_down.gif");
+			image_05 = load_image("images/button_05_down.gif");
+			image_06 = load_image("images/button_06_down.gif");
+			load_image_flag = true;
+		}
+
+		function load_image(file_name)
+		{
+			if (document.images)
+			{
+				load_file = new Image();
+				load_file.src = file_name;
+				return load_file;
+			}
+		}
+	
+		function change_image(image_name, file_name)
+		{
+			if (load_image_flag == true) document.images[image_name].src = file_name;
+		}
+	</SCRIPT>
+	<BODY leftmargin="0" topmargin="0" marginwidth="0" marginheight="0">
+		<TABLE width="197" height="640" border="0" cellspacing="0" cellpadding="0">
+			<TR>
+				<TD width="197" height="130" colspan="3"><A href="index.html" target="_parent"><IMG src="images/menu_01.jpg" width="197" height="130" border="0"></A></TD>
+			</TR>
+			<TR>
+				<TD width="9" height="313" rowspan="11"><IMG src="images/menu_02.jpg" width="9" height="313"></TD>
+				<TD width="180" height="50"><A href="01_area/main.html" target="main_fram" onMouseOver="change_image('button_01', 'images/button_01_down.gif')" onMouseOut="change_image('button_01', 'images/button_01.jpg')"><IMG src="images/button_01.jpg" width="180" height="50" name="button_01" border="0"></A></TD>
+				<TD width="8" height="313" rowspan="11"><IMG src="images/menu_08.jpg" width="8" height="313"></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="3"><IMG src="images/menu_03.jpg" width="180" height="3"></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="50"><A href="02_animal/main.html" target="main_fram" onMouseOver="change_image('button_02', 'images/button_02_down.gif')" onMouseOut="change_image('button_02', 'images/button_02.jpg')"><IMG src="images/button_02.jpg" width="180" height="50" name="button_02" border="0"></A></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="4"><IMG src="images/menu_04.jpg" width="180" height="4"></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="50"><A href="03_mission/main.html" target="main_fram" onMouseOver="change_image('button_03', 'images/button_03_down.gif')" onMouseOut="change_image('button_03', 'images/button_03.jpg')"><IMG src="images/button_03.jpg" width="180" height="50" name="button_03" border="0"></A></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="3"><IMG src="images/menu_05.jpg" width="180" height="3"></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="50"><A href="04_profession/main.html" target="main_fram" onMouseOver="change_image('button_04', 'images/button_04_down.gif')" onMouseOut="change_image('button_04', 'images/button_04.jpg')"><IMG src="images/button_04.jpg" width="180" height="50" name="button_04" border="0"></A></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="2"><IMG src="images/menu_06.jpg" width="180" height="2"></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="50"><A href="05_package/main.html" target="main_fram" onMouseOver="change_image('button_05', 'images/button_05_down.gif')" onMouseOut="change_image('button_05', 'images/button_05.jpg')"><IMG src="images/button_05.jpg" width="180" height="50" name="button_05" border="0"></A></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="1"><IMG src="images/menu_07.jpg" width="180" height="1"></TD>
+			</TR>
+			<TR>
+				<TD width="180" height="50"><A href="06_download/main.html" target="main_fram" onMouseOver="change_image('button_06', 'images/button_06_down.gif')" onMouseOut="change_image('button_06', 'images/button_06.jpg')"><IMG src="images/button_06.jpg" width="180" height="50" name="button_06" border="0"></A></TD>
+			</TR>
+			<TR>
+				<TD width="197" height="189" colspan="2"><IMG src="images/menu_09.jpg" width="189" height="197"></TD>
+				<TD width="197" height="8"><IMG src="images/menu_10.jpg" width="8" height="197"></TD>
+			</TR>
+		</TABLE>
+	</BODY>
+</HTML>
