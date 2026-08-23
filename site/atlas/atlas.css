@@ -293,9 +293,21 @@ a{color:inherit}
 .sh-h{font-family:var(--serif); font-size:13px; letter-spacing:.18em; margin:16px 0 8px; color:var(--gold3)}
 .hero{
   margin:8px 0 12px; background:#1a1610; border:1px solid var(--line); border-radius:10px;
-  overflow:hidden;
+  overflow:hidden; position:relative;
 }
-.hero img{display:block; width:100%; height:auto; max-height:280px; object-fit:contain; background:#1a1610}
+.hero > img{display:block; width:100%; height:auto; max-height:340px; object-fit:contain; background:#1a1610}
+.hero-exits{
+  position:absolute; left:0; right:0; bottom:32px;
+  display:flex; flex-wrap:wrap; gap:6px; padding:10px 8px 8px;
+  background:linear-gradient(180deg, transparent, rgba(20,16,8,.78));
+}
+.hexit{
+  display:inline-flex; align-items:center; gap:6px; border:1px solid var(--gold2);
+  background:rgba(251,246,234,.96); border-radius:8px; padding:3px 8px 3px 3px;
+  cursor:pointer; color:var(--ink); font-size:12.5px;
+}
+.hexit img{width:40px; height:30px; object-fit:cover; border-radius:4px; display:block}
+.hexit:hover{border-color:var(--gold)}
 .hero a{display:block; padding:7px 10px; font-size:12.5px; color:var(--gold3); text-decoration:none; background:var(--cream)}
 .exits{display:grid; grid-template-columns:1fr 1fr; gap:8px}
 .exit{

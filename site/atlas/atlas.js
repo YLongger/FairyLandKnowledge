@@ -532,15 +532,25 @@
     if (p.elem) h += "<span class='tag'>" + esc(p.elem) + "</span>";
     if (p.mons && p.mons.length) h += "<span class='tag'>" + p.mons.length + " 種幻獸</span>";
     h += "</div>";
-    h += "<p class='sh-blurb'>" + esc(p.blurb) + "</p>";
-
     if (p.img) {
-      h += "<figure class='hero'><img src='" + esc(asset(p.img)) + "' alt='" + esc(p.n) + " 原圖'>" +
-        (p.page ? "<a href='" + esc(asset(p.page)) + "' target='_blank' rel='noreferrer'>打開敗家一族原頁 ↗</a>" : "") +
-        "</figure>";
+      h += "<figure class='hero'><img src='" + esc(asset(p.img)) + "' alt='" + esc(p.n) + " 原圖'>";
+      if (p.links && p.links.length) {
+        h += "<div class='hero-exits'>";
+        p.links.forEach(function (id) {
+          var q = byId[id];
+          if (!q) return;
+          h += "<button type='button' class='hexit' data-id='" + q.id + "'>";
+          if (q.img) h += "<img src='" + esc(asset(q.img)) + "' alt=''>";
+          h += "<b>" + esc(q.n) + "</b></button>";
+        });
+        h += "</div>";
+      }
+      if (p.page) h += "<a href='" + esc(asset(p.page)) + "' target='_blank' rel='noreferrer'>打開敗家一族原頁 ↗</a>";
+      h += "</figure>";
     } else if (p.page) {
       h += "<p><a href='" + esc(asset(p.page)) + "' target='_blank' rel='noreferrer'>打開敗家一族原頁 ↗</a></p>";
     }
+    if (p.blurb) h += "<p class='sh-blurb'>" + esc(p.blurb) + "</p>";
 
     if (p.links && p.links.length) {
       h += "<div class='sh-h'>相鄰 · 點圖走過去</div><div class='exits'>";
