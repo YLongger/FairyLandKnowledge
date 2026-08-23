@@ -653,7 +653,7 @@ LAYOUT = {
     "momo_isle": (40, 92),
     "tutu_sky": (58, 80),
     "tutu": (58, 96),
-    "hasin": (74, 94),
+    "hasin": (90, 98),
 }
 
 def file_ok(rel):

@@ -160,6 +160,7 @@
     var inner = document.getElementById("minner");
     if (!inner) return;
     inner.style.transform = "translate(" + S.panX + "px," + S.panY + "px) scale(" + S.zoom + ")";
+    inner.style.setProperty("--z", String(S.zoom));
     var zb = document.querySelector(".zoom b");
     if (zb) zb.textContent = Math.round(S.zoom * 100) + "%";
   }

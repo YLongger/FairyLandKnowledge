@@ -160,30 +160,31 @@ a{color:inherit}
 }
 .frame.land img.map-art{display:block; width:749px; height:564px; user-select:none; pointer-events:none}
 .routes{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible}
-.route{stroke:rgba(184,137,45,.32); stroke-width:2.2; fill:none}
+.route{stroke:rgba(184,137,45,.18); stroke-width:1.6; fill:none}
 .route.on{stroke:#e8c25a; stroke-width:3.6; filter:drop-shadow(0 0 4px rgba(230,195,106,.8))}
 .pins{position:absolute; inset:0}
 .pin{
-  position:absolute; transform:translate(-50%,-50%); width:16px; height:16px;
+  position:absolute; transform:translate(-50%,-50%) scale(calc(1 / var(--z,1)));
+  width:16px; height:16px;
   border:2.5px solid #fff; border-radius:50%; background:transparent;
-  box-shadow:0 0 0 2px rgba(36,31,22,.45), 0 1px 4px rgba(0,0,0,.35); cursor:pointer; z-index:1;
+  box-shadow:0 0 0 1.5px rgba(36,31,22,.5), 0 1px 3px rgba(0,0,0,.3); cursor:pointer; z-index:1;
 }
 .pin:hover,.pin.on,.pin.near{z-index:4}
-.pin:hover{transform:translate(-50%,-50%) scale(1.25)}
-.pin.on{transform:translate(-50%,-50%) scale(1.4); box-shadow:0 0 0 6px rgba(184,137,45,.38), 0 2px 8px rgba(0,0,0,.35)}
+.pin:hover{transform:translate(-50%,-50%) scale(calc(1.2 / var(--z,1)))}
+.pin.on{transform:translate(-50%,-50%) scale(calc(1.35 / var(--z,1))); box-shadow:0 0 0 5px rgba(184,137,45,.38), 0 2px 8px rgba(0,0,0,.35)}
 .pin.near{box-shadow:0 0 0 4px rgba(230,195,106,.35), 0 1px 4px rgba(0,0,0,.3)}
-.pin[data-k=village]{border-color:#f0d27a; background:rgba(201,162,74,.55)}
-.pin[data-k=city]{border-color:#ffd2b0; background:rgba(184,90,40,.7); width:18px; height:18px}
-.pin[data-k=dungeon]{border-radius:3px; background:rgba(106,74,120,.65)}
-.pin[data-k=island]{background:rgba(42,110,110,.55)}
-.pin[data-k=lake],.pin[data-k=sea]{background:rgba(45,95,134,.55)}
-.pin[data-k=port]{background:rgba(122,74,42,.6)}
-.pin[data-k=desert]{background:rgba(154,107,50,.55)}
-.pin[data-k=forest]{background:rgba(47,90,56,.6)}
-.pin[data-k=mountain]{background:rgba(106,83,64,.6)}
-.pin[data-k=sky]{background:rgba(122,160,184,.55)}
-.pin[data-k=temple]{background:rgba(138,100,32,.6)}
-.pin[data-k=field]{background:rgba(61,107,69,.5)}
+.pin[data-k=village]{border-color:#f0d27a; background:rgba(201,162,74,.2)}
+.pin[data-k=city]{border-color:#ffd2b0; background:rgba(184,90,40,.22); width:18px; height:18px}
+.pin[data-k=dungeon]{border-radius:3px; background:rgba(106,74,120,.2)}
+.pin[data-k=island]{background:rgba(42,110,110,.18)}
+.pin[data-k=lake],.pin[data-k=sea]{background:rgba(45,95,134,.18)}
+.pin[data-k=port]{background:rgba(122,74,42,.2)}
+.pin[data-k=desert]{background:rgba(154,107,50,.18)}
+.pin[data-k=forest]{background:rgba(47,90,56,.2)}
+.pin[data-k=mountain]{background:rgba(106,83,64,.2)}
+.pin[data-k=sky]{background:rgba(122,160,184,.18)}
+.pin[data-k=temple]{background:rgba(138,100,32,.2)}
+.pin[data-k=field]{background:rgba(61,107,69,.16)}
 .pin.dim{opacity:.18}
 .pin-tip{
   position:absolute; left:50%; bottom:calc(100% + 8px); transform:translateX(-50%);
