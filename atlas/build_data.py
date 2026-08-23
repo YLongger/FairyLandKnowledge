@@ -56,8 +56,14 @@ add("mystery", "神秘洞窟", ["神秘迷宮"], "mainland", "dungeon", 74.2, 58
     ["frog"], "htm/map/wa.htm", "htm/map/wa.jpg",
     "青蛙沼澤內的洞窟。")
 add("rainbow", "彩虹城", ["首都"], "mainland", "city", 34.2, 36.9,
-    ["north_green", "west_green", "lettuce", "smile"], "copy/map2.htm#4", None,
+    ["north_green", "west_green", "lettuce", "smile", "rainbow_mz", "town_base"], "copy/map2.htm#4", None,
     "人類首都。西綠野、萵苣村、微笑森林在四周，國庫與多數公會在此。")
+add("rainbow_mz", "彩虹城迷宮", ["彩虹地下城", "彩虹地下城迷宮"], "mainland", "dungeon", 31.2, 41.8,
+    ["rainbow"], "htm/map/r1.htm", "htm/map/r1.jpg",
+    "彩虹城底下的兩層迷宮。")
+add("town_base", "市鎮地下室", [], "mainland", "dungeon", 36.6, 33.2,
+    ["rainbow"], None, None,
+    "三大城底下的公共空間。原站沒有獨立詳圖。")
 add("west_green", "西綠野", ["西綠"], "mainland", "field", 29.4, 48.2,
     ["rainbow", "south_green", "sleep_lake"], "htm/map/w.htm", "htm/map/map/west.jpg",
     "彩虹城西南的原野，往沉睡湖的必經之路。")
@@ -86,14 +92,17 @@ add("hachu", "哈啾島", ["哈哈島"], "mainland", "island", 12.8, 23.4,
     ["secret"], "htm/map/2.htm", "htm/map/2.jpg",
     "秘密平原西北外海。")
 add("pineapple", "鳳梨山", [], "mainland", "mountain", 14.2, 51.0,
-    ["lettuce", "bluemeow", "blueisle"], "htm/map/fo.htm", "htm/map/map/fon.jpg",
-    "萵苣村西南的山區，藍喵喵迷宮與藍喵島在這一帶。")
+    ["lettuce", "bluemeow", "blueisle", "cat_mz"], "htm/map/fo.htm", "htm/map/map/fon.jpg",
+    "萵苣村西南的山區，藍喵喵迷宮、貓迷宮與藍喵島在這一帶。")
 add("bluemeow", "藍喵喵迷宮", [], "mainland", "dungeon", 10.6, 47.2,
-    ["pineapple", "blueisle"], None, None,
-    "鳳梨山附近的迷宮。")
+    ["pineapple", "blueisle", "cat_mz"], "htm/map/miou.htm", "htm/map/miou.jpg",
+    "鳳梨山附近的迷宮。去打藍貓記得帶月光村雪怪掉的美味麻糬。")
 add("blueisle", "藍喵島", [], "mainland", "island", 8.4, 54.6,
-    ["pineapple", "bluemeow"], None, None,
+    ["pineapple", "bluemeow"], None, "htm/map/fill/blueisle.jpg",
     "鳳梨山外海的小島。")
+add("cat_mz", "貓迷宮", [], "mainland", "dungeon", 12.0, 44.0,
+    ["pineapple", "bluemeow"], "htm/map/miou.htm", "htm/map/fill/cat_mz.jpg",
+    "從鳳梨山左上方進入。月光村雪怪的美味麻糬在這一帶用得到。")
 add("greenleaf", "綠夫村", ["精靈新手村"], "mainland", "village", 64.5, 42.6,
     ["smile", "rose_lake", "nick"], "copy/map2.htm#2", None,
     "精靈出生村。北微笑森林、東玫瑰湖、南尼克草原。")
@@ -107,8 +116,11 @@ add("rose_isle", "玫瑰島", [], "mainland", "island", 85.8, 38.8,
     ["rose_lake"], "htm/map/rosed.htm", None,
     "玫瑰湖上的小島。")
 add("bluebird", "青鳥城", ["精靈首都"], "mainland", "city", 78.6, 27.1,
-    ["rose_lake", "darkcave", "snow", "pea"], "copy/map2.htm#5", None,
+    ["rose_lake", "darkcave", "snow", "pea", "bird_mz"], "copy/map2.htm#5", None,
     "精靈首都。木材、皮甲與修士工會多在此。")
+add("bird_mz", "青鳥城迷宮", ["青鳥地下城", "青鳥地下城迷宮"], "mainland", "dungeon", 83.8, 31.0,
+    ["bluebird"], "htm/map/b1.htm", "htm/map/b1.jpg",
+    "青鳥城底下的兩層迷宮。")
 add("darkcave", "陰暗山洞", ["陰暗洞窟"], "mainland", "dungeon", 83.4, 23.0,
     ["bluebird"], "htm/map/in.htm", "htm/map/in.jpg",
     "青鳥城附近的洞窟。")
@@ -146,7 +158,7 @@ add("fear", "害怕峽谷", [], "mainland", "field", 47.0, 62.8,
     ["ili", "rat", "puppet"], "htm/map/high.htm", "htm/map/map/high.jpg",
     "伊利村北的峽谷，連著鼠洞與木偶山。")
 add("rat", "鼠洞", [], "mainland", "dungeon", 44.2, 58.4,
-    ["fear"], "htm/map/mg.htm", None,
+    ["fear"], "htm/map/su1.htm", "htm/map/su1.gif",
     "害怕峽谷裡的多層鼠洞。")
 add("puppet", "木偶山", [], "mainland", "mountain", 58.3, 61.3,
     ["fear", "northcave", "goldcity"], "htm/map/mu.htm", "htm/map/map/mu.jpg",
@@ -155,26 +167,29 @@ add("northcave", "北方洞窟", [], "mainland", "dungeon", 60.6, 56.8,
     ["puppet"], "htm/map/north.htm", "htm/map/north.jpg",
     "木偶山內的洞窟。")
 add("goldcity", "金銀城", ["矮人首都"], "mainland", "city", 40.7, 76.2,
-    ["ili", "goldlake", "lamp"], "copy/map2.htm#6", None,
+    ["ili", "goldlake", "lamp", "gold_mz"], "copy/map2.htm#6", None,
     "矮人首都，打鐵與寶石公會在此。南金銀湖、東神燈沙漠。")
+add("gold_mz", "金銀城迷宮", ["金銀地下城", "金銀地下城迷宮"], "mainland", "dungeon", 36.8, 81.6,
+    ["goldcity"], "htm/map/g1.htm", "htm/map/g1.jpg",
+    "金銀城底下的兩層迷宮。")
 add("goldlake", "金銀湖", [], "mainland", "lake", 57.0, 82.4,
     ["goldcity", "gulu", "crystal"], "htm/map/hu.htm", "htm/map/map/gh.jpg",
     "金銀城東南的湖，湖外是咕嚕島。")
 add("gulu", "咕嚕島", [], "mainland", "island", 62.7, 93.2,
-    ["goldlake"], "htm/map/gu.htm", None,
+    ["goldlake"], "htm/map/gu.htm", "htm/map/gu.jpg",
     "金銀湖外海。")
 add("lamp", "神燈沙漠", ["神祕沙漠"], "mainland", "desert", 66.5, 72.5,
     ["goldcity", "frog", "dragon"], "htm/map/shen.htm", "htm/map/map/shen.jpg",
     "金銀城東、青蛙沼澤南的沙漠，龍窟藏在沙裡。")
 add("dragon", "龍窟", [], "mainland", "dungeon", 70.4, 76.8,
-    ["lamp"], None, None,
+    ["lamp"], "htm/map/lon.htm", "htm/map/lon.jpg",
     "神燈沙漠中的龍窟。")
 add("crystal", "水晶山", [], "mainland", "mountain", 41.5, 88.5,
     ["goldlake", "nameless", "moon"], "htm/map/gi.htm", "htm/map/map/sg.jpg",
     "金銀湖南邊的山，不知名迷宮在山中。")
 add("nameless", "不知名迷宮", [], "mainland", "dungeon", 38.2, 92.4,
-    ["crystal"], None, None,
-    "水晶山裡連名字都懶得取的迷宮。")
+    ["crystal"], "htm/map/bu.htm", None,
+    "水晶山裡連名字都懶得取的迷宮。原站只有走法，沒有平面圖。")
 add("moon", "月光村", [], "mainland", "village", 29.3, 96.2,
     ["crystal"], "htm/map/moon.htm", "htm/map/map/moon.jpg",
     "地圖西南角的海邊村子。")
@@ -360,8 +375,8 @@ add("dreamland", "夢奇地", [], "thumb", "field", 32, 36,
     ["puppet_ft", "tunnel_in"], None, None,
     "依等級切 31–100 區，原頁只標一個夢奇地。")
 add("tunnel_in", "地道入口", [], "thumb", "field", 48, 52,
-    ["dreamland", "can_tunnel"], None, None,
-    "罐頭地道的入口。")
+    ["dreamland", "can_tunnel"], "htm/map/wani/g1.htm", "htm/map/wani/g1.jpg",
+    "罐頭地道的入口，詳圖見地道 B1。")
 add("can_tunnel", "罐頭地道", [], "thumb", "dungeon", 64, 52,
     ["tunnel_in", "thumb_gd"], None, None,
     "兩層地道，通往拇指花園。")
@@ -396,7 +411,7 @@ add("castle_ug", "古堡地下迷宮", ["古堡地下"], "beast", "dungeon", 78,
     "B3 到 B1，往上是普諾特古堡。")
 add("pronot", "普諾特古堡", [], "beast", "city", 86, 34,
     ["castle_ug"], None, None,
-    "路線盡頭的古堡。")
+    "路線盡頭的古堡。原站未收到這張詳圖。")
 
 # ----- 桃太郎 -----
 add("peach", "桃花村", [], "momo", "village", 12, 48,
@@ -407,7 +422,7 @@ add("greenhill", "青葉丘", [], "momo", "field", 26, 36,
     "村外丘陵。")
 add("tiger", "虎之原", [], "momo", "field", 40, 48,
     ["greenhill", "oni_isle", "kirihari"], None, None,
-    "往鬼島與霧張島的分岔原。")
+    "往鬼島與霧張島的分岔原。原站沒有這張詳圖。")
 add("oni_isle", "鬼島", [], "momo", "island", 58, 28,
     ["tiger", "oni_hall"], None, None,
     "海上鬼島。")
@@ -417,9 +432,9 @@ add("oni_hall", "鬼之殿", [], "momo", "dungeon", 74, 22,
 add("kirihari", "霧張島", [], "momo", "island", 58, 64,
     ["tiger", "kiri_cave", "kiri_sea"], None, None,
     "另一條出海線。")
-add("kiri_cave", "霧張秘洞", [], "momo", "dungeon", 70, 78,
+add("kiri_cave", "霧張秘洞", ["霧張祕洞"], "momo", "dungeon", 70, 78,
     ["kirihari"], None, None,
-    "島上秘洞。")
+    "島上秘洞。原站沒有這張詳圖。")
 add("kiri_sea", "霧張之海", [], "momo", "sea", 78, 58,
     ["kirihari", "ryugu"], None, None,
     "兩層海域，通往龍宮。")
@@ -451,10 +466,10 @@ add("maple", "楓果森林", [], "candy", "forest", 56, 68,
     "另一條往糖果森林的林道。")
 add("candy_ft", "糖果森林", [], "candy", "forest", 74, 74,
     ["maple", "candy_mz"], None, None,
-    "往糖果屋迷宮的森林。")
+    "往糖果屋迷宮的森林。原站註明暫無地圖，入口在寧靜凍原左上叢林後。")
 add("candy_mz", "糖果屋迷宮", [], "candy", "dungeon", 88, 80,
     ["candy_ft"], None, None,
-    "資料片同名迷宮。")
+    "資料片同名迷宮。原站註明暫無地圖。")
 
 
 print("places", len(P))
@@ -498,8 +513,23 @@ def load_mons():
 
 # 敗家一族原圖：補齊 page / img，資料片針位拉開給「圖節點」用
 EXTRA_PAGE = {
+    "jean": "copy/map2.htm#1",
+    "greenleaf": "copy/map2.htm#2",
+    "ili": "copy/map2.htm#3",
+    "rainbow": "copy/map2.htm#4",
+    "bluebird": "copy/map2.htm#5",
+    "goldcity": "copy/map2.htm#6",
+    "bluemeow": "htm/map/miou.htm",
+    "rat": "htm/map/su1.htm",
+    "gulu": "htm/map/gu.htm",
+    "dragon": "htm/map/lon.htm",
+    "nameless": "htm/map/bu.htm",
+    "rainbow_mz": "htm/map/r1.htm",
+    "gold_mz": "htm/map/g1.htm",
+    "bird_mz": "htm/map/b1.htm",
+    "tunnel_in": "htm/map/wani/g1.htm",
     "wani": "htm/map/wn.htm",
-    "ruins": "htm/map/wani/4.htm",
+    "ruins": "htm/map/gg1.htm",
     "flower_v": "htm/map/wani/a.htm",
     "colorfield": "htm/map/wani/b.htm",
     "sunforest": "htm/map/wani/d.htm",
@@ -588,7 +618,7 @@ EXTRA_IMG = {
     "rock": "htm/map/gg.jpg",
     "eatman": "htm/map/tt.jpg",
     "sandypeel": "htm/map/ss.jpg",
-    "wani": "htm/map/mg.jpg",
+    "wani": "htm/map/gg1.jpg",
     "ruins": "htm/map/gg1.jpg",
     "flower_v": "htm/map/wani/a.gif",
     "colorfield": "htm/map/wani/b.gif",
@@ -620,13 +650,139 @@ EXTRA_IMG = {
     "oni_hall": "htm/map/new/gu1.gif",
     "kirihari": "htm/map/new/wzz.gif",
     "kiri_sea": "htm/map/new/wzzz1.gif",
-    "ryugu": "htm/map/new/lg1.gif",
-    "tanlana": "htm/map/tan.jpg",
-    "rose_isle": "htm/map/rose.jpg",
+    "ryugu": "htm/map/new/lg1.jpg",
     "dragon": "htm/map/lon.jpg",
-    "rainbow": "htm/map/rainbow2.jpg",
-    "goldcity": "htm/map/gold2.jpg",
-    "bluebird": "htm/map/bird2.jpg",
+    "jean": "cimage/1.jpg",
+    "greenleaf": "cimage/2.jpg",
+    "ili": "cimage/3.jpg",
+    "rainbow": "cimage/4.jpg",
+    "bluebird": "cimage/5.jpg",
+    "goldcity": "cimage/6.jpg",
+    "bluemeow": "htm/map/miou.jpg",
+    "rat": "htm/map/su1.gif",
+    "gulu": "htm/map/gu.jpg",
+    "rainbow_mz": "htm/map/r1.jpg",
+    "gold_mz": "htm/map/g1.jpg",
+    "bird_mz": "htm/map/b1.jpg",
+    "tunnel_in": "htm/map/wani/g1.jpg",
+    "blueisle": "htm/map/fill/blueisle.jpg",
+    "tanlana": "htm/map/fill/tanlana.jpg",
+    "nameless": "htm/map/fill/nameless.jpg",
+    "rose_isle": "htm/map/fill/rose_isle.jpg",
+    "tiger": "htm/map/fill/tiger.jpg",
+    "kiri_cave": "htm/map/fill/kiri_cave.jpg",
+    "pronot": "htm/map/fill/pronot.jpg",
+    "candy_ft": "htm/map/fill/candy_ft.jpg",
+    "candy_mz": "htm/map/fill/candy_mz.jpg",
+    "town_base": "htm/map/fill/town_base.jpg",
+    "cat_mz": "htm/map/fill/cat_mz.jpg",
+    "trail": "htm/map/c/b.jpg",
+    "rebirth": "htm/map/c/c.jpg",
+    "gresia": "htm/map/c/d.jpg",
+    "ashwood": "htm/map/c/e.jpg",
+    "quiet": "htm/map/c/g.jpg",
+    "ice": "htm/map/c/aa.jpg",
+    "maple": "htm/map/c/f.jpg",
+    "flower_v": "htm/map/wani/a.jpg",
+    "colorfield": "htm/map/wani/b.jpg",
+    "sunforest": "htm/map/wani/d.jpg",
+    "flower_val": "htm/map/wani/c.jpg",
+    "emerald": "htm/map/wani/e.jpg",
+    "headless": "htm/map/wani/g.jpg",
+    "tanlin": "htm/map/wani/h.jpg",
+    "dk_n": "htm/map/wani/i.jpg",
+    "dk_s": "htm/map/wani/j.jpg",
+    "west_secret": "htm/map/wani/k.jpg",
+    "witch": "htm/map/wani/l.jpg",
+    "witch_nx": "htm/map/wani/m.jpg",
+    "puppet_ft": "htm/map/wani/mus.jpg",
+    "dreamland": "htm/map/wani/mon.jpg",
+    "can_tunnel": "htm/map/wani/g1.jpg",
+    "thumb_gd": "htm/map/wani/mh.jpg",
+    "lotus": "htm/map/wani/ho.jpg",
+    "lotus_land": "htm/map/wani/hs.jpg",
+    "wind_val": "htm/map/new/wind.jpg",
+    "ram_v": "htm/map/new/sh.jpg",
+    "forget": "htm/map/new/for.jpg",
+    "gale": "htm/map/new/sa.jpg",
+    "sand_keep": "htm/map/new/s1.jpg",
+    "castle_ug": "htm/map/new/g3.jpg",
+    "peach": "htm/map/new/7yy.jpg",
+    "greenhill": "htm/map/new/7y7.jpg",
+    "oni_isle": "htm/map/new/gddd.jpg",
+    "oni_hall": "htm/map/new/gu1.jpg",
+    "kirihari": "htm/map/new/wzz.jpg",
+    "kiri_sea": "htm/map/new/wzzz1.jpg",
+    "ryugu": "htm/map/new/lg1.jpg",
+}
+
+# 2026 客戶端已核對的地圖編號（城際傳送卷 live + maps\NNNNN.adf）
+CLIENT_MAP_ID = {
+    "rainbow": 10009,
+    "bluebird": 10058,
+    "goldcity": 40003,
+    "baghdad": 40301,
+    "emerald": 10405,
+    "jean": 10001,
+    "ili": 40002,
+    "greenleaf": 10051,
+    "w_lost": 10203,
+    "e_lost": 10204,  # 客戶端兩張都寫西迷路；這張連羅比特草原，當東迷路
+    "tomb": 20670,    # 客戶端寫「秘密古幕」
+    "bluemeow": 20151,
+    "blueisle": 20152,
+    "tunnel_in": 20903,
+    "kalas": 40303,
+    "puppet_ft": 20901,
+}
+
+FILL = "補圖：原站缺平面圖，依敗家一族畫風重繪，給認路用。"
+IMG_NOTE = {
+    "wani": "原站瓦尼島頁沒有島嶼平面圖，下面用遺跡 0F 當入口圖，各層詳圖可翻。",
+    "nameless": FILL,
+    "blueisle": FILL,
+    "tanlana": FILL,
+    "rose_isle": FILL,
+    "tiger": FILL,
+    "kiri_cave": FILL,
+    "pronot": FILL,
+    "candy_ft": FILL,
+    "candy_mz": FILL,
+    "town_base": FILL,
+    "cat_mz": FILL,
+    "tunnel_in": "入口收在罐頭地道頁，這裡用 B1 當入口圖。",
+}
+
+# 多層迷宮：封面之外再附各層原圖
+GALLERY = {
+    "slime": [("1F", "htm/map/s1.jpg"), ("2F", "htm/map/s2.jpg"), ("3F", "htm/map/s3.jpg")],
+    "door": [("B1", "htm/map/door1.jpg"), ("B2", "htm/map/door2.jpg")],
+    "basm": [("B1", "htm/map/bus.jpg"), ("B2", "htm/map/bus2.jpg"), ("B3", "htm/map/bus3.jpg")],
+    "papa": [("B1", "htm/map/papa1.jpg"), ("B2", "htm/map/papa2.jpg"), ("B3", "htm/map/papa3.jpg")],
+    "thief": [("B1", "htm/map/dd1.jpg"), ("B2", "htm/map/dd2.jpg"), ("B3", "htm/map/dd3.jpg")],
+    "trial": [("B1", "htm/map/sl1.jpg"), ("B2", "htm/map/sl2.jpg")],
+    "tomb": [("B1", "htm/map/mm1.jpg"), ("B2", "htm/map/mm2.jpg"), ("B3", "htm/map/mm3.jpg")],
+    "underworld": [("B1", "htm/map/mg1.jpg"), ("B2", "htm/map/mg2.jpg"), ("B3", "htm/map/mg3.jpg")],
+    "palace": [("1F", "htm/map/kk1.jpg"), ("2F", "htm/map/kk2.jpg"), ("3F", "htm/map/kk3.jpg")],
+    "skye": [("海", "htm/map/map/sea.jpg"), ("B1", "htm/map/sky1.jpg"), ("B2", "htm/map/sky2.jpg")],
+    "rat": [("B1", "htm/map/su1.gif"), ("B2", "htm/map/su2.gif"), ("B3", "htm/map/su3.gif")],
+    "ice": [("B1", "htm/map/c/aa.jpg"), ("B2", "htm/map/c/bb.jpg")],
+    "sand_keep": [("B1", "htm/map/new/s1.jpg"), ("B2", "htm/map/new/s2.jpg")],
+    "castle_ug": [("B3", "htm/map/new/g3.jpg"), ("B2", "htm/map/new/g2.jpg")],
+    "oni_hall": [("B1", "htm/map/new/gu1.jpg"), ("B2", "htm/map/new/gu2.jpg"), ("B3", "htm/map/new/gu3.jpg")],
+    "kiri_sea": [("B1", "htm/map/new/wzzz1.jpg"), ("B2", "htm/map/new/wzzz2.jpg")],
+    "ryugu": [("1F", "htm/map/new/lg1.jpg"), ("2F", "htm/map/new/lg2.jpg"), ("3F", "htm/map/new/lg3.jpg")],
+    "witch": [("B1", "htm/map/wani/l.jpg"), ("B2", "htm/map/wani/m.jpg")],
+    "can_tunnel": [("B1", "htm/map/wani/g1.jpg"), ("B2", "htm/map/wani/g2.jpg")],
+    "rainbow_mz": [("B1", "htm/map/r1.jpg"), ("B2", "htm/map/r2.jpg")],
+    "gold_mz": [("B1", "htm/map/g1.jpg"), ("B2", "htm/map/g2.jpg")],
+    "bird_mz": [("B1", "htm/map/b1.jpg"), ("B2", "htm/map/b2.jpg")],
+    "rainbow": [("村莊全圖", "cimage/4.jpg"), ("NPC 標註", "htm/map/rainbow2.jpg")],
+    "bluebird": [("村莊全圖", "cimage/5.jpg"), ("NPC 標註", "htm/map/bird2.jpg")],
+    "goldcity": [("村莊全圖", "cimage/6.jpg"), ("NPC 標註", "htm/map/gold2.jpg")],
+    "jean": [("村莊全圖", "cimage/1.jpg")],
+    "greenleaf": [("村莊全圖", "cimage/2.jpg")],
+    "ili": [("村莊全圖", "cimage/3.jpg")],
 }
 
 # 一千零一夜：拉開給原圖節點，對齊天方總覽的地理感
@@ -659,19 +815,62 @@ LAYOUT = {
 def file_ok(rel):
     return bool(rel) and (REPO / "site" / rel).is_file()
 
+def prefer_img(rel):
+    if not rel:
+        return None
+    p = Path(rel.replace("\\", "/"))
+    stem = p.with_suffix("").as_posix()
+    for ext in (".jpg", ".JPG", ".jpeg", ".gif", ".GIF", ".png"):
+        cand = stem + ext
+        if file_ok(cand):
+            return cand
+    return rel if file_ok(rel) else None
+
 def resolve_img(pid, page, img):
     extra = EXTRA_IMG.get(pid)
-    if extra and file_ok(extra):
-        return extra
-    if file_ok(img):
-        return img
+    hit = prefer_img(extra) or prefer_img(img)
+    if hit:
+        return hit
     if page:
         stem = Path(page.split("#")[0])
-        for ext in (".jpg", ".gif", ".JPG", ".GIF"):
-            cand = str(stem.with_suffix(ext)).replace("\\", "/")
-            if file_ok(cand):
-                return cand
-    return img
+        hit = prefer_img(str(stem.with_suffix(".jpg")).replace("\\", "/"))
+        if hit:
+            return hit
+    return img if file_ok(img) else None
+
+def ruins_gallery():
+    out = []
+    early = [("0F", "htm/map/gg1.jpg"), ("1F", "htm/map/gg2.jpg"),
+             ("2F", "htm/map/gg22.jpg"), ("3F", "htm/map/gg3.jpg")]
+    for lab, rel in early:
+        hit = prefer_img(rel)
+        if hit:
+            out.append({"n": lab, "img": hit})
+    for n in range(4, 24):
+        hit = prefer_img("htm/map/wani/%d.jpg" % n)
+        if hit:
+            out.append({"n": "%dF" % n, "img": hit})
+    return out
+
+def build_gallery(pid, cover):
+    rows = []
+    if pid == "ruins":
+        rows = ruins_gallery()
+    else:
+        for lab, rel in GALLERY.get(pid, []):
+            hit = prefer_img(rel)
+            if hit:
+                rows.append({"n": lab, "img": hit})
+    if cover and not any(r["img"] == cover for r in rows):
+        rows.insert(0, {"n": "詳圖", "img": cover})
+    # unique
+    seen, uniq = set(), []
+    for r in rows:
+        if r["img"] in seen:
+            continue
+        seen.add(r["img"])
+        uniq.append(r)
+    return uniq
 
 def main():
     tools = load_tools()
@@ -737,12 +936,22 @@ def main():
             "lv": "",
             "elem": "",
             "gather": [],
+            "gallery": [],
+            "note": "",
+            "mid": None,
+            "signs": [],
+            "cimg": None,
+            "cto": [],
+            "cnpcs": [],
         }
         if pid in EXTRA_PAGE:
             rec["page"] = EXTRA_PAGE[pid]
         if pid in LAYOUT:
             rec["x"], rec["y"] = LAYOUT[pid]
         rec["img"] = resolve_img(pid, rec["page"], rec["img"])
+        rec["note"] = IMG_NOTE.get(pid, "")
+        rec["gallery"] = build_gallery(pid, rec["img"])
+        rec["mid"] = CLIENT_MAP_ID.get(pid)
         places.append(rec)
         by_id[pid] = rec
 
@@ -792,6 +1001,15 @@ def main():
             "ice": ["冰原洞窟"],
             "gresia": ["葛雷夏"],
             "rat": ["鼠洞"],
+            "rainbow_mz": ["彩虹城迷宮", "彩虹地下城"],
+            "gold_mz": ["金銀城迷宮", "金銀地下城"],
+            "bird_mz": ["青鳥城迷宮", "青鳥地下城"],
+            "town_base": ["市鎮地下室"],
+            "cat_mz": ["貓迷宮"],
+            "bluemeow": ["藍喵喵迷宮"],
+            "nameless": ["不知名迷宮"],
+            "west_secret": ["西方秘境", "西方祕境"],
+            "witch_nx": ["威奇魔法陣"],
             "under": ["地底", "沈睡迷宮"],
             "darkcave": ["陰暗"],
             "wolf": ["大野狼"],
@@ -871,6 +1089,15 @@ def main():
                     seen.add(mo["n"])
                     found.append(mo)
         rec["mons"] = found[:24]
+        # dropExp 的出沒欄若還沒掛上，補進搜尋用名單
+        seen_n = {mo["n"] for mo in rec["mons"]}
+        for f in rec.get("floors") or []:
+            for name in re.split(r"[、,，]", f.get("m") or ""):
+                name = name.strip()
+                if not name or name in seen_n:
+                    continue
+                seen_n.add(name)
+                rec["mons"].append({"n": name, "e": "", "lv": f.get("lv") or "", "d": []})
 
     # gather
     for rec in places:
@@ -894,13 +1121,438 @@ def main():
             if rec["id"] not in by_id[x]["links"]:
                 by_id[x]["links"].append(rec["id"])
 
+    def pet_rel(mo):
+        img = (mo.get("img") or "").replace("\\", "/")
+        if img.startswith("../"):
+            img = img[3:]
+        return img if file_ok(img) else ""
+
+    def hq_of(stem):
+        for rel in ("htm/huan/hq/%s.png" % stem, "htm/huan/hq/%s.jpg" % stem):
+            if file_ok(rel):
+                return rel
+        return ""
+
+    catalog_rows = []
+    cat_path = ROOT / "catalog_names.json"
+    if cat_path.is_file():
+        catalog_rows = json.loads(cat_path.read_text(encoding="utf-8"))
+    cat_by_name = {}
+    cat_by_id = {}
+    for row in catalog_rows:
+        cid = int(row.get("id") or 0)
+        n = (row.get("n") or "").strip()
+        if not cid or not n or "無法封印" in n or len(n) > 20:
+            continue
+        rel = hq_of(str(cid)) or ("htm/huan/client/%d.png" % cid if file_ok("htm/huan/client/%d.png" % cid) else "")
+        rec = {"id": cid, "n": n, "img": rel}
+        cat_by_id[cid] = rec
+        cat_by_name.setdefault(n, rec)
+
+    # 玩家點名的官方 21 稀有寵（敗家一族／巴哈整理）。典藏 e=「稀」只有其中 10 隻。
+    OFFICIAL_21 = [
+        ("雷爵獸", "金", "1", ["哈啾島", "聽說島", "玫瑰島"]),
+        ("木頭貝貝", "木", "11–15", ["尼克草原"]),
+        ("小木魚", "木", "1", ["巴斯迷宮B3", "巴斯密洞"]),
+        ("小木精靈", "木", "65", ["天鵝湖"]),
+        ("青草企鵝", "木", "1", ["遺跡地下7F", "地下遺跡"]),
+        ("綠草菇", "木", "1", ["拇指花園"]),
+        ("瓦特寶寶", "水", "1", ["史蓋窩克海B1"]),
+        ("福瑞龍", "水", "65", ["米夏島"]),
+        ("水貝貝", "水", "21–25", ["史蓋窩克海"]),
+        ("火雷獸", "火", "65", ["金銀湖"]),
+        ("火精靈", "火", "1", ["鬱金香島"]),
+        ("火燒摳拉", "火", "1", ["瓦尼島"]),
+        ("超合金機器人", "火", "1", ["陽光森林"]),
+        ("熔岩獨角仙", "火", "1", ["罐頭地道B2"]),
+        ("卡拉龍", "光", "1", ["椰子島"]),
+        ("饅頭象", "光", "1", ["巨岩島"]),
+        ("光雷獸", "光", "45", ["秘密古墓B3"]),
+        ("光美哆", "光", "1", ["遺跡地下4F", "地下遺跡"]),
+        ("闇夜獸", "闇", "1", ["冥界洞窟B3"]),
+        ("黑皮怕啃", "闇", "1", ["遺跡地下12F", "地下遺跡"]),
+        ("壞壞司瓦諾", "闇", "1", ["荷花池塘"]),
+    ]
+    RARE_SPRITE = {
+        "卡拉龍": "htm/huan/cala.gif",
+        "水貝貝": "htm/huan/babe.gif",
+        "火精靈": "htm/huan/gif/fire.gif",
+    }
+    # 典藏沒圖、但 LPQ 檔名表編號可信（≥61461）的官方稀有。
+    RARE_CLIENT = {
+        "青草企鵝": 61472,
+        "綠草菇": 61686,
+        "火燒摳拉": 61492,
+        "超合金機器人": 61598,
+        "熔岩獨角仙": 61699,
+        "光美哆": 61512,
+        "黑皮怕啃": 61518,
+        "壞壞司瓦諾": 61713,
+    }
+
+    def client_card(n):
+        cid = RARE_CLIENT.get(n)
+        if not cid or cid < 61461:
+            return ""
+        rel = "htm/huan/client/%d.png" % cid
+        return rel if file_ok(rel) else ""
+
+    def maps_from_locs(locs):
+        maps, seenp = [], set()
+        qcard = False
+        for loc in locs:
+            if "獎品" in loc or "未開放" in loc:
+                qcard = True
+                continue
+            for rec in places:
+                if rec["id"] in seenp:
+                    continue
+                if match_area_name(loc, rec):
+                    seenp.add(rec["id"])
+                    maps.append({"id": rec["id"], "n": rec["n"], "r": rec["r"]})
+        return maps, qcard
+
+    rares = []
+    seen_rare = set()
+    by_mon = {mo["n"]: mo for mo in mons}
+    for n, elem, lv, locs in OFFICIAL_21:
+        mo = by_mon.get(n) or {}
+        maps, qcard = maps_from_locs(list(mo.get("m") or []) + list(locs))
+        # 名字以典藏幻獸頁為準；客戶端卡只用檔名表可信編號（≥61461）。
+        img = hq_of(n) or pet_rel(mo) or RARE_SPRITE.get(n) or client_card(n) or ""
+        if img and not file_ok(img):
+            img = ""
+        note = mo.get("note") or ("官方 21 稀有寵。出沒：" + "、".join(locs) + "。黑暗儀式招不出來。")
+        rares.append({
+            "n": n,
+            "e": elem,
+            "lv": (mo.get("s") or {}).get("等級") or lv,
+            "img": img,
+            "tags": ["稀有種"],
+            "catch": any("娃娃盒" in (d or "") for d in (mo.get("d") or [])),
+            "qcard": qcard,
+            "note": note[:220],
+            "maps": maps[:8],
+            "k": (mo.get("k") or [])[:6],
+        })
+        seen_rare.add(n)
+
+    for mo in mons:
+        if mo["n"] in seen_rare:
+            continue
+        note = mo.get("note") or ""
+        tags = []
+        if mo.get("e") == "稀":
+            tags.append("稀有種")
+        if "五顆星" in note or "冠軍" in note:
+            tags.append("推薦抓")
+        catch = any("娃娃盒" in (d or "") for d in (mo.get("d") or []))
+        if catch:
+            tags.append("可封印")
+        if not tags:
+            continue
+        maps, qcard = maps_from_locs(mo.get("m") or [])
+        seen_rare.add(mo["n"])
+        rares.append({
+            "n": mo["n"],
+            "e": mo.get("e") or "",
+            "lv": (mo.get("s") or {}).get("等級") or "",
+            "img": hq_of(mo["n"]) or pet_rel(mo),
+            "tags": tags,
+            "catch": catch,
+            "qcard": qcard,
+            "note": note[:180],
+            "maps": maps[:8],
+            "k": (mo.get("k") or [])[:6],
+        })
+    official_order = {row[0]: i for i, row in enumerate(OFFICIAL_21)}
+    rares.sort(key=lambda x: (
+        0 if x["n"] in official_order else 1 if "稀有種" in x["tags"] else 2 if "推薦抓" in x["tags"] else 3,
+        official_order.get(x["n"], 99),
+        x["n"],
+    ))
+
+    book = []
+    for mo in mons:
+        n = mo["n"]
+        img = hq_of(n) or pet_rel(mo)
+        book.append({
+            "n": n,
+            "e": mo.get("e") or "",
+            "lv": (mo.get("s") or {}).get("等級") or "",
+            "img": img,
+            "r": mo.get("r") or "",
+            "m": (mo.get("m") or [])[:8],
+            "k": (mo.get("k") or [])[:8],
+            "note": (mo.get("note") or "")[:160],
+        })
+    cards = []
+    # 只有從 LPQ 檔名表抽出的編號才掛中文名；61001–61460 是依檔序硬編的，會對錯名字。
+    for rec in sorted(cat_by_id.values(), key=lambda x: x["id"]):
+        if not rec.get("img"):
+            continue
+        if rec["id"] < 61461:
+            cards.append({"id": rec["id"], "n": "", "img": rec["img"]})
+        else:
+            cards.append(rec)
+    sprite = {}
+    for b in book:
+        if b.get("img") and b["n"] not in sprite:
+            sprite[b["n"]] = b["img"]
+    for r in rares:
+        if r.get("img"):
+            sprite[r["n"]] = r["img"]
+
+    # 官方路牌：客戶端 text/p01.adf（已解出的表）
+    p01_path = Path(r"C:\Users\user-66990\Desktop\tai-tong-tools\research\fairyland_unpack\exports\client_text_tables.json")
+    if p01_path.is_file():
+        try:
+            p01_tab = json.loads(p01_path.read_text(encoding="utf-8"))["tables"]["p01.adf"]
+            p01_lines = p01_tab.get("lines") or []
+        except Exception:
+            p01_lines = []
+        parsed_signs = []
+        for ln in p01_lines:
+            cols = str(ln).split("\t")
+            if len(cols) < 3:
+                continue
+            try:
+                x, y = int(cols[0]), int(cols[1])
+            except Exception:
+                continue
+            t = cols[2].strip()
+            if t:
+                parsed_signs.append((x, y, t))
+        for rec in places:
+            keys = [norm(x) for x in names_of(rec) if x]
+            stem = rec["n"]
+            for suf in ("村", "城", "島", "港", "山", "湖", "林", "窟", "洞"):
+                if stem.endswith(suf) and len(stem) > len(suf) + 1:
+                    stem = stem[: -len(suf)]
+                    break
+            if stem and stem != rec["n"]:
+                keys.append(norm(stem))
+            found = []
+            for x, y, t in parsed_signs:
+                nt = norm(t)
+                if any(k and len(k) >= 2 and (k in nt or ("往" + k) in nt) for k in keys):
+                    found.append({"x": x, "y": y, "t": t})
+            rec["signs"] = found[:24]
+        print("p01 signs attached", sum(1 for r in places if r["signs"]))
+    else:
+        print("p01 json missing, skip official signs")
+
+    # 2026 客戶端 maps\NNNNN.adf：中文名、連線、出沒；彩圖在 minimap.lpq
+    CLIENT_NAME_ALIAS = {
+        "巴斯密洞": ["巴斯秘洞"],
+        "艾司伍林地": ["艾斯伍林地"],
+        "彩虹城迷宮": ["彩虹地下迷宮"],
+        "青鳥城迷宮": ["青鳥地底迷宮"],
+        "金銀城迷宮": ["金銀地底迷宮"],
+        "黑森林之北": ["黑森林北面"],
+        "黑森林之南": ["黑森林南面"],
+        "碗豆湖": ["豌豆湖"],
+        "葛雷夏村與郊外": ["葛雷夏村", "葛雷夏郊外"],
+        "史萊姆迷宮": ["史萊姆迷宮", "史來姆迷宮"],
+        "大野狼洞窟": ["大野狼的洞窟", "大野狼洞窟"],
+        "趴趴迷宮": ["趴趴迷宮", "趴趴迷宮B2", "趴趴迷宮B3"],
+        "試煉洞窟": ["試煉洞窟", "試煉洞窟B1"],
+        "霧張之海": ["霧張之海", "霧張之海B1", "霧張之海B2"],
+        "龍宮": ["龍宮", "龍宮3F"],
+        "地下遺跡": ["地下遺跡", "遺跡地下"],
+        "古堡地下迷宮": ["古堡地下", "古堡地下迷宮"],
+        "門之迷宮": ["門之迷宮"],
+        "夢奇地": ["夢奇地"],
+        "罐頭地道": ["罐頭地道", "罐頭地道B1", "罐頭地道B2"],
+        "市鎮地下室": ["市鎮地下室"],
+        "不知名迷宮": ["不知名迷宮"],
+        "威奇魔法陣": ["威奇魔法陣"],
+        "莫名其妙花叢": ["莫名其妙花叢"],
+        "羅比特草原": ["羅比特草原"],
+        "西迷路森林": ["西迷路森林"],
+        "東迷路森林": ["東迷路森林"],
+        "北貓咪森林": ["北貓咪森林"],
+        "南貓咪森林": ["南貓咪森林"],
+        "史蓋窩克海": ["史蓋窩克海"],
+        "轉生神殿": ["轉生神殿"],
+        "普諾特古堡": ["普諾特古堡"],
+        "霧張秘洞": ["霧張秘洞", "霧張祕洞"],
+        "藍喵喵迷宮": ["藍喵喵的迷宮"],
+        "秘密古墓": ["秘密古幕"],
+        "地道入口": ["罐頭地道B1"],
+        "貓迷宮": ["貓迷宮"],
+        "坦拉娜迷宮": ["坦拉娜迷宮"],
+        "藍喵島": ["藍喵島"],
+        "糖果屋迷宮": ["糖果屋迷宮"],
+        "冰原洞窟": ["冰原洞窟", "冰原洞窟B1"],
+        "卡拉斯山區": ["卡拉斯山"],
+        "木偶山山腳": ["木偶山腳"],
+        "空中宮殿": ["空中宮殿", "空中宮殿1F"],
+        "大盜巢穴": ["大盜巢穴", "大盜巢穴B1"],
+        "冥界洞窟": ["冥界洞窟", "冥界洞窟B1"],
+        "史萊姆迷宮": ["史萊姆迷宮", "史來姆迷宮", "史來姆迷宮B1"],
+    }
+
+    def map_rank(mid):
+        pfx = mid // 1000
+        if pfx in (10, 40, 70):
+            return 0
+        if pfx == 61:
+            return 1
+        if pfx == 60:
+            return 2
+        if 20 <= pfx <= 39:
+            return 5
+        return 3
+
+    def fmt_clv(mb):
+        if not isinstance(mb, dict):
+            return ""
+        a, b = mb.get("lv"), mb.get("lv2")
+        if a is None:
+            return ""
+        if b is not None and b != a:
+            return "%s–%s" % (a, b)
+        return str(a)
+
+    def cmap_band(mid):
+        pfx = mid // 1000
+        if 20 <= pfx <= 39:
+            return "room"
+        if pfx == 60:
+            return "maze"
+        if pfx in (61, 62):
+            return "island"
+        return "world"
+
+    client_rows = []
+    cmap_file = ROOT / "client_maps.json"
+    if cmap_file.is_file():
+        raw_client = json.loads(cmap_file.read_text(encoding="utf-8")).get("maps") or []
+        by_mid = {m["id"]: m for m in raw_client if "id" in m}
+        name_idx = collections.defaultdict(list)
+        for m in raw_client:
+            n = norm(m.get("n") or "")
+            if n:
+                name_idx[n].append(m)
+
+        def match_cmaps(rec):
+            keys = [norm(x) for x in names_of(rec) if x]
+            for extra in CLIENT_NAME_ALIAS.get(rec["n"], []):
+                k = norm(extra)
+                if k and k not in keys:
+                    keys.append(k)
+            found, seen = [], set()
+            for k in keys:
+                for m in name_idx.get(k, []):
+                    if m["id"] not in seen:
+                        seen.add(m["id"])
+                        found.append(m)
+            if not found:
+                for k in keys:
+                    if len(k) < 2:
+                        continue
+                    for m in raw_client:
+                        if m["id"] in seen:
+                            continue
+                        cn = norm(m.get("n") or "")
+                        if not cn:
+                            continue
+                        if cn.startswith(k) and len(cn) > len(k):
+                            seen.add(m["id"])
+                            found.append(m)
+            found.sort(key=lambda m: (map_rank(m["id"]), m["id"]))
+            return found
+
+        matched_n = 0
+        for rec in places:
+            cands = match_cmaps(rec)
+            pick = None
+            forced = rec.get("mid") or CLIENT_MAP_ID.get(rec["id"])
+            if forced and forced in by_mid:
+                pick = by_mid[forced]
+            elif cands:
+                pick = cands[0]
+            if not pick:
+                continue
+            matched_n += 1
+            rec["mid"] = pick["id"]
+            rec["cimg"] = pick.get("img")
+            rec["cto"] = []
+            for tid in pick.get("to") or []:
+                dest = by_mid.get(tid)
+                if dest:
+                    rec["cto"].append({"id": tid, "n": dest.get("n") or str(tid)})
+            rec["cnpcs"] = [x.get("n") for x in (pick.get("npcs") or []) if x.get("n")][:16]
+            have = {m["n"]: m for m in rec["mons"]}
+            for mb in pick.get("mobs") or []:
+                if not isinstance(mb, dict) or not mb.get("n"):
+                    continue
+                n = mb["n"]
+                lv = fmt_clv(mb)
+                if n in have:
+                    have[n]["cs"] = True
+                    if lv and not have[n].get("lv"):
+                        have[n]["lv"] = lv
+                else:
+                    rec["mons"].append({"n": n, "e": "", "lv": lv, "cs": True})
+            if rec.get("cimg"):
+                gal = list(rec.get("gallery") or [])
+                rec["gallery"] = [{"n": "客戶端地圖", "img": rec["cimg"]}] + [
+                    g for g in gal if g.get("img") != rec["cimg"]
+                ]
+                # Keep 詳圖 as the place cover. Only fall back to the client file
+                # when the old site never had a labelled map.
+                if not rec.get("img"):
+                    rec["img"] = rec["cimg"]
+                note = rec.get("note") or ""
+                if note.startswith("補圖"):
+                    rec["note"] = "2026 客戶端彩色地圖。原站沒有平面圖。"
+            dungeonish = any(k in rec["n"] for k in ("迷宮", "洞窟", "遺跡", "地道", "夢奇地", "地下室"))
+            if dungeonish and len(cands) > 1:
+                seen_img = {rec["cimg"]}
+                for m in cands[1:10]:
+                    im = m.get("img")
+                    if im and im not in seen_img:
+                        seen_img.add(im)
+                        rec["gallery"].append({"n": "%s %s" % (m.get("n") or "", m["id"]), "img": im})
+
+        pid_by_mid = {r["mid"]: r["id"] for r in places if r.get("mid")}
+        for m in raw_client:
+            mobs = []
+            for mb in m.get("mobs") or []:
+                if isinstance(mb, dict) and mb.get("n"):
+                    mobs.append({"n": mb["n"], "lv": mb.get("lv"), "lv2": mb.get("lv2")})
+            client_rows.append({
+                "id": m["id"],
+                "n": m.get("n") or ("地圖 %s" % m["id"]),
+                "w": m.get("w") or 0,
+                "h": m.get("h") or 0,
+                "img": m.get("img"),
+                "to": m.get("to") or [],
+                "npcs": [x.get("n") for x in (m.get("npcs") or []) if x.get("n")][:12],
+                "mobs": mobs[:20],
+                "pid": pid_by_mid.get(m["id"]),
+                "b": cmap_band(m["id"]),
+            })
+        print("client maps", len(client_rows), "places with mid", matched_n)
+        missing = [r["n"] for r in places if not r.get("mid")]
+        print("places without client id", len(missing), missing[:30])
+    else:
+        print("client_maps.json missing, skip 2026 client attach")
+
     out = {
         "title": "童話世界地圖",
-        "credit": "原地圖由「徐大少」製作（遊戲基地原文）。資料來源「敗家一族」「IRON WOLVES」「官方網站」「遊戲基地」「巴哈姆特」。修改整合 by ROSS。",
+        "credit": "原地圖由「徐大少」製作（遊戲基地原文）。資料來源「敗家一族」「IRON WOLVES」「官方網站」「遊戲基地」「巴哈姆特」。修改整合 by ROSS。2026 客戶端彩色小地圖來自 maps\\minimap.lpq。",
         "source": "https://www.geocities.ws/fairyland/worldmap.html",
-        "note": "本頁是獨立離線重製，不是原頁鏡像。名單與分區對齊 ROSS 的 xFairyland 世界地圖；等級、掉寶、幻獸來自敗家一族典藏數據。",
+        "note": "本頁是獨立離線重製。地名對齊 xFairyland；彩色地圖與編號來自 2026 客戶端；出沒與稀有寵對照敗家一族／巴哈整理。",
         "regions": REGIONS,
         "places": places,
+        "rares": rares,
+        "client": client_rows,
+        "book": book,
+        "cards": cards,
+        "sprite": sprite,
         "order": [r[0] for r in P],
     }
     dest = ROOT / "data.js"
@@ -910,6 +1562,13 @@ def main():
     # sanity
     no_mon = [p["n"] for p in places if not p["mons"] and p["k"] != "city"]
     print("no mons", len(no_mon), no_mon[:20])
+    no_img = [p["n"] for p in places if not p.get("img")]
+    print("no img", len(no_img), no_img)
+    print("book", len(book), "cards", len(cards), "sprite", len(sprite))
+    print("rares", len(rares),
+          "稀有種", sum(1 for x in rares if "稀有種" in x["tags"]),
+          "推薦抓", sum(1 for x in rares if "推薦抓" in x["tags"]),
+          "可封印", sum(1 for x in rares if "可封印" in x["tags"]))
 
 if __name__ == "__main__":
     main()

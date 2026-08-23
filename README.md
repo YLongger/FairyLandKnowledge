@@ -2,7 +2,12 @@
 
 《童話 Online》老牌資料站「童話資料網（敗家一族）」的完整離線典藏計畫。
 原站 `dsps.case.eorz.net` 自 2019 年後未再更新，本專案將全站資料保存下來，
-並重新設計了一套現代化的離線知識庫，打包成免安裝的單一 exe。
+並重新設計了一套現代化的離線知識庫。同一份 repo 裡是**兩個獨立產品**，打包互不覆蓋：
+
+| 產品 | 給誰用 | 怎麼打 | 產出 |
+|---|---|---|---|
+| 童話資料網典藏版 | 要文獻、幻獸庫、數據寶典、官方誌 | `launcher_modern.py` + `site.zip` | `童話資料網典藏版.exe` |
+| 童話世界地圖 | 只要地圖、稀有寵、客戶端小地圖 | `python pack_atlas.py`（寫 `atlas_site.zip`，**不碰** `site.zip`） | `童話世界地圖.exe` |
 
 ## 內容
 
@@ -12,7 +17,8 @@
 | `site/modern/` | 典藏版（現代化重製）建置輸出 |
 | `site/memory/` | 「童話時分」回憶錄照片與影片素材 |
 | `app/` | 典藏版前端原始碼（app.js／tools.js／memory.js…） |
-| `atlas/` | 世界地圖獨立離線本（geocities.ws/fairyland/worldmap 重製） |
+| `atlas/` | **產品 2** 世界地圖原始碼（改地圖改這裡） |
+| `pack_atlas.py` | 地圖獨立包一鍵打包，不寫典藏版 `site.zip` |
 | `data/童话资料.xlsx` | 老玩家整理的 23 張數據表，數據寶典的資料源 |
 | `mirror.py` | 整站爬蟲（含 Referer 防盜連處理、UTF-8 中文檔名） |
 | `build_tools.py` | xlsx → 結構化資料（簡轉繁），產出 `app/data-tools.js` |
@@ -31,9 +37,9 @@
 - 官方誌：42 篇官方公告典藏（資料片／活動玩法／系統調整）＋九個資料片官網整站離線鏡像，FLASH 動畫由內建 Ruffle 模擬器離線重現
 - 童話時分：卷末致敬書、鳴謝名牆，與 2026/08/13 台服集體大合照回憶錄
 - 全站搜尋（Ctrl+K），左側目錄可切回 2019 原版網站
-- 世界輿圖：ROSS／徐大少世界地圖的獨立離線重製（搜尋、分冊、原版對照）
+- 世界地圖是另一份產品，見下方「地圖獨立包」
 
-## 怎麼建
+## 怎麼建（典藏版）
 
 ```powershell
 pip install -r requirements.txt
@@ -43,6 +49,14 @@ python build_modern.py                # 產出 site/modern/
 py -3.7 -m PyInstaller --onefile --console --name "童話資料網典藏版" `
   --add-data "<絕對路徑>\site.zip;." launcher_modern.py
 python make_package_modern.py         # 組交付包
+```
+
+## 怎麼建（地圖獨立包）
+
+```powershell
+python pack_atlas.py
+# 打出 童話世界地圖.exe，組 童話世界地圖_交付包/
+# 預覽：python launcher_atlas.py  或  python -m http.server 8788 --directory site
 ```
 
 ## 怎麼驗
