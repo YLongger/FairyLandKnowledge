@@ -203,107 +203,108 @@ add("skye_e", "史蓋窩克海東", ["史蓋窩克海"], "mermaid", "sea", 84, 6
     "原圖把史蓋窩克海標了兩次——東側海域另成一塊。")
 
 # ----- 愛麗絲 -----
-add("dream", "夢想花園", [], "alice", "field", 12, 50,
+add("dream", "夢想花園", [], "alice", "field", 12, 52,
     ["door"], "htm/map/dream.htm", "htm/map/dream.jpg",
     "愛麗絲資料片入口，1–5 級花園。")
-add("door", "門之迷宮", [], "alice", "dungeon", 28, 50,
+add("door", "門之迷宮", [], "alice", "dungeon", 28, 52,
     ["dream", "w_lost", "e_lost"], "htm/map/door1.htm", "htm/map/door1.jpg",
     "花園底下的兩層迷宮。")
-add("w_lost", "西迷路森林", [], "alice", "forest", 44, 32,
+add("w_lost", "西迷路森林", [], "alice", "forest", 46, 28,
     ["door", "rabbit"], "htm/map/wmi.htm", "htm/map/wmi.jpg",
     "迷宮出來往西的迷路林。")
-add("e_lost", "東迷路森林", [], "alice", "forest", 44, 68,
+add("e_lost", "東迷路森林", [], "alice", "forest", 46, 74,
     ["door", "rabbit"], "htm/map/emi.htm", "htm/map/emi.jpg",
     "迷宮出來往東的迷路林。")
-add("rabbit", "羅比特草原", ["羅比特平原"], "alice", "field", 60, 50,
-    ["w_lost", "e_lost", "oddflower"], "htm/map/rabbit.htm", None,
+add("rabbit", "羅比特草原", ["羅比特平原"], "alice", "field", 62, 52,
+    ["w_lost", "e_lost", "oddflower"], "htm/map/rabbit.htm", "htm/map/rabbit.jpg",
     "三月兔與微笑貓咪出沒的草原。")
-add("oddflower", "莫名其妙花叢", [], "alice", "field", 74, 50,
-    ["rabbit", "ncat", "scat"], "htm/map/mo.htm", None,
+add("oddflower", "莫名其妙花叢", [], "alice", "field", 76, 52,
+    ["rabbit", "ncat", "scat"], "htm/map/mo.htm", "htm/map/mo.jpg",
     "名字就叫莫名其妙。往北南貓咪森林。")
-add("ncat", "北貓咪森林", [], "alice", "forest", 86, 28,
-    ["oddflower", "rose_gd"], "htm/map/ncat.htm", None,
+add("ncat", "北貓咪森林", [], "alice", "forest", 88, 24,
+    ["oddflower", "rose_gd"], "htm/map/ncat.htm", "htm/map/ncat.jpg",
     "花叢北邊的貓林。")
-add("scat", "南貓咪森林", [], "alice", "forest", 86, 72,
-    ["oddflower", "rose_gd"], "htm/map/scat.htm", None,
+add("scat", "南貓咪森林", [], "alice", "forest", 88, 78,
+    ["oddflower", "rose_gd"], "htm/map/scat.htm", "htm/map/scat.jpg",
     "花叢南邊的貓林。")
-add("rose_gd", "玫瑰園", [], "alice", "field", 70, 22,
-    ["ncat", "poker"], "htm/map/rose0.htm", None,
+add("rose_gd", "玫瑰園", [], "alice", "field", 72, 16,
+    ["ncat", "poker"], "htm/map/rose0.htm", "htm/map/rose0.jpg",
     "往撲克花園前的玫瑰園。")
-add("poker", "撲克花園", [], "alice", "field", 54, 18,
-    ["rose_gd"], "htm/map/pook.htm", None,
+add("poker", "撲克花園", [], "alice", "field", 54, 12,
+    ["rose_gd"], "htm/map/pook.htm", "htm/map/pook.jpg",
     "愛麗絲路線的盡頭花園。")
 
-# ----- 一千零一夜 -----
-add("flyfish", "飛魚角", [], "nights", "port", 8, 70,
-    ["basra_sky", "basra"], "htm/map/f1.htm", "htm/map/f1.jpg",
-    "天方夜譚常見起點，海邊。")
-add("basra_sky", "巴斯拉空域", [], "nights", "sky", 18, 48,
-    ["flyfish", "basra"], None, None,
-    "巴斯拉上空。")
-add("basra", "巴斯拉港", [], "nights", "port", 22, 72,
-    ["flyfish", "basra_sky", "momo_isle", "baghdad"], "htm/map/buss.htm", "htm/map/buss.jpg",
-    "天方的港口城市。")
-add("momo_isle", "摩摩島", [], "nights", "island", 34, 86,
-    ["basra", "tutu"], "htm/map/momo.htm", None,
-    "巴斯拉外海。")
-add("tutu", "禿禿島", [], "nights", "island", 48, 88,
-    ["momo_isle", "tutu_sky", "hasin"], "htm/map/tutu.htm", None,
-    "南方島嶼。")
-add("tutu_sky", "禿禿島空域", [], "nights", "sky", 48, 74,
-    ["tutu"], None, None,
-    "禿禿島上空。")
-add("rock", "巨岩島", ["巨巖島"], "nights", "island", 78, 82,
-    ["eatman", "sandypeel"], None, None,
-    "東南海島。")
-add("eatman", "吃人島", ["喫人島"], "nights", "island", 88, 70,
-    ["rock", "sandypeel"], None, None,
-    "名字很老實的島。")
-add("sandypeel", "沙皮島", [], "nights", "island", 86, 50,
-    ["rock", "eatman", "baghdad_sky"], None, None,
-    "東側島嶼。")
-add("baghdad", "巴格達城", [], "nights", "city", 50, 48,
-    ["basra", "baghdad_sky", "palace", "elian"], "htm/map/baga.htm", "htm/map/baga.jpg",
-    "天方夜譚的大城市。")
-add("baghdad_sky", "巴格達空域", [], "nights", "sky", 50, 34,
-    ["baghdad", "palace"], None, None,
-    "巴格達上空，通往空中宮殿。")
-add("palace", "空中宮殿", [], "nights", "dungeon", 62, 28,
-    ["baghdad_sky"], None, None,
-    "三層空中宮殿。")
-add("elian", "以利暗沙漠", [], "nights", "desert", 38, 40,
-    ["baghdad", "spring", "trial", "thief", "tomb"], "htm/map/1l.htm", None,
-    "巴格達西邊的沙漠。")
-add("spring", "甘泉村", [], "nights", "village", 28, 30,
-    ["elian"], "htm/map/gh.htm", None,
-    "沙漠裡的綠洲村子。")
-add("trial", "試煉洞窟", [], "nights", "dungeon", 36, 18,
-    ["elian"], None, None,
-    "三層高階洞窟，掉寶很肥。")
-add("thief", "大盜巢穴", [], "nights", "dungeon", 22, 18,
-    ["elian"], None, None,
-    "三層盜賊巢穴。")
-add("hasin", "哈辛島", [], "nights", "island", 64, 88,
-    ["tutu"], "htm/map/hs.htm", "htm/map/hs.jpg",
-    "南方島。")
-add("galan", "迦蘭谷地", [], "nights", "field", 14, 28,
-    ["syria", "kalas"], "htm/map/el.htm", "htm/map/el.jpg",
-    "西北谷地。")
-add("underworld", "冥界洞窟", [], "nights", "dungeon", 72, 18,
-    ["elian"], None, None,
-    "三層冥界，靈與魔女出沒。")
-add("syria", "西里亞高原", [], "nights", "field", 10, 14,
+# ----- 一千零一夜：拉開成地理空間，不再擠成流程圖 -----
+# 西北高原／谷地 → 西沙漠 → 中央巴格達 → 南港與島鏈 → 東島
+add("syria", "西里亞高原", [], "nights", "field", 10, 12,
     ["galan", "kalas"], "htm/map/she.htm", "htm/map/she.jpg",
     "最西北的高原。")
-add("kalas", "卡拉斯山區", [], "nights", "mountain", 24, 8,
-    ["galan", "syria", "kalas_sky"], "htm/map/klss.htm", None,
+add("kalas", "卡拉斯山區", [], "nights", "mountain", 26, 9,
+    ["galan", "syria", "kalas_sky"], "htm/map/klss.htm", "htm/map/klss.jpg",
     "北境山區。")
-add("kalas_sky", "卡拉斯空域", [], "nights", "sky", 36, 6,
-    ["kalas"], None, None,
+add("kalas_sky", "卡拉斯空域", [], "nights", "sky", 36, 5,
+    ["kalas"], None, "htm/map/kls.jpg",
     "卡拉斯上空。")
-add("tomb", "秘密古墓", ["祕密古墓"], "nights", "dungeon", 44, 22,
+add("galan", "迦蘭谷地", [], "nights", "field", 12, 26,
+    ["syria", "kalas"], "htm/map/el.htm", "htm/map/el.jpg",
+    "西北谷地。")
+add("thief", "大盜巢穴", [], "nights", "dungeon", 22, 20,
+    ["elian"], None, "htm/map/dd1.jpg",
+    "三層盜賊巢穴。")
+add("trial", "試煉洞窟", [], "nights", "dungeon", 36, 15,
+    ["elian"], None, "htm/map/sl1.jpg",
+    "三層高階洞窟，掉寶很肥。")
+add("tomb", "秘密古墓", ["祕密古墓"], "nights", "dungeon", 48, 18,
     ["elian"], None, None,
     "沙漠裡的三層古墓。")
+add("underworld", "冥界洞窟", [], "nights", "dungeon", 80, 12,
+    ["elian"], None, "htm/map/mm3.jpg",
+    "三層冥界，靈與魔女出沒。")
+add("palace", "空中宮殿", [], "nights", "dungeon", 70, 22,
+    ["baghdad_sky"], None, "htm/map/kk1.jpg",
+    "三層空中宮殿。")
+add("spring", "甘泉村", [], "nights", "village", 28, 34,
+    ["elian"], "htm/map/gh.htm", "htm/map/gh.jpg",
+    "沙漠裡的綠洲村子。")
+add("elian", "以利暗沙漠", [], "nights", "desert", 40, 40,
+    ["baghdad", "spring", "trial", "thief", "tomb"], "htm/map/1l.htm", "htm/map/1l.jpg",
+    "巴格達西邊的沙漠。")
+add("baghdad_sky", "巴格達空域", [], "nights", "sky", 58, 30,
+    ["baghdad", "palace"], None, "htm/map/bg.jpg",
+    "巴格達上空，通往空中宮殿。")
+add("baghdad", "巴格達城", [], "nights", "city", 58, 48,
+    ["basra", "baghdad_sky", "palace", "elian"], "htm/map/baga.htm", "htm/map/baga.jpg",
+    "天方夜譚的大城市。")
+add("sandypeel", "沙皮島", [], "nights", "island", 88, 40,
+    ["rock", "eatman", "baghdad_sky"], None, "htm/map/ss.jpg",
+    "東側島嶼。")
+add("basra_sky", "巴斯拉空域", [], "nights", "sky", 20, 50,
+    ["flyfish", "basra"], None, "htm/map/bs.jpg",
+    "巴斯拉上空。")
+add("flyfish", "飛魚角", [], "nights", "port", 8, 64,
+    ["basra_sky", "basra"], "htm/map/f1.htm", "htm/map/f1.jpg",
+    "天方夜譚常見起點，海邊。")
+add("basra", "巴斯拉港", [], "nights", "port", 24, 68,
+    ["flyfish", "basra_sky", "momo_isle", "baghdad"], "htm/map/buss.htm", "htm/map/buss.jpg",
+    "天方的港口城市。")
+add("eatman", "吃人島", ["喫人島"], "nights", "island", 90, 64,
+    ["rock", "sandypeel"], None, "htm/map/tt.jpg",
+    "名字很老實的島。")
+add("momo_isle", "摩摩島", [], "nights", "island", 36, 82,
+    ["basra", "tutu"], "htm/map/momo.htm", "htm/map/momo.jpg",
+    "巴斯拉外海。")
+add("tutu_sky", "禿禿島空域", [], "nights", "sky", 54, 72,
+    ["tutu"], None, "htm/map/tutuk.jpg",
+    "禿禿島上空。")
+add("tutu", "禿禿島", [], "nights", "island", 54, 88,
+    ["momo_isle", "tutu_sky", "hasin"], "htm/map/tutu.htm", "htm/map/tutu.jpg",
+    "南方島嶼。")
+add("rock", "巨岩島", ["巨巖島"], "nights", "island", 76, 80,
+    ["eatman", "sandypeel"], None, "htm/map/gg.jpg",
+    "東南海島。")
+add("hasin", "哈辛島", [], "nights", "island", 68, 90,
+    ["tutu"], "htm/map/hs.htm", "htm/map/hs.jpg",
+    "南方島。")
 
 # ----- 國王的新衣 -----
 add("wani", "瓦尼島", [], "clothes", "island", 22, 50,
@@ -494,6 +495,184 @@ def load_mons():
     m = re.match(r"window\.__MON=(.*)\s*$", raw, re.S)
     return json.loads(m.group(1).rstrip(";"))
 
+
+# 敗家一族原圖：補齊 page / img，資料片針位拉開給「圖節點」用
+EXTRA_PAGE = {
+    "wani": "htm/map/wn.htm",
+    "ruins": "htm/map/wani/4.htm",
+    "flower_v": "htm/map/wani/a.htm",
+    "colorfield": "htm/map/wani/b.htm",
+    "sunforest": "htm/map/wani/d.htm",
+    "flower_val": "htm/map/wani/c.htm",
+    "emerald": "htm/map/wani/e.htm",
+    "headless": "htm/map/wani/g.htm",
+    "tanlin": "htm/map/wani/h.htm",
+    "dk_n": "htm/map/wani/i.htm",
+    "dk_s": "htm/map/wani/j.htm",
+    "west_secret": "htm/map/wani/k.htm",
+    "witch": "htm/map/wani/l.htm",
+    "witch_nx": "htm/map/wani/m.htm",
+    "puppet_ft": "htm/map/wani/mus.htm",
+    "dreamland": "htm/map/wani/mon.htm",
+    "can_tunnel": "htm/map/wani/g1.htm",
+    "thumb_gd": "htm/map/wani/mh.htm",
+    "lotus": "htm/map/wani/ho.htm",
+    "lotus_land": "htm/map/wani/hs.htm",
+    "wind_val": "htm/map/new/wind.htm",
+    "ram_v": "htm/map/new/sh.htm",
+    "forget": "htm/map/new/for.htm",
+    "gale": "htm/map/new/sa.htm",
+    "sand_keep": "htm/map/new/s1.htm",
+    "castle_ug": "htm/map/new/g3.htm",
+    "peach": "htm/map/new/7yy.htm",
+    "greenhill": "htm/map/new/7y7.htm",
+    "oni_isle": "htm/map/new/gddd.htm",
+    "oni_hall": "htm/map/new/gu1.htm",
+    "kirihari": "htm/map/new/wzz.htm",
+    "kiri_sea": "htm/map/new/wzzz1.htm",
+    "ryugu": "htm/map/new/lg1.htm",
+    "misha": "htm/map/mi.htm",
+    "basm": "htm/map/bus.htm",
+    "papa": "htm/map/papa1.htm",
+    "skye_e": "htm/map/sky1.htm",
+    "rabbit": "htm/map/rabbit.htm",
+    "oddflower": "htm/map/mo.htm",
+    "ncat": "htm/map/ncat.htm",
+    "scat": "htm/map/scat.htm",
+    "rose_gd": "htm/map/rose0.htm",
+    "poker": "htm/map/pook.htm",
+    "momo_isle": "htm/map/momo.htm",
+    "tutu": "htm/map/tutu.htm",
+    "elian": "htm/map/1l.htm",
+    "spring": "htm/map/gh.htm",
+    "kalas": "htm/map/klss.htm",
+    "tomb": "htm/map/mm1.htm",
+    "thief": "htm/map/dd1.htm",
+    "trial": "htm/map/sl1.htm",
+    "underworld": "htm/map/mg1.htm",
+    "palace": "htm/map/kk1.htm",
+    "basra_sky": "htm/map/bs.htm",
+    "baghdad_sky": "htm/map/bg.htm",
+    "tutu_sky": "htm/map/tutuk.htm",
+    "kalas_sky": "htm/map/kls.htm",
+    "rock": "htm/map/gg.htm",
+    "eatman": "htm/map/tt.htm",
+    "sandypeel": "htm/map/ss.htm",
+}
+
+EXTRA_IMG = {
+    "misha": "htm/map/mi.jpg",
+    "basm": "htm/map/bus.jpg",
+    "papa": "htm/map/papa1.jpg",
+    "skye_e": "htm/map/sky1.jpg",
+    "rabbit": "htm/map/rabbit.jpg",
+    "oddflower": "htm/map/mo.jpg",
+    "ncat": "htm/map/ncat.jpg",
+    "scat": "htm/map/scat.jpg",
+    "rose_gd": "htm/map/rose0.jpg",
+    "poker": "htm/map/pook.jpg",
+    "momo_isle": "htm/map/momo.jpg",
+    "tutu": "htm/map/tutu.jpg",
+    "elian": "htm/map/1l.jpg",
+    "spring": "htm/map/gh.jpg",
+    "kalas": "htm/map/klss.jpg",
+    "tomb": "htm/map/mm1.jpg",
+    "thief": "htm/map/dd1.jpg",
+    "trial": "htm/map/sl1.jpg",
+    "underworld": "htm/map/mg1.jpg",
+    "palace": "htm/map/kk1.jpg",
+    "basra_sky": "htm/map/bs.jpg",
+    "baghdad_sky": "htm/map/bg.jpg",
+    "tutu_sky": "htm/map/tutuk.jpg",
+    "kalas_sky": "htm/map/kls.jpg",
+    "rock": "htm/map/gg.jpg",
+    "eatman": "htm/map/tt.jpg",
+    "sandypeel": "htm/map/ss.jpg",
+    "wani": "htm/map/mg.jpg",
+    "ruins": "htm/map/gg1.jpg",
+    "flower_v": "htm/map/wani/a.gif",
+    "colorfield": "htm/map/wani/b.gif",
+    "sunforest": "htm/map/wani/d.gif",
+    "flower_val": "htm/map/wani/c.gif",
+    "emerald": "htm/map/wani/e.gif",
+    "headless": "htm/map/wani/g.gif",
+    "tanlin": "htm/map/wani/h.gif",
+    "dk_n": "htm/map/wani/i.gif",
+    "dk_s": "htm/map/wani/j.gif",
+    "west_secret": "htm/map/wani/k.gif",
+    "witch": "htm/map/wani/l.gif",
+    "witch_nx": "htm/map/wani/m.gif",
+    "puppet_ft": "htm/map/wani/mus.gif",
+    "dreamland": "htm/map/wani/mon.gif",
+    "can_tunnel": "htm/map/wani/g1.gif",
+    "thumb_gd": "htm/map/wani/mh.gif",
+    "lotus": "htm/map/wani/ho.gif",
+    "lotus_land": "htm/map/wani/hs.gif",
+    "wind_val": "htm/map/new/wind.gif",
+    "ram_v": "htm/map/new/sh.gif",
+    "forget": "htm/map/new/for.gif",
+    "gale": "htm/map/new/sa.gif",
+    "sand_keep": "htm/map/new/s1.gif",
+    "castle_ug": "htm/map/new/g3.gif",
+    "peach": "htm/map/new/7yy.gif",
+    "greenhill": "htm/map/new/7y7.gif",
+    "oni_isle": "htm/map/new/gddd.gif",
+    "oni_hall": "htm/map/new/gu1.gif",
+    "kirihari": "htm/map/new/wzz.gif",
+    "kiri_sea": "htm/map/new/wzzz1.gif",
+    "ryugu": "htm/map/new/lg1.gif",
+    "tanlana": "htm/map/tan.jpg",
+    "rose_isle": "htm/map/rose.jpg",
+    "dragon": "htm/map/lon.jpg",
+    "rainbow": "htm/map/rainbow2.jpg",
+    "goldcity": "htm/map/gold2.jpg",
+    "bluebird": "htm/map/bird2.jpg",
+}
+
+# 一千零一夜：拉開給原圖節點，對齊天方總覽的地理感
+LAYOUT = {
+    "syria": (12, 10),
+    "kalas": (30, 8),
+    "kalas_sky": (44, 6),
+    "galan": (14, 24),
+    "thief": (28, 20),
+    "trial": (46, 18),
+    "tomb": (60, 20),
+    "underworld": (80, 14),
+    "spring": (24, 36),
+    "elian": (42, 38),
+    "baghdad_sky": (58, 32),
+    "palace": (76, 28),
+    "baghdad": (50, 50),
+    "basra_sky": (24, 52),
+    "flyfish": (10, 64),
+    "basra": (30, 68),
+    "sandypeel": (86, 50),
+    "eatman": (90, 68),
+    "rock": (78, 78),
+    "momo_isle": (38, 84),
+    "tutu_sky": (54, 74),
+    "tutu": (54, 90),
+    "hasin": (68, 88),
+}
+
+def file_ok(rel):
+    return bool(rel) and (REPO / "site" / rel).is_file()
+
+def resolve_img(pid, page, img):
+    extra = EXTRA_IMG.get(pid)
+    if extra and file_ok(extra):
+        return extra
+    if file_ok(img):
+        return img
+    if page:
+        stem = Path(page.split("#")[0])
+        for ext in (".jpg", ".gif", ".JPG", ".GIF"):
+            cand = str(stem.with_suffix(ext)).replace("\\", "/")
+            if file_ok(cand):
+                return cand
+    return img
+
 def main():
     tools = load_tools()
     mons = load_mons()
@@ -559,6 +738,11 @@ def main():
             "elem": "",
             "gather": [],
         }
+        if pid in EXTRA_PAGE:
+            rec["page"] = EXTRA_PAGE[pid]
+        if pid in LAYOUT:
+            rec["x"], rec["y"] = LAYOUT[pid]
+        rec["img"] = resolve_img(pid, rec["page"], rec["img"])
         places.append(rec)
         by_id[pid] = rec
 
