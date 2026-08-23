@@ -10,8 +10,6 @@
   var byR = {};
   regions.forEach(function (r) { byR[r.id] = r; });
 
-  var MAP_W = 749, MAP_H = 564, BOARD_W = 1600, BOARD_H = 1000;
-
   var S = {
     view: "map",
     region: "mainland",
@@ -21,10 +19,18 @@
     panX: 0,
     panY: 0,
     liston: false,
-    mapKey: ""
+    cw: 749,
+    ch: 564,
+    fitZ: 1,
+    userCam: false
   };
 
+  var builtKey = null;
+  var lastSel = null;
+  var reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+
   var els = {
+    app: document.getElementById("app"),
     chips: document.getElementById("chips"),
     sub: document.getElementById("sub"),
     listBtn: document.getElementById("listBtn"),
@@ -79,25 +85,16 @@
     });
     return c;
   }
-  function neighbors(p) {
-    if (!p) return [];
-    var out = [], seen = {};
-    (p.links || []).forEach(function (id) {
-      if (byId[id] && !seen[id]) { seen[id] = 1; out.push(byId[id]); }
-    });
-    return out;
+  function ridNow() {
+    return S.region === "all" ? "mainland" : S.region;
   }
-  function asset(rel) {
-    if (!rel) return "";
-    if (/^https?:/i.test(rel)) return rel;
-    return "../" + rel;
+  function canvasOf(rid) {
+    if (rid === "mainland") return { w: 749, h: 564 };
+    if (rid === "clothes") return { w: 1200, h: 800 };
+    return { w: 2000, h: 1400 };
   }
-  function pinColor(k) {
-    return ({
-      village: "#c9a24a", city: "#b85a28", field: "#3d6b45", lake: "#2d5f86",
-      mountain: "#6a5340", island: "#2a6e6e", port: "#7a4a2a", dungeon: "#6a4a78",
-      sky: "#7aa0b8", sea: "#2d5f86", desert: "#9a6b32", temple: "#8a6420", forest: "#2f5a38"
-    })[k] || "#3d6b45";
+  function clamp(n, a, b) {
+    return Math.max(a, Math.min(b, n));
   }
 
   function hash() {
@@ -127,136 +124,150 @@
     if (S.sel && S.view === "map") S.region = byId[S.sel].r;
   }
 
-  function mapRid() {
-    return S.region === "all" ? "mainland" : S.region;
-  }
-  function contentSize() {
-    return mapRid() === "mainland" ? { w: MAP_W, h: MAP_H } : { w: BOARD_W, h: BOARD_H };
-  }
-  function applyCam() {
-    var inner = document.getElementById("minner");
-    if (!inner) return;
-    inner.style.transform = "translate(" + S.panX + "px," + S.panY + "px) scale(" + S.zoom + ")";
-    var zr = document.getElementById("zoomRead");
-    if (zr) zr.textContent = Math.round(S.zoom * 100) + "%";
-  }
-  function fitMap() {
-    var vp = document.getElementById("mvp");
-    if (!vp) return;
-    var c = contentSize();
-    var pad = 28;
-    var z = Math.min((vp.clientWidth - pad * 2) / c.w, (vp.clientHeight - pad * 2) / c.h);
-    S.zoom = Math.max(0.28, Math.min(2.8, z));
-    S.panX = (vp.clientWidth - c.w * S.zoom) / 2;
-    S.panY = (vp.clientHeight - c.h * S.zoom) / 2;
-    applyCam();
-  }
-  function flyTo(p) {
-    if (!p || p.x == null) return;
-    var vp = document.getElementById("mvp");
-    if (!vp) return;
-    var c = contentSize();
-    var z = mapRid() === "mainland" ? 1.75 : 1.05;
-    z = Math.max(S.zoom, z);
-    z = Math.min(2.6, z);
-    var px = p.x / 100 * c.w;
-    var py = p.y / 100 * c.h;
-    var inset = (S.sel && vp.clientWidth > 1100) ? Math.min(440, vp.clientWidth * 0.38) : 0;
-    S.zoom = z;
-    S.panX = (vp.clientWidth - inset) * 0.5 - px * z;
-    S.panY = vp.clientHeight * 0.46 - py * z;
-    applyCam();
-  }
-  function worldFromEvent(ev) {
-    var vp = document.getElementById("mvp").getBoundingClientRect();
-    var sx = ev.clientX - vp.left;
-    var sy = ev.clientY - vp.top;
-    return { x: (sx - S.panX) / S.zoom, y: (sy - S.panY) / S.zoom, sx: sx, sy: sy };
-  }
-  function zoomAt(ev, factor) {
-    var w = worldFromEvent(ev);
-    var next = Math.max(0.28, Math.min(4.2, S.zoom * factor));
-    S.panX = w.sx - w.x * next;
-    S.panY = w.sy - w.y * next;
-    S.zoom = next;
-    applyCam();
+  function asset(rel) {
+    if (!rel) return "";
+    if (/^https?:/i.test(rel)) return rel;
+    return "../" + rel;
   }
 
-  function go(id, opts) {
-    opts = opts || {};
+  function go(id, keepView) {
     var p = byId[id];
     if (!p) return;
-    var prevR = S.region;
     S.sel = id;
-    if (S.region !== "all") S.region = p.r;
-    if (!opts.keepView) S.view = "map";
-    render({
-      rebuild: S.view !== "map" || (S.region !== "all" && prevR !== p.r && prevR !== "all"),
-      fly: !opts.skipFly
-    });
+    S.region = p.r;
+    if (!keepView) S.view = "map";
+    render();
     var el = document.getElementById("card-" + id);
     if (el) el.scrollIntoView({ block: "nearest" });
   }
   function setView(v) {
     S.view = v;
     if (v === "old") S.sel = null;
-    S.mapKey = "";
-    render({ rebuild: true, fit: v === "map" });
+    if (v !== "map") builtKey = null;
+    render();
   }
   function setRegion(id) {
     S.region = id;
     if (S.sel && byId[S.sel].r !== id && id !== "all") S.sel = null;
     if (S.view === "old") S.view = "map";
-    S.mapKey = "";
-    render({ rebuild: true, fit: true });
+    S.userCam = false;
+    builtKey = null;
+    lastSel = null;
+    render();
   }
 
-  function render(opts) {
-    opts = opts || {};
+  function applyCam() {
+    var inner = document.getElementById("minner");
+    if (!inner) return;
+    inner.style.transform = "translate(" + S.panX + "px," + S.panY + "px) scale(" + S.zoom + ")";
+    var zb = document.querySelector(".zoom b");
+    if (zb) zb.textContent = Math.round(S.zoom * 100) + "%";
+  }
+  function fitCam() {
+    var vp = document.getElementById("mvp");
+    if (!vp) return;
+    var r = vp.getBoundingClientRect();
+    if (r.width < 40 || r.height < 40) return;
+    var pad = 24;
+    var z = Math.min((r.width - pad * 2) / S.cw, (r.height - pad * 2) / S.ch);
+    if (!isFinite(z) || z <= 0) z = 1;
+    S.fitZ = z;
+    S.zoom = z;
+    S.panX = (r.width - S.cw * z) / 2;
+    S.panY = (r.height - S.ch * z) / 2;
+    S.userCam = false;
+    applyCam();
+  }
+  function zoomAt(mx, my, factor) {
+    var lo = (S.fitZ || 0.6) * 0.7;
+    var hi = 4.2;
+    var next = clamp(S.zoom * factor, lo, hi);
+    var cx = (mx - S.panX) / S.zoom;
+    var cy = (my - S.panY) / S.zoom;
+    S.panX = mx - cx * next;
+    S.panY = my - cy * next;
+    S.zoom = next;
+    S.userCam = true;
+    applyCam();
+  }
+  function flyTo(id) {
+    var p = byId[id];
+    var vp = document.getElementById("mvp");
+    if (!p || !vp) return;
+    var r = vp.getBoundingClientRect();
+    var z = clamp((S.fitZ || 1) * (S.cw > 1000 ? 1.45 : 1.7), (S.fitZ || 1), 2.8);
+    var px = p.x / 100 * S.cw;
+    var py = p.y / 100 * S.ch;
+    var left = (S.liston && S.view === "map") ? 270 : 0;
+    var right = S.sel ? Math.min(420, r.width * 0.38) + 16 : 0;
+    var cx = left + (r.width - left - right) / 2;
+    var cy = r.height * 0.48;
+    S.zoom = z;
+    S.panX = cx - px * z;
+    S.panY = cy - py * z;
+    S.userCam = true;
+    var inner = document.getElementById("minner");
+    if (inner && !reduceMotion) inner.style.transition = "transform .32s ease";
+    applyCam();
+    if (inner && !reduceMotion) {
+      window.setTimeout(function () { inner.style.transition = "none"; }, 340);
+    }
+  }
+
+  function render() {
     syncHash();
-    document.getElementById("app").dataset.view = S.view;
-    els.work.classList.toggle("nosheet", !S.sel || S.view !== "map");
-    els.work.classList.toggle("nrail", S.view !== "map");
+    els.app.dataset.view = S.view;
+    els.app.classList.toggle("liston", S.liston);
     els.work.classList.toggle("old", S.view === "old");
+    els.work.classList.toggle("ledger", S.view === "list");
     els.work.classList.toggle("liston", S.liston);
+    els.work.classList.toggle("nrail", !S.liston || S.view !== "map");
+    els.work.classList.toggle("nosheet", !S.sel || S.view !== "map");
+    if (els.listBtn) els.listBtn.classList.toggle("on", S.liston);
     renderViews();
     renderChips();
     renderSub();
     if (S.view === "old") {
       els.rail.innerHTML = "";
       els.sheet.hidden = true;
+      els.sheet.innerHTML = "";
+      builtKey = null;
       renderOld();
       return;
     }
-    if (S.view === "map") renderRail();
-    else els.rail.innerHTML = "";
-    els.sheet.hidden = !(S.sel && S.view === "map");
-    if (S.sel && S.view === "map") renderSheet();
+    renderRail();
+    els.sheet.hidden = !S.sel;
+    if (S.sel) renderSheet();
     else els.sheet.innerHTML = "";
-    if (S.view === "list") renderLedger();
-    else {
-      var key = mapRid();
-      if (opts.rebuild || S.mapKey !== key) renderMap();
-      else updateMapState();
-      if (opts.fit) requestAnimationFrame(function () { fitMap(); });
-      if (opts.fly && S.sel) requestAnimationFrame(function () { flyTo(byId[S.sel]); });
+    if (S.view === "list") {
+      builtKey = null;
+      renderLedger();
+      return;
     }
+    renderMap();
   }
 
   function renderViews() {
-    var vs = [["map", "輿圖"], ["list", "名冊"], ["old", "原版對照"]];
+    var vs = [
+      ["map", "輿圖"],
+      ["list", "名冊"],
+      ["old", "原版對照"]
+    ];
     els.views.innerHTML = vs.map(function (v) {
       return "<button type='button' data-v='" + v[0] + "' class='" + (S.view === v[0] ? "on" : "") + "'>" + v[1] + "</button>";
     }).join("");
   }
+
   function renderSub() {
     if (!els.sub) return;
-    var rid = mapRid();
+    if (S.view !== "list") { els.sub.innerHTML = ""; return; }
+    var rid = ridNow();
     var r = byR[rid] || byR.mainland;
     var n = S.region === "all" ? filtered().length : (counts()[rid] || 0);
     els.sub.innerHTML = "<span class='sk'>" + esc(r.en) + "</span><h2>" + esc(S.region === "all" ? "全圖" : r.n) + "</h2><p>" +
-      esc(S.region === "all" ? "十個分冊、同一份名單。點資料片看那一區的走法。" : r.d) + " · " + n + " 處</p>";
+      esc(S.region === "all" ? "十個分冊、同一份名單。" : r.d) + " · " + n + " 處</p>";
   }
+
   function renderChips() {
     var c = counts();
     var html = "<button type='button' class='chip" + (S.region === "all" ? " on" : "") + "' data-r='all'><b>全部</b><i>" + c.all + "</i></button>";
@@ -265,6 +276,7 @@
     });
     els.chips.innerHTML = html;
   }
+
   function renderRail() {
     var list = filtered();
     var groups = [];
@@ -288,147 +300,203 @@
     els.rail.innerHTML = h;
   }
 
-  function routeSvg(inR, w, h) {
+  function pinColor(k) {
+    return ({
+      village: "#c9a24a", city: "#b85a28", field: "#3d6b45", lake: "#2d5f86",
+      mountain: "#6a5340", island: "#2a6e6e", port: "#7a4a2a", dungeon: "#6a4a78",
+      sky: "#7aa0b8", sea: "#2d5f86", desert: "#9a6b32", temple: "#8a6420", forest: "#2f5a38"
+    })[k] || "#3d6b45";
+  }
+
+  function routePath(a, b, w, h) {
+    var x1 = a.x / 100 * w, y1 = a.y / 100 * h;
+    var x2 = b.x / 100 * w, y2 = b.y / 100 * h;
+    var mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+    var dx = x2 - x1, dy = y2 - y1;
+    var nx = -dy * 0.14, ny = dx * 0.14;
+    return "M" + x1.toFixed(1) + " " + y1.toFixed(1) + " Q" + (mx + nx).toFixed(1) + " " + (my + ny).toFixed(1) + " " + x2.toFixed(1) + " " + y2.toFixed(1);
+  }
+
+  function routesSvg(inR, rid, w, h) {
     var lines = "";
     inR.forEach(function (p) {
       (p.links || []).forEach(function (id) {
         var q = byId[id];
-        if (!q || q.r !== p.r || p.id > id) return;
-        if (q.x == null || p.x == null) return;
-        var on = (S.sel === p.id || S.sel === q.id) ? " on" : "";
-        lines += "<line class='route" + on + "' data-a='" + p.id + "' data-b='" + q.id +
-          "' x1='" + (p.x / 100 * w) + "' y1='" + (p.y / 100 * h) +
-          "' x2='" + (q.x / 100 * w) + "' y2='" + (q.y / 100 * h) + "'/>";
+        if (!q || q.r !== rid || p.id > id) return;
+        lines += "<path class='route' data-a='" + p.id + "' data-b='" + id + "' d='" + routePath(p, q, w, h) + "'/>";
       });
     });
     return "<svg class='routes' viewBox='0 0 " + w + " " + h + "' preserveAspectRatio='none'>" + lines + "</svg>";
   }
 
-  function pinCls(p, qset, hasQ, near) {
-    var cls = "";
-    if (S.sel === p.id) cls += " on";
-    if (near[p.id]) cls += " near";
-    if (hasQ && !qset[p.id]) cls += " dim";
-    return cls;
+  function mapBar(r, n) {
+    return "<div class='map-bar'><div class='map-title'><div class='k'>" + esc(r.en) + "</div><h2>" + esc(r.n) + "</h2><p>" +
+      esc(r.d) + " · " + n + " 處 · 拖曳移動、滾輪對準游標縮放</p></div><div class='zoom'>" +
+      "<button type='button' data-z='-' title='縮小'>−</button>" +
+      "<b>100%</b>" +
+      "<button type='button' data-z='0' title='重設'>⊙</button>" +
+      "<button type='button' data-z='+' title='放大'>+</button></div></div>";
   }
 
   function renderMap() {
-    var rid = mapRid();
-    var r = byR[rid] || byR.mainland;
-    var inR = places.filter(function (p) { return p.r === rid; });
-    var qset = {};
-    filtered().forEach(function (p) { qset[p.id] = 1; });
-    var hasQ = !!S.q;
-    var near = {};
-    if (S.sel && byId[S.sel]) neighbors(byId[S.sel]).forEach(function (n) { near[n.id] = 1; });
-
-    S.mapKey = rid;
-    els.stage.className = "";
-    var bar = "<div class='map-bar'><div class='map-title'><div class='k'>" + esc(r.en) + "</div><h2>" +
-      esc(r.n) + "</h2><p>" + esc(r.d) + "</p></div><div class='zoom'>" +
-      "<button type='button' data-z='-' title='縮小'>−</button>" +
-      "<b id='zoomRead'>100%</b>" +
-      "<button type='button' data-z='+' title='放大'>+</button>" +
-      "<button type='button' data-z='0' title='整圖'>⊙</button></div></div>";
-
-    if (rid === "mainland") {
-      els.stage.innerHTML = bar +
-        "<div class='map-vp' id='mvp'><div class='map-inner' id='minner'>" +
-        "<div class='frame land'>" +
-        "<img class='map-art' src='img/mainland.jpg' width='749' height='564' alt='主大陸大地圖' draggable='false'>" +
-        routeSvg(inR, MAP_W, MAP_H) +
-        "<div class='pins'>" + inR.map(function (p) {
-          return "<button type='button' class='pin" + pinCls(p, qset, hasQ, near) +
-            "' data-k='" + p.k + "' data-id='" + p.id +
-            "' style='left:" + p.x + "%;top:" + p.y + "%'><span class='pin-tip'>" + esc(p.n) + "</span></button>";
-        }).join("") + "</div></div></div></div>" +
-        "<div class='legend'><b>在圖上走</b>　金線是相鄰。點地名看敗家一族原圖，再點相鄰圖走到下一張。</div>";
-    } else {
-      els.stage.innerHTML = bar +
-        "<div class='map-vp' id='mvp'><div class='map-inner' id='minner'>" +
-        "<div class='frame board' data-tone='" + (r.tone || "pine") + "'>" +
-        routeSvg(inR, BOARD_W, BOARD_H) +
-        inR.map(function (p) {
-          var pic = p.img ? "<img src='" + esc(asset(p.img)) + "' alt='" + esc(p.n) + "'>" : "";
-          return "<button type='button' class='node" + (p.img ? "" : " plain") + pinCls(p, qset, hasQ, near) +
-            "' data-id='" + p.id + "' style='left:" + p.x + "%;top:" + p.y + "%'>" + pic +
-            "<span class='cap'><span class='nk'>" + esc(p.kz) + "</span><b>" + esc(p.n) + "</b></span></button>";
-        }).join("") + "</div></div></div>" +
-        "<div class='legend'><b>原圖節點</b>　每張是敗家一族手繪／截圖。金線是走法，點圖走進詳圖。</div>";
+    var rid = ridNow();
+    var key = rid;
+    if (builtKey === key) {
+      paintMap();
+      if (S.sel && S.sel !== lastSel) flyTo(S.sel);
+      lastSel = S.sel;
+      return;
     }
-    bindCam();
-    applyCam();
+    buildMap(rid);
+    builtKey = key;
+    lastSel = null;
+    if (S.sel && byId[S.sel] && byId[S.sel].r === rid) {
+      window.requestAnimationFrame(function () { flyTo(S.sel); lastSel = S.sel; });
+    } else {
+      lastSel = S.sel;
+    }
   }
 
-  function updateMapState() {
+  function buildMap(rid) {
+    var r = byR[rid] || byR.mainland;
+    var inR = places.filter(function (p) { return p.r === rid; });
+    var size = canvasOf(rid);
+    S.cw = size.w;
+    S.ch = size.h;
+    els.stage.className = "";
+    if (rid === "mainland") {
+      els.stage.innerHTML = mapBar(r, inR.length) +
+        "<div class='map-vp' id='mvp'><div class='map-inner' id='minner'>" +
+        "<div class='frame land' id='frame' style='width:749px;height:564px'>" +
+        "<img class='map-art' id='mapimg' src='img/mainland.jpg' width='749' height='564' alt='主大陸大地圖，官方原圖、敗家一族補充' draggable='false'>" +
+        routesSvg(inR, rid, 749, 564) +
+        "<div class='pins'>" + inR.map(pinHtml).join("") + "</div></div></div></div>" +
+        "<div class='legend'><b>空心圈</b>對準原圖地名，避免蓋字。金線是選中地的相鄰走法。</div>";
+    } else {
+      els.stage.innerHTML = mapBar(r, inR.length) +
+        "<div class='map-vp' id='mvp'><div class='map-inner' id='minner'>" +
+        "<div class='frame board' data-tone='" + esc(r.tone || "pine") + "' id='frame' style='width:" + size.w + "px;height:" + size.h + "px'>" +
+        routesSvg(inR, rid, size.w, size.h) +
+        "<div class='pins'>" + inR.map(nodeHtml).join("") + "</div></div></div></div>" +
+        "<div class='legend'><b>原圖節點</b>是敗家一族手繪。點圖走相鄰，不要只靠文字名單。</div>";
+    }
+    paintMap();
+    bindCam();
+    var img = document.getElementById("mapimg");
+    if (img) {
+      if (img.complete && img.naturalWidth) {
+        S.cw = img.naturalWidth;
+        S.ch = img.naturalHeight;
+        fitCam();
+      } else {
+        img.onload = function () {
+          S.cw = img.naturalWidth || 749;
+          S.ch = img.naturalHeight || 564;
+          var frame = document.getElementById("frame");
+          if (frame) {
+            frame.style.width = S.cw + "px";
+            frame.style.height = S.ch + "px";
+          }
+          if (!S.userCam) fitCam();
+          if (S.sel) flyTo(S.sel);
+        };
+        window.requestAnimationFrame(fitCam);
+      }
+    } else {
+      window.requestAnimationFrame(fitCam);
+    }
+  }
+
+  function pinHtml(p) {
+    return "<button type='button' class='pin' data-k='" + p.k + "' data-id='" + p.id +
+      "' style='left:" + p.x + "%;top:" + p.y + "%'><span class='pin-tip'>" + esc(p.n) + "</span></button>";
+  }
+  function nodeHtml(p) {
+    var img = p.img ? "<img src='" + esc(asset(p.img)) + "' alt='" + esc(p.n) + "'>" : "";
+    return "<button type='button' class='node" + (p.img ? "" : " plain") + "' data-id='" + p.id +
+      "' style='left:" + p.x + "%;top:" + p.y + "%'>" + img +
+      "<span class='cap'><span class='nk'>" + esc(p.kz) + "</span><b>" + esc(p.n) + "</b></span></button>";
+  }
+
+  function paintMap() {
     var qset = {};
     filtered().forEach(function (p) { qset[p.id] = 1; });
     var hasQ = !!S.q;
     var near = {};
-    if (S.sel && byId[S.sel]) neighbors(byId[S.sel]).forEach(function (n) { near[n.id] = 1; });
-    Array.prototype.forEach.call(els.stage.querySelectorAll(".pin, .node"), function (el) {
+    if (S.sel && byId[S.sel]) {
+      (byId[S.sel].links || []).forEach(function (id) { near[id] = 1; });
+    }
+    var marks = els.stage.querySelectorAll(".pin, .node");
+    for (var i = 0; i < marks.length; i++) {
+      var el = marks[i];
       var id = el.getAttribute("data-id");
       el.classList.toggle("on", S.sel === id);
       el.classList.toggle("near", !!near[id]);
       el.classList.toggle("dim", hasQ && !qset[id]);
-    });
-    Array.prototype.forEach.call(els.stage.querySelectorAll(".route"), function (ln) {
-      var a = ln.getAttribute("data-a"), b = ln.getAttribute("data-b");
-      ln.classList.toggle("on", !!(S.sel && (S.sel === a || S.sel === b)));
-    });
+    }
+    var routes = els.stage.querySelectorAll(".route");
+    for (var j = 0; j < routes.length; j++) {
+      var a = routes[j].getAttribute("data-a");
+      var b = routes[j].getAttribute("data-b");
+      routes[j].classList.toggle("on", !!(S.sel && (a === S.sel || b === S.sel)));
+    }
   }
 
   function bindCam() {
     var vp = document.getElementById("mvp");
-    if (!vp) return;
+    var inner = document.getElementById("minner");
+    if (!vp || !inner) return;
+    applyCam();
     var drag = null;
     vp.onpointerdown = function (e) {
-      if (e.target.closest(".pin, .node, .zoom, .map-title")) return;
-      drag = { x: e.clientX, y: e.clientY, px: S.panX, py: S.panY, moved: false };
+      if (e.target.closest(".pin, .node, .zoom, .map-title, .legend")) return;
+      inner.style.transition = "none";
+      drag = { x: e.clientX, y: e.clientY, px: S.panX, py: S.panY };
       vp.classList.add("drag");
-      vp.setPointerCapture(e.pointerId);
+      try { vp.setPointerCapture(e.pointerId); } catch (err) {}
     };
     vp.onpointermove = function (e) {
       if (!drag) return;
-      if (Math.abs(e.clientX - drag.x) + Math.abs(e.clientY - drag.y) > 3) drag.moved = true;
       S.panX = drag.px + (e.clientX - drag.x);
       S.panY = drag.py + (e.clientY - drag.y);
+      S.userCam = true;
       applyCam();
     };
     vp.onpointerup = function (e) {
       var was = drag;
       drag = null;
       vp.classList.remove("drag");
-      if (was && !was.moved && !e.target.closest(".pin, .node, .zoom, button")) {
-        S.sel = null;
-        render();
+      if (was && !e.target.closest(".pin, .node, .zoom, .map-title, button") &&
+          Math.abs(e.clientX - was.x) + Math.abs(e.clientY - was.y) < 4) {
+        if (S.sel) { S.sel = null; render(); }
       }
     };
+    vp.onpointercancel = function () { drag = null; vp.classList.remove("drag"); };
     vp.onwheel = function (e) {
       e.preventDefault();
-      zoomAt(e, e.deltaY > 0 ? 0.9 : 1.11);
+      var rect = vp.getBoundingClientRect();
+      zoomAt(e.clientX - rect.left, e.clientY - rect.top, e.deltaY > 0 ? 0.9 : 1.11);
     };
   }
 
   function renderLedger() {
     els.stage.className = "ledger";
-    S.mapKey = "";
     var list = filtered();
     var h = "<div class='ledger'><div class='ledger-lead'><div class='k'>GAZETTEER</div><h2>地名名冊</h2>" +
-      "<p>同一份 ROSS 世界地圖名單。卡片上就是敗家一族原圖，點進去會回到輿圖並飛到那個點。</p></div>";
+      "<p>同一份 ROSS 世界地圖名單，改按資料片分冊。卡片上的圖是敗家一族原圖，點進去地圖會飛到那一點。</p></div>";
     var last = "";
-    list.forEach(function (p, i) {
+    list.forEach(function (p, idx) {
       if (p.r !== last) {
         last = p.r;
         h += "<div class='lg'>" + esc(byR[p.r].n) + "</div><div class='grid'>";
       }
       var ms = (p.mons || []).slice(0, 3).map(function (m) { return m.n; }).join("、");
       h += "<button type='button' class='card' data-id='" + p.id + "'>";
-      if (p.img) h += "<img src='" + esc(asset(p.img)) + "' alt='" + esc(p.n) + "'>";
+      if (p.img) h += "<img src='" + esc(asset(p.img)) + "' alt=''>";
       h += "<div class='pad'><div class='meta'>" + esc(p.kz) + "</div><b>" + esc(p.n) + "</b>" +
         (p.lv ? "<div class='lv'>Lv " + esc(p.lv) + "</div>" : "") +
         "<div class='ms'>" + esc(ms || "—") + "</div></div></button>";
-      var nxt = list[i + 1];
+      var nxt = list[idx + 1];
       if (!nxt || nxt.r !== p.r) h += "</div>";
     });
     if (!list.length) h += "<div class='empty'>沒有符合的地名。</div>";
@@ -438,8 +506,7 @@
 
   function renderOld() {
     els.stage.className = "old";
-    S.mapKey = "";
-    var h = "<div class='oldpage'><div class='old-banner'><span>這是原頁的資訊架構重建：一張圖、一長串藍字、靠瀏覽器 Ctrl+F 找路。</span>" +
+    var h = "<div class='oldpage'><div class='old-banner'><span>這是原頁的資訊架構重建：一張圖、一長串藍字、靠瀏覽器 Ctrl+F 找路。進典藏輿圖看同一份名單被重排之後的落差。</span>" +
       "<button type='button' data-v='map'>進入典藏輿圖 →</button></div><div class='old-inner'>" +
       "<h1>xFairyland | World Map</h1>" +
       "<div class='src'>geocities.ws/fairyland/worldmap.html　·　支援 Ctrl+F 搜尋地圖名</div>" +
@@ -463,29 +530,29 @@
     h += "<div class='sh-meta'>";
     if (p.lv) h += "<span class='tag'>Lv " + esc(p.lv) + "</span>";
     if (p.elem) h += "<span class='tag'>" + esc(p.elem) + "</span>";
-    if (p.mons.length) h += "<span class='tag'>" + p.mons.length + " 種幻獸</span>";
+    if (p.mons && p.mons.length) h += "<span class='tag'>" + p.mons.length + " 種幻獸</span>";
     h += "</div>";
+    h += "<p class='sh-blurb'>" + esc(p.blurb) + "</p>";
 
     if (p.img) {
-      h += "<figure class='hero'><img src='" + esc(asset(p.img)) + "' alt='" + esc(p.n) + " 原圖'>";
-      if (p.page) h += "<a href='" + esc(asset(p.page)) + "' target='_blank' rel='noreferrer'>打開敗家一族原頁 ↗</a>";
-      h += "</figure>";
+      h += "<figure class='hero'><img src='" + esc(asset(p.img)) + "' alt='" + esc(p.n) + " 原圖'>" +
+        (p.page ? "<a href='" + esc(asset(p.page)) + "' target='_blank' rel='noreferrer'>打開敗家一族原頁 ↗</a>" : "") +
+        "</figure>";
     } else if (p.page) {
       h += "<p><a href='" + esc(asset(p.page)) + "' target='_blank' rel='noreferrer'>打開敗家一族原頁 ↗</a></p>";
     }
 
-    var nei = neighbors(p);
-    if (nei.length) {
-      h += "<div class='sh-h'>從這張圖可以走到</div><div class='exits'>";
-      nei.forEach(function (q) {
+    if (p.links && p.links.length) {
+      h += "<div class='sh-h'>相鄰 · 點圖走過去</div><div class='exits'>";
+      p.links.forEach(function (id) {
+        var q = byId[id];
+        if (!q) return;
         h += "<button type='button' class='exit' data-id='" + q.id + "'>";
-        if (q.img) h += "<img src='" + esc(asset(q.img)) + "' alt='" + esc(q.n) + "'>";
-        h += "<span><b>" + esc(q.n) + "</b><i>" + esc(q.kz) + (q.lv ? " · " + esc(q.lv) : "") + "</i></span></button>";
+        if (q.img) h += "<img src='" + esc(asset(q.img)) + "' alt=''>";
+        h += "<span><b>" + esc(q.n) + "</b><i>" + esc(q.kz) + (q.r !== p.r ? " · " + esc(byR[q.r].n) : "") + "</i></span></button>";
       });
       h += "</div>";
     }
-
-    if (p.blurb) h += "<p class='sh-blurb'>" + esc(p.blurb) + "</p>";
 
     if (p.floors && p.floors.length > 1) {
       h += "<div class='sh-h'>分層</div><table class='floors'><thead><tr><th>地區</th><th>等級</th><th>屬性</th></tr></thead><tbody>";
@@ -494,6 +561,7 @@
       });
       h += "</tbody></table>";
     }
+
     if (p.mons && p.mons.length) {
       h += "<div class='sh-h'>出沒幻獸</div><div class='mons'>";
       p.mons.forEach(function (m) {
@@ -501,24 +569,33 @@
       });
       h += "</div>";
     }
+
     if (p.drops && p.drops.length) {
       h += "<div class='sh-h'>掉寶</div><div class='chips'>";
       p.drops.forEach(function (d) { h += "<span>" + esc(d) + "</span>"; });
       h += "</div>";
     }
+
     if (p.gather && p.gather.length) {
       h += "<div class='sh-h'>採集</div><div class='chips'>";
       p.gather.forEach(function (g) { h += "<span>" + esc(g.n) + " · " + esc(g.sk) + " " + esc(g.lv || "") + "</span>"; });
       h += "</div>";
     }
-    h += "<p class='hint'>主大陸用官方大地圖走針；點開後右邊是敗家一族原圖。資料片每一格也是原圖，金線是相鄰走法。</p>";
+
+    h += "<p class='hint'>等級、掉寶、幻獸來自敗家一族典藏數據。地名與分區對齊 xFairyland 世界地圖。</p>";
     els.sheet.innerHTML = h;
   }
 
-  if (els.listBtn) els.listBtn.addEventListener("click", function () { S.liston = !S.liston; render(); });
+  if (els.listBtn) {
+    els.listBtn.addEventListener("click", function () {
+      S.liston = !S.liston;
+      render();
+    });
+  }
   document.getElementById("brand").addEventListener("click", function () {
-    S.view = "map"; S.region = "mainland"; S.sel = null; S.q = ""; els.q.value = ""; S.mapKey = "";
-    render({ rebuild: true, fit: true });
+    S.view = "map"; S.region = "mainland"; S.sel = null; S.q = "";
+    els.q.value = ""; S.userCam = false; builtKey = null; lastSel = null;
+    render();
   });
   els.views.addEventListener("click", function (e) {
     var b = e.target.closest("[data-v]");
@@ -530,7 +607,7 @@
   });
   els.rail.addEventListener("click", function (e) {
     var b = e.target.closest("[data-id]");
-    if (b) go(b.getAttribute("data-id"));
+    if (b) go(b.getAttribute("data-id"), true);
   });
   els.stage.addEventListener("click", function (e) {
     var v = e.target.closest("[data-v]");
@@ -539,29 +616,28 @@
     if (z) {
       var k = z.getAttribute("data-z");
       var vp = document.getElementById("mvp");
-      if (k === "0" || !vp) { fitMap(); return; }
-      var box = vp.getBoundingClientRect();
-      zoomAt({ clientX: box.left + box.width / 2, clientY: box.top + box.height / 2 }, k === "+" ? 1.18 : 1 / 1.18);
+      if (!vp) return;
+      if (k === "0") { fitCam(); return; }
+      var rect = vp.getBoundingClientRect();
+      zoomAt(rect.width / 2, rect.height / 2, k === "+" ? 1.18 : 1 / 1.18);
       return;
     }
     var b = e.target.closest("[data-id]");
-    if (b) go(b.getAttribute("data-id"));
+    if (b) go(b.getAttribute("data-id"), true);
   });
   els.sheet.addEventListener("click", function (e) {
     if (e.target.closest("[data-close]")) { S.sel = null; render(); return; }
     var b = e.target.closest("[data-id]");
-    if (b) go(b.getAttribute("data-id"));
+    if (b) go(b.getAttribute("data-id"), true);
   });
   els.q.addEventListener("input", function () {
     S.q = els.q.value;
     render();
-    var list = filtered().filter(function (p) { return p.x != null; });
-    if (S.q && list[0] && S.view === "map") flyTo(list[0]);
   });
   els.q.addEventListener("keydown", function (e) {
     if (e.key === "Enter") {
       var list = filtered();
-      if (list[0]) go(list[0].id);
+      if (list[0]) go(list[0].id, true);
     }
     if (e.key === "Escape") { els.q.value = ""; S.q = ""; render(); }
   });
@@ -571,14 +647,17 @@
     }
     if (e.key === "Escape" && S.sel) { S.sel = null; render(); }
   });
-  window.addEventListener("hashchange", function () { readHash(); S.mapKey = ""; render({ rebuild: true, fit: true, fly: !!S.sel }); });
+  window.addEventListener("hashchange", function () {
+    builtKey = null;
+    lastSel = null;
+    readHash();
+    render();
+  });
   window.addEventListener("resize", function () {
-    if (S.view === "map" && !S.sel) fitMap();
+    if (S.view === "map" && !S.userCam) fitCam();
   });
 
   readHash();
   els.q.value = S.q;
-  render({ rebuild: true, fit: true, fly: !!S.sel });
-  setTimeout(function () { if (S.view === "map" && !S.sel) fitMap(); }, 80);
-  setTimeout(function () { if (S.view === "map" && !S.sel) fitMap(); }, 400);
+  render();
 })();
