@@ -748,6 +748,14 @@ def emit():
     tags = "".join(f'<script src="{fn}"></script>' for fn in files)
     idx = idx.replace("<!--DATA_CHUNKS-->", tags)
     (OUT / "index.html").write_text(idx, encoding="utf-8")
+    # 獨立世界輿圖（不進 modern SPA，站在 site/atlas/）
+    atlas_src = ROOT / "atlas"
+    atlas_dst = ROOT / "site" / "atlas"
+    if atlas_src.is_dir():
+        if atlas_dst.exists():
+            shutil.rmtree(atlas_dst)
+        shutil.copytree(atlas_src, atlas_dst, ignore=shutil.ignore_patterns("__pycache__", "*.pyc"))
+        print("atlas -> site/atlas")
     print(f"articles={len(arts)} monsters={len(monsters)} monster_parse_fail={len(fails)}")
     sizes = sum(f.stat().st_size for f in OUT.glob("data-*.js"))
     print(f"data size = {sizes/1048576:.1f} MB, chunks={len(files)}")

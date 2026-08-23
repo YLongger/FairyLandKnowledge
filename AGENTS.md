@@ -13,6 +13,7 @@
 
 典藏版原始碼（改功能改這裡）：
 - `app/index.html|app.css|app.js`：SPA 骨架、全部樣式、路由／導覽／搜尋／幻獸資料庫／降級計算機。
+- `atlas/`：獨立離線世界輿圖（geocities worldmap 重製）。改完跑 `python atlas/build_data.py`，`build_modern.py` 會複製到 `site/atlas/`。
 - `app/tools.js`：數據寶典 19 頁互動圖表的渲染邏輯。
 - `app/data-tools.js`：**產生檔**，由 `build_tools.py` 從 xlsx 產出，不要手改。先手敏捷表（出手順序頁上半）的資料不在 xlsx，是 `build_tools.py` 內的 FS_* 常數（來源截圖存 `data/先手敏捷表2023-02.png`，技能圖示裁在 `app/img/strike/`）。
 - `app/official.js` + `app/data-official.js`：官方誌（`#/o`）——官方公告截圖典藏。data 檔由 `build_official.py` 產出，不要手改。
