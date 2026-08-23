@@ -13,6 +13,7 @@
 
 典藏版原始碼（改功能改這裡）：
 - `app/index.html|app.css|app.js`：SPA 骨架、全部樣式、路由／導覽／搜尋／幻獸資料庫／降級計算機。
+- `atlas/`：獨立離線世界輿圖（geocities worldmap 重製）。改完跑 `python atlas/build_data.py`，`build_modern.py` 會複製到 `site/atlas/`。
 - `app/tools.js`：數據寶典 19 頁互動圖表的渲染邏輯。
 - `app/data-tools.js`：**產生檔**，由 `build_tools.py` 從 xlsx 產出，不要手改。先手敏捷表（出手順序頁上半）的資料不在 xlsx，是 `build_tools.py` 內的 FS_* 常數（來源截圖存 `data/先手敏捷表2023-02.png`，技能圖示裁在 `app/img/strike/`）。
 - `app/official.js` + `app/data-official.js`：官方誌（`#/o`）——官方公告截圖典藏。data 檔由 `build_official.py` 產出，不要手改。
@@ -29,7 +30,9 @@
 - `fetch_expac.py` + `fetch_rollover.py` + `inject_ruffle.py`：鏡像九個資料片官網到 `site/lager/`，補抓藏在 JS 字串裡的 rollover 換圖（MM_swapImage 等，首輪只掃 HTML 屬性會漏），再給含 SWF 的頁面注入 Ruffle。已抓齊，只在原站更新時才需要重跑（三支都可重複執行）。
 - `build_modern.py`：`site/` 原始頁 + `app/` → `site/modern/`。1073 篇文獻清洗重排 + 559 隻幻獸結構化。**改了 `app/` 任何檔都要重跑**（它會把 app/ 複製進 modern/）。
 - `launcher.py` / `launcher_modern.py`：離線瀏覽啟動器，從 exe 內嵌 site.zip 記憶體直服（不落地解壓），127.0.0.1 隨機 port。
-- `make_package.py` / `make_package_modern.py`：組交付包（exe + Big5 使用說明.txt + zip）。
+- `launcher_atlas.py`：世界地圖獨立包啟動器，開 `/atlas/index.html`。
+- `make_package.py` / `make_package_modern.py` / `make_package_atlas.py`：組交付包（exe + Big5 使用說明.txt + zip）。
+- `pack_atlas.py`：地圖獨立包一鍵打包（同步 atlas、壓精簡 site.zip、Python 3.7 打 exe、組交付包）。
 - `audit_all.py`：全站品質審計（見「怎麼驗」）。
 - `shot.py`：Playwright 截圖抽查。
 
@@ -44,6 +47,11 @@ python -c "import zipfile,pathlib;root=pathlib.Path('site');zf=zipfile.ZipFile('
 # 正式 exe 必須用 Python 3.7 打（Win7 VM 相容）；--add-data 要絕對路徑：
 & "C:\Users\user-66990\Desktop\TWlogin\.build\Python37\python.exe" -m PyInstaller --onefile --console --name "童話資料網典藏版" --add-data "<絕對路徑>\site.zip;." --distpath dist37 --workpath build37 --specpath build37 -y launcher_modern.py
 python make_package_modern.py            # 組交付包（1:1 原版則用 launcher.py + make_package.py）
+
+# 世界地圖獨立包（只要地圖、要分享給人雙擊就開）：
+python pack_atlas.py
+# 有 Win7 用的 Python 3.7 時會打出 童話世界地圖.exe 並組 童話世界地圖_交付包/
+# 沒有 3.7 也會壓好 site.zip，可先 python launcher_atlas.py 試開
 ```
 
 ## 怎麼驗（交付前全部要過）

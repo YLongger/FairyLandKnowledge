@@ -78,7 +78,7 @@
       ["任務攻略", "各地任務完整流程", "#/p/" + idOf("任務攻略"), ""],
       ["魔王攻略", "魔王打法與情報", "#/p/" + idOf("魔王攻略"), ""],
       ["特殊物品", "稀有物入手途徑", "#/p/" + idOf("特殊物品"), ""],
-      ["地圖詳覽", "全地圖導覽", "#/p/" + idOf("地圖詳覽"), ""],
+      ["地圖詳覽", "敗家一族各地詳圖", "#/p/" + idOf("地圖詳覽"), ""],
       ["工作技能", "生產製造全書", "#/p/" + idOf("工作技能"), ""],
       ["幻獸融合", "融合配方與心得", "#/p/" + idOf("幻獸融合"), ""],
     ];
@@ -90,6 +90,9 @@
       '<span class="q">搜尋幻獸、物品、地圖、任務攻略…</span><kbd>Ctrl K</kbd></div>' +
       '<div class="hero-stats">' + ARTS.length + " 篇文獻 · " + MON.length + " 隻幻獸資料 · 全站離線可查</div>" +
       "</div>";
+    h += '<a class="home-atlas" href="../atlas/index.html">' +
+      '<div class="ha-k">STANDALONE ATLAS</div><h3>童話世界地圖</h3>' +
+      "<p>ROSS／徐大少那張 geocities 世界地圖的獨立離線本。同一份名單，改成可搜、可走、可對照原版。</p></a>";
     h += '<div class="home-sec"><div class="sec-head"><h2>新手上路</h2><span class="en">三步走進童話世界</span></div><div class="steps">';
     stepDefs.forEach(function (s, i) {
       h += '<div class="step"><div class="step-num">' + "壹貳參"[i] + "</div><h3>" + s[0] + "</h3><p>" + s[1] + "</p>";

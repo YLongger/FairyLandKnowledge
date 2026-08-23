@@ -1,8 +1,15 @@
 # HANDOFF
 
-最後更新：2026-08-15
+最後更新：2026-08-23（地圖獨立包）
 
 ## 目前狀態
+
+- 2026-08-23 新增獨立離線「童話世界地圖」：`atlas/`（建置後複製到 `site/atlas/`）。
+  來源是 geocities.ws/fairyland/worldmap.html（徐大少原圖、ROSS 整合）。
+  輿圖／名冊／原版對照三視圖，搜尋地名與幻獸掉寶；主大陸用官方大地圖針位。
+  典藏版首頁與側欄有入口。單獨打開 `atlas/index.html` 即可，不必進 SPA。
+  分享用獨立包：`python pack_atlas.py`（與典藏版同一套：site.zip 記憶體直服 + Python 3.7 onefile exe）。
+  產出 `童話世界地圖_交付包/`（exe + Big5 使用說明.txt）與同名 zip。zip 只收 atlas + 地圖詳圖 + copy，不是整站。
 
 - 典藏版功能齊備並已交付：五卷文獻（1104 頁）、幻獸資料庫（559 隻）、
   數據寶典 19 頁互動圖表、全屬性寵物降級計算機、官方誌（`#/o`，42 篇官方公告）、
@@ -46,6 +53,7 @@
 | 新官方公告截圖 | 丟三資料夾結構，跑 `build_official.py <資料夾>` | `build_modern.py` → 同上 |
 | 更新數據表 | 換 `data/童话资料.xlsx` | `build_tools.py` → `build_modern.py` → 同上 |
 | 改介面/樣式 | `app/*.css|js|html` | `build_modern.py` → 同上 |
+| 改世界地圖 | `atlas/*`（資料改 `build_data.py` 再跑） | `python pack_atlas.py` |
 | 修回憶錄名單/文案 | `app/memory.js`（ROLL / TRIBUTE / STORY） | `build_modern.py` → 同上 |
 | 加合照/影片 | `site/memory/` 放檔 + `memory.js` 的 SCENES/CLIPS | `build_modern.py` → 同上 |
 
