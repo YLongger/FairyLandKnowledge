@@ -1,18 +1,35 @@
 # HANDOFF
 
-最後更新：2026-08-23（地圖產品併進典藏 repo，仍是兩份獨立包）
+最後更新：2026-08-23（客戶端小地圖審計：10106 錯圖修復＋改版迷宮標註）
 
 ## 目前狀態
 
-- 同一 GitHub `YLongger/FairyLandKnowledge`，兩個產品：典藏版（`site.zip`）與世界地圖（`atlas_site.zip`）。改地圖只跑 `pack_atlas.py`。
+- 2026-08-23（下午）客戶端小地圖全面審計（使用者出示神燈沙漠/坦拉娜迷宮兩張詳圖與客戶端圖不符）：
+  1. `minimap.lpq` 檔序對齊本身沒錯（634/660 符合 3.2×1.6 標準比例），但 **10106 神燈沙漠槽位
+     裝的是一張 60×120 村莊圖（萵苣村變體），尺寸不可能是 80×120 的神燈沙漠**——官方封包錯置。
+     真正的沙漠小圖藏在 `10106.adf` frame 10 內嵌 BMP（256×192），但原檔有 51.8% 黑塊缺損；
+     `atlas/fix_10106_minimap.py` 抽出後用鄰近沙地紋理補洞，寫回 `site/htm/map/client/10106.png`。
+  2. **坦拉娜迷宮 20088 / 糖果屋迷宮 21308：客戶端 ADF 走格與 LPQ 小圖互相一致（是本尊），
+     但迷宮結構與玩家詳圖完全不同**——新版客戶端重做過配置，詳圖記的是舊版。全庫掃描確認
+     詳圖那座迷宮不存在於現行 669 張小圖中。處理：`build_data.py` 的 `CLIENT_VER_DIFF` 加旗標，
+     UI（地點卡＋客戶端卡）顯示「客戶端檔內是改版後的迷宮配置，實際走法以詳圖為準」（`.cap-warn`）。
+  3. 常設審計腳本 `atlas/audit_client_imgs.py`：對 atlas 用到的全部編號做「BMP 尺寸 vs ADF 格數」
+     與「走格拓撲 IoU」雙檢查；dims 不符即 exit 1。目前 134 編號僅 10106 一筆 dims 失敗（已修）。
+     全 136 地點對照表眼看走查（`_audit_sheets.py` 產 `_evi/sheet_*.png`）其餘配對吻合。
+  4. 驗證：本地 8788 與桌面 exe 都用 Playwright channel=chrome 實測（`_verify_places.py`），
+     神燈沙漠顯示修復沙漠圖、兩迷宮顯示改版標註、無 JS 錯誤。exe 已重打並複製桌面。
 
+- 地圖滾輪放大已改架構：底圖只改寬高、從原圖像素重採樣（主大陸 2920×2200、資料片 4000×2800），上限 1.0＝原圖像素，不再 CSS `scale`。地名／資料片卡片放在 `#marks` 螢幕層，字永遠原尺寸。平移用 `left/top` 整數像素，不要 `transform:translate`（縮回去會在圖跟米框之間出一條黑底線）。百分比仍相對全圖（全圖=100%）。
 - 稀有寵手冊 65 隻全部用 `site/htm/huan/hq/` 生成圖，不再拿客戶端卡硬對名字。官方 21 隻身分：典藏 GIF 優先；缺圖且 LPQ 編號 ≥61461 才用客戶端卡當原圖再生成。`61001+檔序` 會對錯（雷爵獸變成寄居蟹），禁止再用。
 - 主大陸針位名稱常駐顯示（`.pin-tip{opacity:1}`）。原版對照固定 `atlas/img/mainland-orig.jpg`（徐大少 749×564），不要換成生成圖。
 - 九個資料片有對齊節點的華麗底圖 `atlas/img/{rid}.jpg`。打包：`python pack_atlas.py`（寫 `atlas_site.zip`，不碰典藏 `site.zip`）。忽略 `rare_src/`、`layout/`。
 - 木頭貝貝典藏沒圖：依金貝貝／水貝貝同族圓殼再生成木紋版。其餘 8 隻缺典藏圖用可信客戶端卡。
+- 火精靈身分：原頁 `gif/rx.gif` 紅龍寶寶（鬱金香島）。舊 HQ 誤用 `gif/fire.gif` 火力蟲。手冊用 110 版坐姿雙眼光亮 Q 圖 `htm/huan/hq/火精靈.png`。
 
 ## 證據位置
 
+- 縮放：`shots/v_zoom_fit.png`、`v_zoom_in.png`（主大陸 302%、字 12px 不變、底圖=2920 原寬）、`v_zoom_mermaid.png`（人魚 384%、卡片字不變）、`v_zoom_click.png`（點吉恩村飛入＋側欄）。
+- 火精靈：`shots/v_fire_rare.png`（手冊＋側欄是紅龍，出沒鬱金香島）。
 - 瀏覽器實踏：`shots/v_mainland.png`（54 地名可見）、`v_old.png`（徐大少原圖）、`v_rare.png`（21 隻 Q 圖對名）、`v_mermaid.png`（人魚底圖+節點）。
 - HQ 65 張在 `site/htm/huan/hq/`。
 

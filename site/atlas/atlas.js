@@ -66,11 +66,17 @@
     cw: 1168,
     ch: 880,
     fitZ: 1,
+    viewW: 1168,
+    viewH: 880,
+    viewX: 0,
+    viewY: 0,
     userCam: false
   };
 
   var builtKey = null;
   var lastSel = null;
+  var flyTok = 0;
+  var MAP_MAT = 10;
   var reduceMotion = !!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
 
   var els = {
@@ -264,21 +270,46 @@
     render();
   }
 
-  function applyCam() {
+  function applyCam(opts) {
     var inner = document.getElementById("minner");
-    if (!inner) return;
-    inner.style.transform = "translate(" + S.panX + "px," + S.panY + "px) scale(" + S.zoom + ")";
-    inner.style.setProperty("--z", String(S.zoom));
+    var frame = document.getElementById("frame");
+    if (!inner || !frame) return;
+    // 底圖用寬高重採樣，不用 CSS scale。平移用 left/top 整數像素，
+    // 避免 transform 半像素邊跟透明黑混出一條黑線。
+    var w = Math.round(S.cw * S.zoom);
+    var h = Math.round(S.ch * S.zoom);
+    var px = Math.round(S.panX);
+    var py = Math.round(S.panY);
+    S.viewW = w;
+    S.viewH = h;
+    S.viewX = px;
+    S.viewY = py;
+    frame.style.width = w + "px";
+    frame.style.height = h + "px";
+    inner.style.transform = "none";
+    inner.style.left = (px - MAP_MAT) + "px";
+    inner.style.top = (py - MAP_MAT) + "px";
+    layoutMarks();
+    if (!opts || !opts.skipTips) layoutPinTips();
     var zb = document.querySelector(".zoom b");
-    if (zb) zb.textContent = Math.round(S.zoom * 100) + "%";
+    if (zb) {
+      var rel = S.fitZ ? (S.zoom / S.fitZ) : S.zoom;
+      zb.textContent = Math.round(rel * 100) + "%";
+    }
+  }
+  function maxZoom() {
+    // 1.0 = 底圖像素 1:1。再往上拉只是把圖拉糊。
+    return 1;
   }
   function fitCam() {
+    flyTok++;
     var vp = document.getElementById("mvp");
     if (!vp) return;
     var r = vp.getBoundingClientRect();
     if (r.width < 40 || r.height < 40) return;
-    var pad = 24;
-    var z = Math.min((r.width - pad * 2) / S.cw, (r.height - pad * 2) / S.ch);
+    // 資料片節點卡以座標為中心外擴，多留白才不會 fit 時卡片切頭
+    var pad = ridNow() === "mainland" ? 24 : 64;
+    var z = Math.min((r.width - pad * 2) / S.cw, (r.height - pad * 2) / S.ch, 1);
     if (!isFinite(z) || z <= 0) z = 1;
     S.fitZ = z;
     S.zoom = z;
@@ -286,11 +317,11 @@
     S.panY = (r.height - S.ch * z) / 2;
     S.userCam = false;
     applyCam();
-    window.requestAnimationFrame(layoutPinTips);
   }
   function zoomAt(mx, my, factor) {
-    var lo = (S.fitZ || 0.6) * 0.7;
-    var hi = 4.2;
+    flyTok++;
+    var lo = (S.fitZ || 0.6) * 0.85;
+    var hi = maxZoom();
     var next = clamp(S.zoom * factor, lo, hi);
     var cx = (mx - S.panX) / S.zoom;
     var cy = (my - S.panY) / S.zoom;
@@ -300,28 +331,46 @@
     S.userCam = true;
     applyCam();
   }
+  function easeInOut(t) {
+    return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+  }
+  function animateCam(z2, x2, y2) {
+    var tok = ++flyTok;
+    if (reduceMotion) {
+      S.zoom = z2;
+      S.panX = x2;
+      S.panY = y2;
+      applyCam();
+      return;
+    }
+    var z1 = S.zoom, x1 = S.panX, y1 = S.panY;
+    var t0 = (window.performance && performance.now) ? performance.now() : Date.now();
+    function step(now) {
+      if (tok !== flyTok) return;
+      var t = Math.min(1, (now - t0) / 280);
+      var e = easeInOut(t);
+      S.zoom = z1 + (z2 - z1) * e;
+      S.panX = x1 + (x2 - x1) * e;
+      S.panY = y1 + (y2 - y1) * e;
+      applyCam();
+      if (t < 1) window.requestAnimationFrame(step);
+    }
+    window.requestAnimationFrame(step);
+  }
   function flyTo(id) {
     var p = byId[id];
     var vp = document.getElementById("mvp");
     if (!p || !vp) return;
     var r = vp.getBoundingClientRect();
-    var z = clamp((S.fitZ || 1) * (S.cw > 1000 ? 1.45 : 1.7), (S.fitZ || 1), 2.8);
+    var z = clamp((S.fitZ || 1) * 2.15, S.fitZ || 1, maxZoom());
     var px = p.x / 100 * S.cw;
     var py = p.y / 100 * S.ch;
     var left = (S.liston && S.view === "map") ? 270 : 0;
     var right = S.sel ? Math.min(420, r.width * 0.38) + 16 : 0;
     var cx = left + (r.width - left - right) / 2;
     var cy = r.height * 0.48;
-    S.zoom = z;
-    S.panX = cx - px * z;
-    S.panY = cy - py * z;
     S.userCam = true;
-    var inner = document.getElementById("minner");
-    if (inner && !reduceMotion) inner.style.transition = "transform .32s ease";
-    applyCam();
-    if (inner && !reduceMotion) {
-      window.setTimeout(function () { inner.style.transition = "none"; }, 340);
-    }
+    animateCam(z, cx - px * z, cy - py * z);
   }
 
   function render() {
@@ -421,14 +470,19 @@
     var html = "<b>找到 " + list.length + " 處</b>";
     if (exact.length) {
       html += " · 幻獸「" + esc(exact[0].n) + "」出現在 ";
+      var seenLoc = {};
       var locBtns = exact[0].places.map(function (id) {
         var p = byId[id];
-        return p ? "<button type='button' data-id='" + p.id + "'>" + esc(p.n) + "</button>" : "";
+        if (!p) return "";
+        seenLoc[norm(p.n)] = 1;
+        return "<button type='button' data-id='" + p.id + "'>" + esc(p.n) + "</button>";
       });
       (exact[0].cplaces || []).forEach(function (cid) {
         var cm = cmapBy[cid];
         if (!cm || cm.pid) return;
         if (cid >= 62000 && cid < 63000) return;
+        if (seenLoc[norm(cm.n)]) return; // 同名客戶端分層不重複列（市鎮地下室 B2/B3）
+        seenLoc[norm(cm.n)] = 1;
         locBtns.push("<button type='button' data-cid='" + cid + "'>" + esc(cm.n) + "</button>");
       });
       html += locBtns.filter(Boolean).join("、");
@@ -452,7 +506,13 @@
     monsterHits(q).slice(0, 6).forEach(function (m) {
       var maps = m.places.map(function (id) { return byId[id] ? byId[id].n : ""; }).filter(Boolean);
       var extra = (m.cplaces || []).map(function (cid) { return cmapBy[cid] && !cmapBy[cid].pid ? cmapBy[cid].n : ""; }).filter(Boolean);
-      maps = maps.concat(extra);
+      var seenNm = {};
+      maps = maps.concat(extra).filter(function (n) {
+        var k = norm(n);
+        if (seenNm[k]) return false;
+        seenNm[k] = 1;
+        return true;
+      });
       rows.push({
         k: "幻獸", q: m.n, id: m.places[0] || "", cid: extra.length && !m.places[0] ? (m.cplaces || [])[0] : "",
         t: m.n, s: maps.slice(0, 3).join("、") + (maps.length > 3 ? " 等 " + maps.length + " 張地圖" : " · " + maps.length + " 張地圖")
@@ -520,7 +580,7 @@
       return;
     }
     if (S.view === "rare") {
-      var tags = [["稀有種", "稀有種"], ["推薦抓", "推薦抓"], ["可封印", "可封印"], ["all", "全部"]];
+      var tags = [["稀有種", "稀有種"], ["稀屬性", "稀屬性"], ["推薦抓", "推薦抓"], ["可封印", "可封印"], ["all", "全部"]];
       var html = "";
       tags.forEach(function (t) {
         var n = rares().filter(function (m) {
@@ -586,7 +646,7 @@
     var detailImg = place && place.img && place.img !== m.img ? place.img : "";
     h += "<div class='pair-maps" + (m.img && detailImg ? "" : " one") + "'>";
     if (m.img) {
-      h += "<figure><img src='" + esc(asset(m.img)) + "' alt='" + esc(m.n) + "' data-lite='" + esc(asset(m.img)) + "' data-cap='" + esc(m.n + " · 客戶端地圖 " + m.id) + "'><figcaption>客戶端地圖 · " + m.id + "</figcaption></figure>";
+      h += "<figure><img src='" + esc(asset(m.img)) + "' alt='" + esc(m.n) + "' data-lite='" + esc(asset(m.img)) + "' data-cap='" + esc(m.n + " · 客戶端地圖 " + m.id) + "'><figcaption>客戶端地圖 · " + m.id + (m.ver ? "<br><span class='cap-warn'>" + esc(m.ver) + "</span>" : "") + "</figcaption></figure>";
     }
     if (detailImg) {
       h += "<figure><img src='" + esc(asset(detailImg)) + "' alt='" + esc(place.n) + " 詳圖' data-lite='" + esc(asset(detailImg)) + "' data-cap='" + esc(place.n + " · 詳圖") + "'><figcaption>詳圖</figcaption></figure>";
@@ -626,7 +686,7 @@
   function renderRare() {
     var list = rareFiltered();
     var h = "<div class='ledger rarebook'><div class='ledger-lead'><div class='k'>TAMER</div><h2>稀有寵手冊</h2>" +
-      "<p>給魔獸使看的。稀有種是官方 21 隻（雷爵獸、木頭貝貝、小木魚…），黑暗儀式招不出來。推薦抓是五顆星／冠軍，可封印會掉娃娃盒。點卡片看出沒，點地圖就飛過去。</p></div>";
+      "<p>給魔獸使看的。稀有種是官方 21 隻（雷爵獸、木頭貝貝、小木魚…），黑暗儀式招不出來。稀屬性是圖鑑屬性欄標「稀」的活動寵。推薦抓是五顆星／冠軍，可封印會掉娃娃盒。點卡片看出沒，點地圖就飛過去。</p></div>";
     if (!list.length) h += "<div class='empty'>沒有符合的寵。換上面的分類，或搜名字／地圖。</div>";
     h += "<div class='grid petgrid'>";
     list.forEach(function (m) {
@@ -856,40 +916,39 @@
     S.cw = size.w;
     S.ch = size.h;
     els.stage.className = "";
-    if (rid === "mainland") {
-      els.stage.innerHTML = mapBar(r, inR.length) +
-        "<div class='map-vp' id='mvp'><div class='map-inner' id='minner'>" +
-        "<div class='frame land' id='frame' style='width:" + size.w + "px;height:" + size.h + "px'>" +
-        "<img class='map-art' id='mapimg' src='img/mainland.jpg' width='" + size.w + "' height='" + size.h + "' alt='主大陸大地圖' draggable='false'>" +
-        routesSvg(inR, rid, size.w, size.h) +
-        "<div class='pins'>" + inR.map(pinHtml).join("") + "</div></div></div></div>" +
-        "<div class='legend'><b>圓點</b>是地名。金線是選中地的相鄰走法。</div>";
-    } else {
-      els.stage.innerHTML = mapBar(r, inR.length) +
-        "<div class='map-vp' id='mvp'><div class='map-inner' id='minner'>" +
-        "<div class='frame board' data-tone='" + esc(r.tone || "pine") + "' id='frame' style='width:" + size.w + "px;height:" + size.h + "px'>" +
-        "<img class='map-art' id='mapimg' src='img/" + rid + ".jpg' width='" + size.w + "' height='" + size.h + "' alt='" + esc(r.n) + "' draggable='false'>" +
-        routesSvg(inR, rid, size.w, size.h) +
-        "<div class='pins'>" + inR.map(nodeHtml).join("") + "</div></div></div></div>" +
-        "<div class='legend'><b>底圖</b>對齊節點與路線。點卡片看那一張。</div>";
-    }
+    var marks = rid === "mainland" ? inR.map(pinHtml).join("") : inR.map(nodeHtml).join("");
+    var frameCls = rid === "mainland" ? "frame land" : "frame board";
+    var tone = rid === "mainland" ? "" : " data-tone='" + esc(r.tone || "pine") + "'";
+    // ?v= 讓瀏覽器換掉舊快取的底圖（邊緣已烘成米框色，見 bake_frame_edges.py）
+    var src = (rid === "mainland" ? "img/mainland.jpg" : "img/" + rid + ".jpg") + "?v=20260823d";
+    var alt = rid === "mainland" ? "主大陸大地圖" : r.n;
+    var legend = rid === "mainland"
+      ? "<div class='legend'><b>圓點</b>是地名。金線是選中地的相鄰走法。滾輪對準游標放大，放到原圖像素就停，字跟底圖都不會跟著糊。</div>"
+      : "<div class='legend'><b>底圖</b>對齊節點與路線。點卡片看那一張。放大時卡片字維持原尺寸，不跟底圖一起拉伸。</div>";
+    els.stage.innerHTML = mapBar(r, inR.length) +
+      "<div class='map-vp' id='mvp'>" +
+      "<div class='map-inner' id='minner'>" +
+      "<div class='" + frameCls + "'" + tone + " id='frame' style='width:" + size.w + "px;height:" + size.h + "px'>" +
+      "<img class='map-art' id='mapimg' src='" + src + "' alt='" + esc(alt) + "' draggable='false'>" +
+      routesSvg(inR, rid, size.w, size.h) +
+      "<div class='frame-edge' aria-hidden='true'></div></div></div>" +
+      "<div class='marks" + (rid !== "mainland" && inR.length >= 15 ? " dense" : "") + "' id='marks'>" + marks + "</div></div>" +
+      legend;
     paintMap();
     bindCam();
     var img = document.getElementById("mapimg");
+    function applyNativeSize() {
+      if (!img || !img.naturalWidth) return;
+      S.cw = img.naturalWidth;
+      S.ch = img.naturalHeight;
+    }
     if (img) {
       if (img.complete && img.naturalWidth) {
-        S.cw = img.naturalWidth;
-        S.ch = img.naturalHeight;
+        applyNativeSize();
         fitCam();
       } else {
         img.onload = function () {
-          S.cw = img.naturalWidth || 749;
-          S.ch = img.naturalHeight || 564;
-          var frame = document.getElementById("frame");
-          if (frame) {
-            frame.style.width = S.cw + "px";
-            frame.style.height = S.ch + "px";
-          }
+          applyNativeSize();
           if (!S.userCam) fitCam();
           if (S.sel) flyTo(S.sel);
         };
@@ -902,29 +961,114 @@
 
   function pinHtml(p) {
     return "<button type='button' class='pin' data-k='" + p.k + "' data-id='" + p.id +
-      "' style='left:" + p.x + "%;top:" + p.y + "%'><span class='pin-tip' data-slot='n'>" + esc(p.n) + "</span></button>";
+      "'><span class='pin-tip' data-slot='n'>" + esc(p.n) + "</span></button>";
+  }
+
+  function nodeHtml(p) {
+    var img = p.img ? "<img src='" + esc(asset(p.img)) + "' alt='" + esc(p.n) + "'>" : "";
+    return "<button type='button' class='node" + (p.img ? "" : " plain") + "' data-id='" + p.id +
+      "'>" + img +
+      "<span class='cap'><span class='nk'>" + esc(p.kz) + "</span><b>" + esc(p.n) + "</b></span></button>";
+  }
+
+  function layoutMarks() {
+    var box = document.getElementById("marks");
+    if (!box) return;
+    var ox = S.viewX, oy = S.viewY, ow = S.viewW, oh = S.viewH;
+    var kids = box.children;
+    var i, el, p, x, y;
+    for (i = 0; i < kids.length; i++) {
+      el = kids[i];
+      p = byId[el.getAttribute("data-id")];
+      if (!p) continue;
+      x = ox + (p.x / 100) * ow;
+      y = oy + (p.y / 100) * oh;
+      el.style.left = Math.round(x) + "px";
+      el.style.top = Math.round(y) + "px";
+      if (el.classList.contains("node")) {
+        el.style.marginLeft = Math.round(-el.offsetWidth / 2) + "px";
+        el.style.marginTop = Math.round(-el.offsetHeight / 2) + "px";
+      }
+    }
+  }
+
+  function applyTipSlot(tip, slot, tw, th) {
+    tip.style.left = "";
+    tip.style.right = "";
+    tip.style.top = "";
+    tip.style.bottom = "";
+    tip.style.marginLeft = "0px";
+    tip.style.marginRight = "0px";
+    tip.style.marginTop = "0px";
+    tip.style.marginBottom = "0px";
+    tip.style.transform = "none";
+    var gap = 6;
+    if (slot === "n") {
+      tip.style.left = "50%";
+      tip.style.bottom = "100%";
+      tip.style.marginBottom = gap + "px";
+      tip.style.marginLeft = Math.round(-tw / 2) + "px";
+    } else if (slot === "s") {
+      tip.style.left = "50%";
+      tip.style.top = "100%";
+      tip.style.marginTop = gap + "px";
+      tip.style.marginLeft = Math.round(-tw / 2) + "px";
+    } else if (slot === "e") {
+      tip.style.left = "100%";
+      tip.style.top = "50%";
+      tip.style.marginLeft = gap + "px";
+      tip.style.marginTop = Math.round(-th / 2) + "px";
+    } else if (slot === "w") {
+      tip.style.right = "100%";
+      tip.style.top = "50%";
+      tip.style.marginRight = gap + "px";
+      tip.style.marginTop = Math.round(-th / 2) + "px";
+    } else if (slot === "ne") {
+      tip.style.left = "100%";
+      tip.style.bottom = "100%";
+      tip.style.marginLeft = "2px";
+      tip.style.marginBottom = gap + "px";
+    } else if (slot === "nw") {
+      tip.style.right = "100%";
+      tip.style.bottom = "100%";
+      tip.style.marginRight = "2px";
+      tip.style.marginBottom = gap + "px";
+    } else if (slot === "se") {
+      tip.style.left = "100%";
+      tip.style.top = "100%";
+      tip.style.marginLeft = "2px";
+      tip.style.marginTop = "4px";
+    } else {
+      tip.style.right = "100%";
+      tip.style.top = "100%";
+      tip.style.marginRight = "2px";
+      tip.style.marginTop = "4px";
+    }
   }
 
   function layoutPinTips() {
-    var frame = document.getElementById("frame");
-    if (!frame || !frame.classList.contains("land")) return;
-    var pins = frame.querySelectorAll(".pin");
+    var box = document.getElementById("marks");
+    var vp = document.getElementById("mvp");
+    if (!box || !vp) return;
+    var pins = box.querySelectorAll(".pin");
     if (!pins.length) return;
-    var z = S.fitZ || S.zoom || 1;
-    var fw = S.cw || frame.clientWidth || 1168;
-    var fh = S.ch || frame.clientHeight || 880;
+    var vw = vp.clientWidth;
+    var vh = vp.clientHeight;
     var items = [];
-    var i, j, it, tip;
+    var i, j, it, tip, p, pinR;
     for (i = 0; i < pins.length; i++) {
       tip = pins[i].querySelector(".pin-tip");
-      if (!tip) continue;
+      p = byId[pins[i].getAttribute("data-id")];
+      if (!tip || !p) continue;
+      pinR = pins[i].getAttribute("data-k") === "city" ? 9 : 8;
       items.push({
         el: pins[i],
         tip: tip,
-        x: parseFloat(pins[i].style.left) || 0,
-        y: parseFloat(pins[i].style.top) || 0,
+        x: S.viewX + (p.x / 100) * S.viewW,
+        y: S.viewY + (p.y / 100) * S.viewH,
         tw: Math.max(tip.offsetWidth, (tip.textContent || "").length * 11 + 14),
         th: Math.max(tip.offsetHeight, 18),
+        pinR: pinR,
         near: 0
       });
     }
@@ -932,43 +1076,36 @@
       for (j = i + 1; j < items.length; j++) {
         var dx = items[i].x - items[j].x;
         var dy = items[i].y - items[j].y;
-        if (dx * dx + dy * dy < 140) {
+        if (dx * dx + dy * dy < 1600) {
           items[i].near++;
           items[j].near++;
         }
       }
     }
     items.sort(function (a, b) { return b.near - a.near; });
-    function pctW(px) { return (px / z) / fw * 100; }
-    function pctH(px) { return (px / z) / fh * 100; }
-    var gapX = pctW(8);
-    var gapY = pctH(8);
-    var pad = pctW(4);
+    var pad = 4;
     var slots = ["n", "s", "e", "w", "ne", "nw", "se", "sw"];
     function boxOf(it, slot) {
-      var lw = pctW(it.tw);
-      var lh = pctH(it.th);
-      var b = { w: lw, h: lh };
-      if (slot === "n") { b.x = it.x - lw / 2; b.y = it.y - gapY - lh; }
-      else if (slot === "s") { b.x = it.x - lw / 2; b.y = it.y + gapY; }
-      else if (slot === "e") { b.x = it.x + gapX; b.y = it.y - lh / 2; }
-      else if (slot === "w") { b.x = it.x - gapX - lw; b.y = it.y - lh / 2; }
-      else if (slot === "ne") { b.x = it.x + gapX * 0.35; b.y = it.y - gapY - lh; }
-      else if (slot === "nw") { b.x = it.x - gapX * 0.35 - lw; b.y = it.y - gapY - lh; }
-      else if (slot === "se") { b.x = it.x + gapX * 0.35; b.y = it.y + gapY; }
-      else { b.x = it.x - gapX * 0.35 - lw; b.y = it.y + gapY; }
-      return b;
+      var tw = it.tw, th = it.th, x = it.x, y = it.y, r = it.pinR, gap = 6;
+      if (slot === "n") return { x: x - tw / 2, y: y - r - gap - th, w: tw, h: th };
+      if (slot === "s") return { x: x - tw / 2, y: y + r + gap, w: tw, h: th };
+      if (slot === "e") return { x: x + r + gap, y: y - th / 2, w: tw, h: th };
+      if (slot === "w") return { x: x - r - gap - tw, y: y - th / 2, w: tw, h: th };
+      if (slot === "ne") return { x: x + r - 2, y: y - r - gap - th, w: tw, h: th };
+      if (slot === "nw") return { x: x - r + 2 - tw, y: y - r - gap - th, w: tw, h: th };
+      if (slot === "se") return { x: x + r - 2, y: y + r + 4, w: tw, h: th };
+      return { x: x - r + 2 - tw, y: y + r + 4, w: tw, h: th };
     }
     function hits(a, b) {
       return a.x < b.x + b.w + pad && a.x + a.w + pad > b.x &&
         a.y < b.y + b.h + pad && a.y + a.h + pad > b.y;
     }
-    function inMap(b) {
-      return b.x > 0.4 && b.y > 0.4 && b.x + b.w < 99.6 && b.y + b.h < 99.6;
+    function inView(b) {
+      return b.x > 4 && b.y > 4 && b.x + b.w < vw - 4 && b.y + b.h < vh - 4;
     }
     var placed = [];
-    var dots = items.map(function (p) {
-      return { x: p.x - 1.2, y: p.y - 1.6, w: 2.4, h: 3.2, self: p };
+    var dots = items.map(function (q) {
+      return { x: q.x - q.pinR, y: q.y - q.pinR, w: q.pinR * 2, h: q.pinR * 2, self: q };
     });
     for (i = 0; i < items.length; i++) {
       it = items[i];
@@ -977,7 +1114,7 @@
       for (j = 0; j < slots.length; j++) {
         var slot = slots[j];
         var b = boxOf(it, slot);
-        var score = inMap(b) ? 0 : 40;
+        var score = inView(b) ? 0 : 40;
         var k;
         for (k = 0; k < placed.length; k++) {
           if (hits(b, placed[k])) score += 80;
@@ -993,14 +1130,9 @@
         }
       }
       it.tip.setAttribute("data-slot", best);
+      applyTipSlot(it.tip, best, it.tw, it.th);
       placed.push(boxOf(it, best));
     }
-  }
-  function nodeHtml(p) {
-    var img = p.img ? "<img src='" + esc(asset(p.img)) + "' alt='" + esc(p.n) + "'>" : "";
-    return "<button type='button' class='node" + (p.img ? "" : " plain") + "' data-id='" + p.id +
-      "' style='left:" + p.x + "%;top:" + p.y + "%'>" + img +
-      "<span class='cap'><span class='nk'>" + esc(p.kz) + "</span><b>" + esc(p.n) + "</b></span></button>";
   }
 
   function paintMap() {
@@ -1035,7 +1167,7 @@
     var drag = null;
     vp.onpointerdown = function (e) {
       if (e.target.closest(".pin, .node, .zoom, .map-title, .legend")) return;
-      inner.style.transition = "none";
+      flyTok++;
       drag = { x: e.clientX, y: e.clientY, px: S.panX, py: S.panY };
       vp.classList.add("drag");
       try { vp.setPointerCapture(e.pointerId); } catch (err) {}
@@ -1045,12 +1177,13 @@
       S.panX = drag.px + (e.clientX - drag.x);
       S.panY = drag.py + (e.clientY - drag.y);
       S.userCam = true;
-      applyCam();
+      applyCam({ skipTips: true });
     };
     vp.onpointerup = function (e) {
       var was = drag;
       drag = null;
       vp.classList.remove("drag");
+      if (was) layoutPinTips();
       if (was && !e.target.closest(".pin, .node, .zoom, .map-title, button") &&
           Math.abs(e.clientX - was.x) + Math.abs(e.clientY - was.y) < 4) {
         if (S.sel) { S.sel = null; render(); }
@@ -1128,7 +1261,7 @@
     if (p.cimg || detailImg) {
       h += "<div class='pair-maps" + (p.cimg && detailImg ? "" : " one") + "'>";
       if (p.cimg) {
-        h += "<figure><img src='" + esc(asset(p.cimg)) + "' alt='" + esc(p.n) + " 客戶端地圖' data-lite='" + esc(asset(p.cimg)) + "' data-cap='" + esc(p.n + " · 客戶端地圖") + "'><figcaption>客戶端地圖" + (p.mid ? " · " + p.mid : "") + "</figcaption></figure>";
+        h += "<figure><img src='" + esc(asset(p.cimg)) + "' alt='" + esc(p.n) + " 客戶端地圖' data-lite='" + esc(asset(p.cimg)) + "' data-cap='" + esc(p.n + " · 客戶端地圖") + "'><figcaption>客戶端地圖" + (p.mid ? " · " + p.mid : "") + (p.cver ? "<br><span class='cap-warn'>" + esc(p.cver) + "</span>" : "") + "</figcaption></figure>";
       }
       if (detailImg) {
         h += "<figure><img src='" + esc(asset(detailImg)) + "' alt='" + esc(p.n) + " 詳圖' data-lite='" + esc(asset(detailImg)) + "' data-cap='" + esc(p.n + " · 詳圖") + "'><figcaption>詳圖</figcaption></figure>";

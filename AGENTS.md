@@ -28,6 +28,8 @@
 世界地圖原始碼（改地圖改這裡，跟典藏版分開打包）：
 - `atlas/`：獨立離線世界地圖。改完跑 `python atlas/build_data.py`，再用 `python pack_atlas.py`（複製到 `site/atlas/` 並打 `atlas_site.zip`）。
 - 客戶端彩色小地圖：`atlas/extract_minimaps.py`（`maps/minimap.lpq` → `site/htm/map/client/`）。走格示意圖不要蓋過彩色圖。
+  - 審計：`atlas/audit_client_imgs.py` 檢查每張小圖尺寸是否等於 ADF 格數 ×(3.2,1.6)（或 2.5 倍高解析 ×(8,4)），不符＝槽位裝了別張圖。已知官方封包錯置：10106 神燈沙漠（真圖藏在 `10106.adf` 內嵌 BMP，`atlas/fix_10106_minimap.py` 修復補洞後輸出，重跑 extract_minimaps 後要再跑一次它）。
+  - 客戶端迷宮被改版、與玩家詳圖不同者（20088 坦拉娜、21308 糖果屋）列在 `build_data.py` 的 `CLIENT_VER_DIFF`，UI 會標「以詳圖為準」。詳圖永遠是玩法正確性的基準。
 - 稀有寵 HQ：`site/htm/huan/hq/`。名字以典藏 GIF 為準；客戶端卡只有檔名表編號 ≥61461 才可信。
 
 建置管線（依序）：
@@ -87,3 +89,5 @@ python pack_atlas.py
 - 資料片官網少數中文檔名是 Big5 百分比編碼（如 間距.gif），與主站的 UTF-8 相反；`fetch_expac.py` 兩種都會試。
 - 走路用地圖編號在 `C:\Lager\nflonline\maps\NNNNN.adf`（FGF300 多層：MAPNAME／傳送／NPC／出沒），**不是**海報庫 `01_素材庫`，也不是 PE 裡的中文。彩色地圖在 `maps\minimap.lpq`（LPQ\\x1a + LZO 0.22），用 `python atlas/extract_minimaps.py` 抽到 `site/htm/map/client/{id}.png`。禁止把走格示意圖蓋上去。listfile 是 names[0] 對 ents[1]，差一格會把吉恩圖寫成別張。室內圖黑邊要裁掉並把純黑打成透明，卡片才不會變成小黑塊。
 - `pack_atlas.py` 同步 atlas 時忽略 `*.py`、`_rev`、`client_maps.json`（資料已編進 `data.js`）。
+- 地圖滾輪放大禁止對「含文字的層」做 CSS `scale`／`will-change:transform`。底圖只改 `width/height`，上限 1.0＝原圖；地名放 `#marks`。平移用 `left/top` 整數像素；米框用 `.map-inner` 實心 padding。縮到很小會把底圖最底下深海壓成一條黑線（原圖像素本來就暗，不是框沒接好）——用 `.frame-edge` 漸層接到米框。改 CSS 要 bump `index.html` 的 `?v=`，否則 8788 預覽會吃到舊檔。
+- 稀有寵「火精靈」原頁 `htm/huan/s82.htm` 圖是 `gif/rx.gif`（紅龍寶寶）。`gif/fire.gif` 是「火力蟲」（叼菸斗的松鼠），禁止再對到火精靈。

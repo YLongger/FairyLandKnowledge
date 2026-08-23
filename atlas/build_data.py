@@ -736,6 +736,13 @@ CLIENT_MAP_ID = {
     "puppet_ft": 20901,
 }
 
+# 客戶端迷宮配置與玩家詳圖不同（改版重做過，ADF 走格已核對與 LPQ 小圖一致，
+# 但與詳圖記錄的舊版走法對不上）。詳圖為準，客戶端卡加標註。
+CLIENT_VER_DIFF = {
+    20088: "客戶端檔內是改版後的迷宮配置，實際走法以詳圖為準。",
+    21308: "客戶端檔內是改版後的迷宮配置，實際走法以詳圖為準。",
+}
+
 FILL = "補圖：原站缺平面圖，依敗家一族畫風重繪，給認路用。"
 IMG_NOTE = {
     "wani": "原站瓦尼島頁沒有島嶼平面圖，下面用遺跡 0F 當入口圖，各層詳圖可翻。",
@@ -1176,7 +1183,8 @@ def main():
     RARE_SPRITE = {
         "卡拉龍": "htm/huan/cala.gif",
         "水貝貝": "htm/huan/babe.gif",
-        "火精靈": "htm/huan/gif/fire.gif",
+        # 火精靈原頁 s82.htm 用 gif/rx.gif。gif/fire.gif 是火力蟲，禁止再對錯。
+        "火精靈": "htm/huan/gif/rx.gif",
     }
     # 典藏沒圖、但 LPQ 檔名表編號可信（≥61461）的官方稀有。
     RARE_CLIENT = {
@@ -1242,8 +1250,10 @@ def main():
             continue
         note = mo.get("note") or ""
         tags = []
+        # 官方稀有種只有 OFFICIAL_21 那 21 隻；敗家把屬性欄寫「稀」的
+        # 其他寵（小天使、藍鳳凰等 11 隻）另立「稀屬性」，不冒充稀有種。
         if mo.get("e") == "稀":
-            tags.append("稀有種")
+            tags.append("稀屬性")
         if "五顆星" in note or "冠軍" in note:
             tags.append("推薦抓")
         catch = any("娃娃盒" in (d or "") for d in (mo.get("d") or []))
@@ -1267,7 +1277,7 @@ def main():
         })
     official_order = {row[0]: i for i, row in enumerate(OFFICIAL_21)}
     rares.sort(key=lambda x: (
-        0 if x["n"] in official_order else 1 if "稀有種" in x["tags"] else 2 if "推薦抓" in x["tags"] else 3,
+        0 if x["n"] in official_order else 1 if "稀屬性" in x["tags"] else 2 if "推薦抓" in x["tags"] else 3,
         official_order.get(x["n"], 99),
         x["n"],
     ))
@@ -1478,6 +1488,8 @@ def main():
             matched_n += 1
             rec["mid"] = pick["id"]
             rec["cimg"] = pick.get("img")
+            if pick["id"] in CLIENT_VER_DIFF:
+                rec["cver"] = CLIENT_VER_DIFF[pick["id"]]
             rec["cto"] = []
             for tid in pick.get("to") or []:
                 dest = by_mid.get(tid)
@@ -1534,6 +1546,7 @@ def main():
                 "mobs": mobs[:20],
                 "pid": pid_by_mid.get(m["id"]),
                 "b": cmap_band(m["id"]),
+                "ver": CLIENT_VER_DIFF.get(m["id"]),
             })
         print("client maps", len(client_rows), "places with mid", matched_n)
         missing = [r["n"] for r in places if not r.get("mid")]

@@ -26,3 +26,7 @@ shots*/
 audit-report.json
 exe-*.txt
 *.log
+
+# 工作階段診斷腳本與證據圖（本機留存即可）
+/_*.py
+/_evi/

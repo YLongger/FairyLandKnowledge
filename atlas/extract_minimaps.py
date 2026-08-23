@@ -15,6 +15,10 @@ from PIL import Image
 CLIENT = Path(r"C:\Lager\nflonline\maps\minimap.lpq")
 OUT = Path(__file__).resolve().parents[1] / "site" / "htm" / "map" / "client"
 
+# 官方封包錯置的槽位：LPQ 內的圖不是這張地圖（audit_client_imgs.py 抓的）。
+# 10106 神燈沙漠裝的是萵苣村變體；正確圖由 fix_10106_minimap.py 從 ADF 內嵌 BMP 修復。
+BAD_SLOTS = {10106}
+
 
 def parse_lpq(data):
     if data[:4] != b"LPQ\x1a":
@@ -122,6 +126,9 @@ def main():
         stem = Path(name).stem
         if not stem.isdigit():
             fail += 1
+            continue
+        if int(stem) in BAD_SLOTS:
+            print("skip bad slot", stem, "(LPQ image is a foreign map; see fix_%s_minimap.py)" % stem)
             continue
         try:
             raw = decomp(data, ent)

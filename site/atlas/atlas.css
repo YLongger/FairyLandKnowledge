@@ -175,32 +175,54 @@ a{color:inherit}
 .zoom button:hover{background:var(--paper2)}
 .zoom b{font-size:11px; font-weight:500; color:var(--muted); min-width:42px; text-align:center}
 
-.map-vp{position:absolute; inset:0; overflow:hidden; cursor:grab; touch-action:none}
+.map-vp{position:absolute; inset:0; overflow:hidden; cursor:grab; touch-action:none; background:#c9b88a}
 .map-vp.drag{cursor:grabbing}
-.map-inner{position:absolute; left:0; top:0; transform-origin:0 0; will-change:transform}
-
-.frame.land{
-  position:relative; width:749px; height:564px; aspect-ratio:749/564;
-  border:10px solid #efe6cf; box-shadow:0 0 0 1px #c9b88a, var(--shadow); background:#9bb8d0;
+.map-inner{
+  position:absolute; left:0; top:0;
+  padding:10px; background:#efe6cf; box-sizing:content-box;
+  box-shadow:0 0 0 1px #c9b88a, var(--shadow);
 }
-.frame.land img.map-art{display:block; width:100%; height:100%; object-fit:fill; user-select:none; pointer-events:none}
-.routes{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:visible}
+.marks{
+  position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:2;
+}
+.marks .pin,.marks .node{pointer-events:auto}
+
+.frame.land,.frame.board{
+  position:relative; box-sizing:content-box; border:0; overflow:hidden;
+  background:#efe6cf;
+}
+.frame.land img.map-art,.frame.board img.map-art{
+  /* 底圖邊緣已烘成米框色（bake_frame_edges.py），不再需要外擴遮縫；
+     1:1 貼齊框，最大縮放時原圖像素不重採樣。 */
+  display:block; position:absolute; left:0; top:0;
+  width:100%; height:100%;
+  object-fit:fill; user-select:none; pointer-events:none; z-index:0;
+  image-rendering:auto;
+}
+.frame-edge{
+  position:absolute; inset:0; pointer-events:none; z-index:4;
+  background:
+    linear-gradient(#efe6cf, rgba(239,230,207,0)) top / 100% 10px no-repeat,
+    linear-gradient(rgba(239,230,207,0), #efe6cf) bottom / 100% 18px no-repeat,
+    linear-gradient(to right, #efe6cf, rgba(239,230,207,0)) left / 10px 100% no-repeat,
+    linear-gradient(to left, #efe6cf, rgba(239,230,207,0)) right / 10px 100% no-repeat;
+}
+.routes{position:absolute; inset:0; width:100%; height:100%; pointer-events:none; overflow:hidden; z-index:1}
 .route{stroke:rgba(184,137,45,.18); stroke-width:1.6; fill:none}
 .route.on{stroke:#e8c25a; stroke-width:3.6; filter:drop-shadow(0 0 4px rgba(230,195,106,.8))}
 .pins{position:absolute; inset:0}
 .pin{
-  position:absolute; transform:translate(-50%,-50%) scale(calc(1 / var(--z,1)));
-  width:16px; height:16px;
+  position:absolute; width:16px; height:16px; margin:-8px 0 0 -8px;
   border:2.5px solid #fff; border-radius:50%; background:transparent;
   box-shadow:0 0 0 1.5px rgba(36,31,22,.5), 0 1px 3px rgba(0,0,0,.3); cursor:pointer; z-index:1;
   overflow:visible;
 }
 .pin:hover,.pin.on,.pin.near{z-index:6}
-.pin:hover{transform:translate(-50%,-50%) scale(calc(1.2 / var(--z,1)))}
-.pin.on{transform:translate(-50%,-50%) scale(calc(1.35 / var(--z,1))); box-shadow:0 0 0 5px rgba(184,137,45,.38), 0 2px 8px rgba(0,0,0,.35)}
+.pin:hover{box-shadow:0 0 0 3px rgba(230,195,106,.45), 0 1px 4px rgba(0,0,0,.3)}
+.pin.on{box-shadow:0 0 0 5px rgba(184,137,45,.38), 0 2px 8px rgba(0,0,0,.35)}
 .pin.near{box-shadow:0 0 0 4px rgba(230,195,106,.35), 0 1px 4px rgba(0,0,0,.3)}
 .pin[data-k=village]{border-color:#f0d27a; background:rgba(201,162,74,.2)}
-.pin[data-k=city]{border-color:#ffd2b0; background:rgba(184,90,40,.22); width:18px; height:18px}
+.pin[data-k=city]{border-color:#ffd2b0; background:rgba(184,90,40,.22); width:18px; height:18px; margin:-9px 0 0 -9px}
 .pin[data-k=dungeon]{border-radius:3px; background:rgba(106,74,120,.2)}
 .pin[data-k=island]{background:rgba(42,110,110,.18)}
 .pin[data-k=lake],.pin[data-k=sea]{background:rgba(45,95,134,.18)}
@@ -213,34 +235,24 @@ a{color:inherit}
 .pin[data-k=field]{background:rgba(61,107,69,.16)}
 .pin.dim{opacity:.18}
 .pin-tip{
-  position:absolute; left:50%; bottom:calc(100% + 6px); transform:translateX(-50%);
-  background:rgba(36,31,22,.9); color:#f4eeda;
-  font-family:var(--serif); font-size:11px; font-weight:700; letter-spacing:.04em;
-  padding:1px 6px; border-radius:4px; white-space:nowrap; pointer-events:none;
-  opacity:1; box-shadow:0 1px 4px rgba(0,0,0,.35);
+  /* 常駐地名不再壓深色底框——縮小時黑框會擠成一條黑線。
+     改成製圖式描邊字：白字＋深色外暈，各種底圖上都讀得到。 */
+  position:absolute; left:50%; bottom:100%; margin-bottom:6px;
+  background:transparent; color:#fff;
+  font-family:var(--serif); font-size:12.5px; font-weight:700; letter-spacing:.04em; line-height:1.35;
+  padding:2px 7px; border-radius:4px; white-space:nowrap; pointer-events:none;
+  opacity:1;
+  text-shadow:
+    0 1px 2px rgba(22,18,10,.95), 0 -1px 2px rgba(22,18,10,.95),
+    1px 0 2px rgba(22,18,10,.95), -1px 0 2px rgba(22,18,10,.95),
+    0 0 6px rgba(22,18,10,.65);
+  -webkit-font-smoothing:subpixel-antialiased;
 }
-.pin-tip[data-slot=s]{bottom:auto; top:calc(100% + 6px)}
-.pin-tip[data-slot=e]{left:calc(100% + 6px); bottom:auto; top:50%; transform:translateY(-50%)}
-.pin-tip[data-slot=w]{left:auto; right:calc(100% + 6px); bottom:auto; top:50%; transform:translateY(-50%)}
-.pin-tip[data-slot=ne]{left:calc(100% - 2px); transform:none}
-.pin-tip[data-slot=nw]{left:auto; right:calc(100% - 2px); transform:none}
-.pin-tip[data-slot=se]{left:calc(100% - 2px); bottom:auto; top:calc(100% + 4px); transform:none}
-.pin-tip[data-slot=sw]{left:auto; right:calc(100% - 2px); bottom:auto; top:calc(100% + 4px); transform:none}
-.pin:hover .pin-tip,.pin.on .pin-tip{opacity:1; background:#241f16}
+.pin:hover .pin-tip,.pin.on .pin-tip{
+  opacity:1; background:rgba(36,31,22,.92); color:#f4eeda;
+  text-shadow:none; box-shadow:0 1px 4px rgba(0,0,0,.35);
+}
 
-.frame.board{
-  position:relative; width:2000px; height:1400px;
-  border:10px solid #efe6cf; border-radius:6px;
-  box-shadow:0 0 0 1px #c9b88a, var(--shadow);
-  background:
-    radial-gradient(ellipse at 30% 20%, rgba(255,255,255,.18), transparent 42%),
-    linear-gradient(180deg, rgba(243,234,214,.35), rgba(243,234,214,.12)),
-    #c9d4b8;
-}
-.frame.board img.map-art{
-  display:block; position:absolute; inset:0; width:100%; height:100%;
-  object-fit:fill; user-select:none; pointer-events:none; z-index:0;
-}
 .frame.board .routes,.frame.board .pins{position:absolute; inset:0; z-index:1}
 .frame.board[data-tone=water]{background:linear-gradient(180deg,#d5e4ea,#c5d6c8)}
 .frame.board[data-tone=rose]{background:linear-gradient(180deg,#ead8dc,#d9d4c4)}
@@ -252,10 +264,11 @@ a{color:inherit}
 .frame.board[data-tone=peach]{background:linear-gradient(180deg,#edd6c8,#dcc6b4)}
 .frame.board[data-tone=ice]{background:linear-gradient(180deg,#d6e2e8,#c8d4d0)}
 .node{
-  position:absolute; transform:translate(-50%,-50%);
+  position:absolute;
   width:132px; padding:0; overflow:hidden; text-align:left;
   background:#241f16; border:2px solid #efe6cf; border-radius:10px;
   cursor:pointer; box-shadow:0 10px 22px rgba(40,30,10,.18); z-index:1;
+  -webkit-font-smoothing:subpixel-antialiased;
 }
 .node img{
   display:block; width:100%; height:78px; object-fit:cover; background:#6a5a3a;
@@ -272,6 +285,12 @@ a{color:inherit}
 .node.dim{opacity:.28}
 .frame.board .route{stroke:rgba(90,64,24,.4); stroke-width:2.4; stroke-dasharray:7 6}
 .frame.board .route.on{stroke:#8a6420; stroke-width:3.4; stroke-dasharray:none}
+/* 節點很多的資料片（一千零一夜 23 張）用縮小卡，fit 時才不會整片互疊 */
+.marks.dense .node{width:98px; border-width:1.5px; border-radius:8px}
+.marks.dense .node img{height:54px}
+.marks.dense .node .cap{padding:4px 7px 6px}
+.marks.dense .node .nk{font-size:9px; letter-spacing:.1em}
+.marks.dense .node b{font-size:12px}
 
 .legend{
   position:absolute; z-index:4; left:12px; bottom:12px;
@@ -349,6 +368,9 @@ a{color:inherit}
 }
 .pair-maps figcaption{
   padding:6px 10px 8px; font-size:12px; letter-spacing:.08em; color:var(--gold3); background:var(--cream);
+}
+.cap-warn{
+  display:inline-block; margin-top:3px; font-size:11px; letter-spacing:.02em; color:#9a5b2c;
 }
 @media (max-width:720px){
   .pair-maps{grid-template-columns:1fr}
