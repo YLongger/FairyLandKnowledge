@@ -69,3 +69,14 @@ python make_package_modern.py            # 組交付包（1:1 原版則用 launc
 - PowerShell 5 不支援 `&&`；跨程序用 `;` 串接。
 - launcher 的 MIME 要含 `.shtml`→text/html、`.wasm`→application/wasm、`.swf`→application/x-shockwave-flash，缺了 Ruffle 或資料片鏡像頁會壞（瀏覽器跳下載框）。本地預覽用 `python -m http.server` 沒有 .shtml 對應，驗資料片頁要另起有註冊 MIME 的伺服器。
 - 資料片官網少數中文檔名是 Big5 百分比編碼（如 間距.gif），與主站的 UTF-8 相反；`fetch_expac.py` 兩種都會試。
+
+## Cursor Cloud specific instructions
+
+雲端環境是 **Linux（Ubuntu / Python 3.12）**，只做開發與驗證，**不打 exe**。AGENTS.md「怎麼建」裡的 Python 3.7 + PyInstaller Win7 打包流程在此無法執行（那是 Windows 專用），雲端只跑「怎麼驗」那半。
+
+- 依賴由開機更新腳本裝好（`pip install -r requirements.txt --break-system-packages` + `python3 -m playwright install --with-deps chromium`）。本機 pip 受 PEP 668 管控，手動裝套件也要加 `--break-system-packages`。
+- Playwright 瀏覽器在 Linux 預設落在 `~/.cache/ms-playwright`，**不要**照上面 Windows 註記去設 `PLAYWRIGHT_BROWSERS_PATH`（那指向 Windows 的 `%LOCALAPPDATA%`，在此會找不到瀏覽器）。直接 `python3 audit_all.py` 即可。
+- 開發預覽（主要）：`python3 -m http.server 8777 --directory site`，開 `http://127.0.0.1:8777/modern/index.html`（典藏版 SPA）。改 `app/` 或 `site/` 後先跑 `python3 build_modern.py` 再看。
+- 實際交付程式（記憶體直服 site.zip）：`python3 launcher_modern.py`（1:1 原版用 `launcher.py`）。它會先 import `site.zip`，所以要先建：`python3 -c "import zipfile,pathlib;root=pathlib.Path('site');zf=zipfile.ZipFile('site.zip','w',zipfile.ZIP_DEFLATED);[zf.write(p,p.relative_to(root).as_posix()) for p in root.rglob('*') if p.is_file()];zf.close()"`。launcher 綁 127.0.0.1 隨機 port（開機時印在 stdout），headless 環境下 `webbrowser.open` 無害。
+- `build_modern.py` 會就地覆寫 `site/modern/`（已進版控）；純驗證時若不想動到追蹤檔，事後 `git checkout -- site/modern/` 還原即可。`site.zip` 已 gitignore。
+- `python3 audit_all.py` 需要上面的 http.server 開在 8777；全站約 1130 頁、約 80 秒，交付前要 0 缺陷。
