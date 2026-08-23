@@ -1,10 +1,10 @@
 @font-face{font-family:"Noto Serif TC";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/noto-serif-tc-latin-400.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Noto Serif TC";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/noto-serif-tc-400.woff2") format("woff2")}
+@font-face{font-family:"Noto Serif TC";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/noto-serif-tc-400.woff2") format("woff2");unicode-range:U+3000-30FF,U+3400-4DBF,U+4E00-9FFF,U+F900-FAFF,U+FF00-FFEF}
 @font-face{font-family:"Noto Serif TC";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/noto-serif-tc-latin-700.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Noto Serif TC";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/noto-serif-tc-700.woff2") format("woff2")}
+@font-face{font-family:"Noto Serif TC";font-style:normal;font-weight:700;font-display:swap;src:url("fonts/noto-serif-tc-700.woff2") format("woff2");unicode-range:U+3000-30FF,U+3400-4DBF,U+4E00-9FFF,U+F900-FAFF,U+FF00-FFEF}
 @font-face{font-family:"Noto Sans TC";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/noto-sans-tc-latin-400.woff2") format("woff2");unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
-@font-face{font-family:"Noto Sans TC";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/noto-sans-tc-400.woff2") format("woff2")}
-@font-face{font-family:"Noto Sans TC";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/noto-sans-tc-500.woff2") format("woff2")}
+@font-face{font-family:"Noto Sans TC";font-style:normal;font-weight:400;font-display:swap;src:url("fonts/noto-sans-tc-400.woff2") format("woff2");unicode-range:U+3000-30FF,U+3400-4DBF,U+4E00-9FFF,U+F900-FAFF,U+FF00-FFEF}
+@font-face{font-family:"Noto Sans TC";font-style:normal;font-weight:500;font-display:swap;src:url("fonts/noto-sans-tc-500.woff2") format("woff2");unicode-range:U+3000-30FF,U+3400-4DBF,U+4E00-9FFF,U+F900-FAFF,U+FF00-FFEF}
 
 :root{
   --ink:#241f16; --muted:#6d6553; --faint:#9a917c;
@@ -280,9 +280,10 @@ a{color:inherit}
   #work{grid-template-columns:1fr}
   #work.nosheet{grid-template-columns:1fr}
   #rail{display:none}
-  #work.liston #rail{display:block; position:absolute; inset:0 0 0 0; z-index:8; max-width:100%}
-  #sheet{position:absolute; inset:0; z-index:9}
+  #work.liston #rail{display:block;position:absolute;inset:0;z-index:8;max-width:100%}
+  #sheet{position:absolute;inset:0;z-index:9}
   .brand-sub{display:none}
+  .list-btn{display:inline-flex}
 }
 @media (max-width:720px){
   #top{flex-wrap:wrap; gap:10px; padding:12px}
@@ -296,3 +297,20 @@ a{color:inherit}
 @media (prefers-reduced-motion:reduce){
   *{transition:none!important}
 }
+
+.list-btn{display:none;border:1px solid rgba(233,226,205,.28);background:rgba(0,0,0,.18);color:#efe6cf;border-radius:8px;padding:7px 12px;cursor:pointer;font-size:12.5px;letter-spacing:.08em}
+#sub{flex:0 0 auto;display:flex;align-items:baseline;gap:16px;padding:10px 22px 11px;background:var(--cream);border-bottom:1px solid var(--line)}
+#sub .sk{font-size:11px;letter-spacing:.24em;color:var(--gold3)}
+#sub h2{font-family:var(--serif);font-size:18px;letter-spacing:.16em}
+#sub p{color:var(--muted);font-size:13px}
+#app[data-view=old] #chips,#app[data-view=old] #sub{display:none}
+.board[data-tone=water]{background:linear-gradient(180deg,#d5e4ea,#c5d6c8)}
+.board[data-tone=rose]{background:linear-gradient(180deg,#ead8dc,#d9d4c4)}
+.board[data-tone=sand]{background:linear-gradient(180deg,#ead9b4,#d8c9a0)}
+.board[data-tone=gold]{background:linear-gradient(180deg,#e8d7b0,#d4c49a)}
+.board[data-tone=emerald]{background:linear-gradient(180deg,#d5e0c6,#c5d2b0)}
+.board[data-tone=moss]{background:linear-gradient(180deg,#d8e0c8,#c8d2b4)}
+.board[data-tone=wine]{background:linear-gradient(180deg,#e5d3c8,#d4c4b0)}
+.board[data-tone=peach]{background:linear-gradient(180deg,#edd6c8,#dcc6b4)}
+.board[data-tone=ice]{background:linear-gradient(180deg,#d6e2e8,#c8d4d0)}
+.board[data-tone=pine]{background:linear-gradient(180deg,#d5ddc8,#c8d0b4)}

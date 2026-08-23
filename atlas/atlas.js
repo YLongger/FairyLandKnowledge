@@ -23,6 +23,8 @@
 
   var els = {
     chips: document.getElementById("chips"),
+    sub: document.getElementById("sub"),
+    listBtn: document.getElementById("listBtn"),
     rail: document.getElementById("rail"),
     stage: document.getElementById("stage"),
     sheet: document.getElementById("sheet"),
@@ -145,6 +147,7 @@
     els.work.classList.toggle("liston", S.liston);
     renderViews();
     renderChips();
+    renderSub();
     if (S.view === "old") {
       els.rail.innerHTML = "";
       els.sheet.hidden = true;
@@ -168,6 +171,17 @@
     els.views.innerHTML = vs.map(function (v) {
       return "<button type='button' data-v='" + v[0] + "' class='" + (S.view === v[0] ? "on" : "") + "'>" + v[1] + "</button>";
     }).join("");
+  }
+
+
+  function renderSub() {
+    if (!els.sub) return;
+    if (S.view === "old") { els.sub.innerHTML = ""; return; }
+    var rid = S.region === "all" ? "mainland" : S.region;
+    var r = byR[rid] || byR.mainland;
+    var n = S.region === "all" ? filtered().length : (counts()[rid] || 0);
+    els.sub.innerHTML = "<span class='sk'>" + esc(r.en) + "</span><h2>" + esc(S.region === "all" ? "全圖" : r.n) + "</h2><p>" +
+      esc(S.region === "all" ? "十個分冊、同一份名單。點資料片看那一區的走法。" : r.d) + " · " + n + " 處</p>";
   }
 
   function renderChips() {
@@ -217,11 +231,10 @@
     filtered().forEach(function (p) { qset[p.id] = 1; });
     var hasQ = !!S.q;
 
-    var bar = "<div class='map-bar'><div class='map-title'><div class='k'>" + esc(r.en) + "</div>" +
-      "<h2>" + esc(r.n) + "</h2><p>" + esc(r.d) + "</p></div>" +
-      "<div class='zoom'><button type='button' data-z='-' title='縮小'>−</button>" +
+    var bar = rid === "mainland" ? ("<div class='map-bar'><div></div><div class='zoom'>" +
+      "<button type='button' data-z='-' title='縮小'>−</button>" +
       "<button type='button' data-z='0' title='重設'>⊙</button>" +
-      "<button type='button' data-z='+' title='放大'>+</button></div></div>";
+      "<button type='button' data-z='+' title='放大'>+</button></div></div>") : "";
 
     if (rid === "mainland") {
       els.stage.className = "";
@@ -247,7 +260,7 @@
             "' stroke='#8a6420' stroke-width='1.2' stroke-dasharray='5 6' opacity='.45'/>";
         });
       });
-      els.stage.innerHTML = bar + "<div class='board'><svg viewBox='0 0 " + w + " " + h + "' preserveAspectRatio='none'>" + lines + "</svg>" +
+      els.stage.innerHTML = bar + "<div class='board' data-tone='" + (r.tone || "pine") + "'><svg viewBox='0 0 " + w + " " + h + "' preserveAspectRatio='none'>" + lines + "</svg>" +
         inR.map(function (p) {
           var dim = hasQ && !qset[p.id] ? " dim" : "";
           var on = S.sel === p.id ? " on" : "";
@@ -389,6 +402,7 @@
     els.sheet.innerHTML = h;
   }
 
+  if (els.listBtn) els.listBtn.addEventListener("click", function () { S.liston = !S.liston; render(); });
   document.getElementById("brand").addEventListener("click", function () {
     S.view = "map"; S.region = "mainland"; S.sel = null; S.q = ""; els.q.value = ""; resetCam(); render();
   });
