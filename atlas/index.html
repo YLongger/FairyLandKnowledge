@@ -14,22 +14,29 @@
       <div class="brand-mark">圖</div>
       <div>
         <div class="brand-title">童話世界地圖</div>
-        <div class="brand-sub">離線典藏 · 獨立輿圖</div>
+        <div class="brand-sub">離線典藏 · 獨立地圖</div>
       </div>
     </div>
     <div id="searchWrap">
       <span class="search-ico">⌕</span>
-      <input id="q" type="search" placeholder="搜地名、幻獸、掉寶…" title="按 / 聚焦" autocomplete="off" spellcheck="false">
+      <input id="q" type="search" placeholder="搜地名、幻獸、地圖編號… 例如窩捲蟲、10009" title="按 / 聚焦" autocomplete="off" spellcheck="false">
+      <div id="suggest" hidden></div>
     </div>
     <button type="button" id="listBtn" class="list-btn">地名</button>
     <div id="views"></div>
   </header>
   <nav id="chips" aria-label="資料片"></nav>
+  <div id="findbar" hidden></div>
   <div id="sub"></div>
   <div id="work">
     <aside id="rail"></aside>
     <section id="stage"></section>
     <aside id="sheet" hidden></aside>
+  </div>
+  <div id="lite" hidden>
+    <button type="button" class="lite-x" data-lite="x" title="關閉">×</button>
+    <img id="liteImg" alt="">
+    <p id="liteCap"></p>
   </div>
 </div>
 <script src="data.js"></script>

@@ -3,6 +3,7 @@ build*/
 dist*/
 __pycache__/
 site.zip
+atlas_site.zip
 
 # 交付包（另行以 GitHub Release 發佈，不進版控）
 童話資料網離線版_交付包/
@@ -11,6 +12,14 @@ site.zip
 童話資料網典藏版_交付包.zip
 童話世界地圖_交付包/
 童話世界地圖_交付包.zip
+
+# 地圖產品暫存（解包／生成過程，不進版控）
+atlas/_rev/
+atlas/img/rare_src/
+atlas/img/layout/
+atlas/_*.py
+atlas/_*.png
+atlas/client_maps.json
 
 # 驗證輸出與暫存
 shots*/

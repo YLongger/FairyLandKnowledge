@@ -2,13 +2,15 @@
 """One-shot packer for the standalone world map.
 
 Same pipeline as the archive exe:
-  atlas/ -> site/atlas/ -> site.zip (in memory for the launcher) ->
+  atlas/ -> site/atlas/ -> atlas_site.zip (in memory for the launcher) ->
   Python 3.7 PyInstaller onefile -> 交付包 (exe + Big5 readme + zip)
+
+Does NOT write site.zip, so the 典藏版 archive is left alone.
 
 On Windows with the Win7 Python 3.7 this is one command:
     python pack_atlas.py
 
-On a machine without that Python it still writes site.zip so the
+On a machine without that Python it still writes atlas_site.zip so the
 launcher can be smoke-tested with:  python launcher_atlas.py
 """
 from __future__ import print_function
@@ -22,8 +24,8 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 NAME = "童話世界地圖"
 SITE = ROOT / "site"
-ZIP_PATH = ROOT / "site.zip"
-INCLUDE = ("atlas", "htm/map", "copy")
+ZIP_PATH = ROOT / "atlas_site.zip"
+INCLUDE = ("atlas", "htm/map", "copy", "cimage", "htm/huan")
 PY37_DEFAULT = Path(r"C:\Users\user-66990\Desktop\TWlogin\.build\Python37\python.exe")
 
 
@@ -36,7 +38,10 @@ def sync_atlas():
         shutil.rmtree(dst)
     shutil.copytree(
         src, dst,
-        ignore=shutil.ignore_patterns("__pycache__", "*.pyc"),
+        ignore=shutil.ignore_patterns(
+            "__pycache__", "*.pyc", "_rev", "*.py", "client_maps.json",
+            "rare_src", "layout", "catalog_names.json",
+        ),
     )
     print("atlas -> site/atlas")
 
@@ -60,7 +65,7 @@ def build_zip():
     with zipfile.ZipFile(ZIP_PATH, "w", zipfile.ZIP_DEFLATED) as zf:
         for f in files:
             zf.write(f, f.relative_to(SITE).as_posix())
-    print("site.zip", ZIP_PATH.stat().st_size, "files", len(files))
+    print("atlas_site.zip", ZIP_PATH.stat().st_size, "files", len(files))
     return len(files)
 
 
@@ -102,15 +107,16 @@ def main():
     sync_atlas()
     n = build_zip()
     if n < 10:
-        raise SystemExit("site.zip too small, abort")
+        raise SystemExit("atlas_site.zip too small, abort")
     py37 = find_py37()
     if py37 is None:
-        print("Python 3.7 not found. site.zip is ready.")
+        print("Python 3.7 not found. atlas_site.zip is ready.")
         print("On the Win7 VM run:")
         print('  python pack_atlas.py')
         print("or set FAIRYLAND_PY37 to that python.exe and rerun.")
         print("Smoke test without exe:")
         print("  python launcher_atlas.py")
+        print("This packer never writes site.zip (that file belongs to 典藏版).")
         return 0
     build_exe(py37)
     subprocess.check_call([sys.executable, str(ROOT / "make_package_atlas.py")])

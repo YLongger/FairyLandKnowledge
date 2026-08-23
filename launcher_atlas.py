@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """Offline viewer for the standalone FairyLand world map.
 
-Serves site.zip from memory on 127.0.0.1 (random port), then opens
-the default browser. Nothing is extracted to disk.
+Serves atlas_site.zip (fallback: site.zip) from memory on 127.0.0.1
+(random port), then opens the default browser. Nothing is extracted to disk.
 """
 import mimetypes
 import re
@@ -24,7 +24,17 @@ def resource_path(name):
     return base / name
 
 
-ZF = zipfile.ZipFile(resource_path("site.zip"))
+def find_zip():
+    """Prefer atlas_site.zip so packing the map never collides with 典藏版 site.zip."""
+    base = Path(getattr(sys, "_MEIPASS", Path(__file__).parent))
+    for name in ("atlas_site.zip", "site.zip"):
+        p = base / name
+        if p.is_file():
+            return p
+    raise SystemExit("missing atlas_site.zip (and no site.zip fallback)")
+
+
+ZF = zipfile.ZipFile(find_zip())
 NAMES = set(ZF.namelist())
 LOCK = threading.Lock()
 

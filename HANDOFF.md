@@ -1,15 +1,22 @@
 # HANDOFF
 
-最後更新：2026-08-23（地圖獨立包）
+最後更新：2026-08-23（地圖產品併進典藏 repo，仍是兩份獨立包）
 
 ## 目前狀態
 
-- 2026-08-23 新增獨立離線「童話世界地圖」：`atlas/`（建置後複製到 `site/atlas/`）。
-  來源是 geocities.ws/fairyland/worldmap.html（徐大少原圖、ROSS 整合）。
-  輿圖／名冊／原版對照三視圖，搜尋地名與幻獸掉寶；主大陸用官方大地圖針位。
-  典藏版首頁與側欄有入口。單獨打開 `atlas/index.html` 即可，不必進 SPA。
-  分享用獨立包：`python pack_atlas.py`（與典藏版同一套：site.zip 記憶體直服 + Python 3.7 onefile exe）。
-  產出 `童話世界地圖_交付包/`（exe + Big5 使用說明.txt）與同名 zip。zip 只收 atlas + 地圖詳圖 + copy，不是整站。
+- 同一 GitHub `YLongger/FairyLandKnowledge`，兩個產品：典藏版（`site.zip`）與世界地圖（`atlas_site.zip`）。改地圖只跑 `pack_atlas.py`。
+
+- 稀有寵手冊 65 隻全部用 `site/htm/huan/hq/` 生成圖，不再拿客戶端卡硬對名字。官方 21 隻身分：典藏 GIF 優先；缺圖且 LPQ 編號 ≥61461 才用客戶端卡當原圖再生成。`61001+檔序` 會對錯（雷爵獸變成寄居蟹），禁止再用。
+- 主大陸針位名稱常駐顯示（`.pin-tip{opacity:1}`）。原版對照固定 `atlas/img/mainland-orig.jpg`（徐大少 749×564），不要換成生成圖。
+- 九個資料片有對齊節點的華麗底圖 `atlas/img/{rid}.jpg`。打包：`python pack_atlas.py`（寫 `atlas_site.zip`，不碰典藏 `site.zip`）。忽略 `rare_src/`、`layout/`。
+- 木頭貝貝典藏沒圖：依金貝貝／水貝貝同族圓殼再生成木紋版。其餘 8 隻缺典藏圖用可信客戶端卡。
+
+## 證據位置
+
+- 瀏覽器實踏：`shots/v_mainland.png`（54 地名可見）、`v_old.png`（徐大少原圖）、`v_rare.png`（21 隻 Q 圖對名）、`v_mermaid.png`（人魚底圖+節點）。
+- HQ 65 張在 `site/htm/huan/hq/`。
+
+
 
 - 典藏版功能齊備並已交付：五卷文獻（1104 頁）、幻獸資料庫（559 隻）、
   數據寶典 19 頁互動圖表、全屬性寵物降級計算機、官方誌（`#/o`，42 篇官方公告）、
@@ -53,7 +60,7 @@
 | 新官方公告截圖 | 丟三資料夾結構，跑 `build_official.py <資料夾>` | `build_modern.py` → 同上 |
 | 更新數據表 | 換 `data/童话资料.xlsx` | `build_tools.py` → `build_modern.py` → 同上 |
 | 改介面/樣式 | `app/*.css|js|html` | `build_modern.py` → 同上 |
-| 改世界地圖 | `atlas/*`（資料改 `build_data.py` 再跑） | `python pack_atlas.py` |
+| 改世界地圖 | `atlas/*`（資料改 `build_data.py` 再跑） | `python pack_atlas.py`（寫 `atlas_site.zip`，不碰典藏版 `site.zip`） |
 | 修回憶錄名單/文案 | `app/memory.js`（ROLL / TRIBUTE / STORY） | `build_modern.py` → 同上 |
 | 加合照/影片 | `site/memory/` 放檔 + `memory.js` 的 SCENES/CLIPS | `build_modern.py` → 同上 |
 
@@ -62,6 +69,7 @@
 - 回憶錄點名冊（63 人）由合照像素字辨識，個別名字可能有錯漏
   （把握較低：Wing 家族尾碼、晴嵐、斧頭綁姐、吞噬冒牛獸）；使用者回報後改 `app/memory.js` 的 ROLL 即可。
 - 原站本來就死的連結列於 `mirror-failed.txt`，無需修。
+- 地圖獨立包與典藏版是兩份產品。打地圖用 `pack_atlas.py`；打典藏版仍壓整份 `site.zip` + `launcher_modern.py`，別混用。
 
 ## 證據位置
 
